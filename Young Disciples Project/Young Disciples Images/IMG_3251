@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>adjustmentBaseVersion</key>
+	<integer>0</integer>
+	<key>adjustmentData</key>
+	<data>
+	YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMS
+	AAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICVRyb290gAGjCwwPVSRudWxs0Q0OViRjbGFz
+	c4AC0hAREhNaJGNsYXNzbmFtZVgkY2xhc3Nlc18QJFNTU1NjcmVlbnNob3RNdXRhYmxl
+	TW9kaWZpY2F0aW9uSW5mb6MUFRZfECRTU1NTY3JlZW5zaG90TXV0YWJsZU1vZGlmaWNh
+	dGlvbkluZm9fEB1TU1NTY3JlZW5zaG90TW9kaWZpY2F0aW9uSW5mb1hOU09iamVjdAgR
+	GiQpMjdJTFFTV11gZ2lueYKprdT0AAAAAAAAAQEAAAAAAAAAFwAAAAAAAAAAAAAAAAAA
+	AP0=
+	</data>
+	<key>adjustmentEditorBundleID</key>
+	<string>com.apple.ScreenshotServicesService</string>
+	<key>adjustmentFormatIdentifier</key>
+	<string>ScreenshotServices</string>
+	<key>adjustmentFormatVersion</key>
+	<string>2.0</string>
+	<key>adjustmentTimestamp</key>
+	<date>2019-11-19T21:09:35Z</date>
+</dict>
+</plist>

@@ -1,0 +1,330 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    text-align: center;
+    background-image:rgb(255, 255, 255); 
+}
+.logo{
+    float:left;
+}
+.nav-lines-container{
+    width:100%;
+    position:absolute;
+    z-index: 999;
+    display:none;
+}
+.nav-lines div{
+height: 6px;
+background-color:gold;
+margin:1px 0  7px;
+border-radius:25px;
+transition: 0.3;
+}
+.nav-lines{
+    width: 40px;
+    display:block;
+    margin: 2em 0 0 2em;
+}
+.nav-line-two{
+width: 1.875rem;
+}
+.nav-container{
+    position: absolute;
+    margin:();
+    width:100%;
+    z-index: 999;
+}
+
+.topnav{
+    overflow:hidden;
+    background-color: transparent;
+    opacity: 1;
+    padding:0% 0% -1%;
+    
+}
+.topnav a{
+    margin-top:3%;
+    margin-right: 1%;
+    float: right;
+    border:();
+    color: black;
+    text-decoration: none;
+    text-align:center;
+  	font-size: 250%;
+    font-weight: bold;
+    line-height: 100%;
+    font-family: 'Londrina Shadow', cursive;
+}
+.nav-btn-donate{
+    color:red;
+}
+.topnav a:hover{
+    color:gold;
+}
+@media all and (max-width: 1036px) {
+    body{
+        overflow-x:hidden;
+    }
+    .logo{
+        float:center;
+        Margin:0% 30% 0%;
+    }
+    .topnav{
+        border:none;
+    }
+    .nav-btn-donate{
+        background-color:transparent;
+    }
+    .nav-btn-donate:hover{
+        color:red;
+    }
+
+    .nav-button{
+        position:absolute;
+        left: 0rem;
+        height :100vh;
+        top:0vh;
+        background-color:gold;
+        display:flex;
+        flex-direction: column-reverse;
+        justify-content: center; 
+        width:100%;
+        transform: translateX(-100%);
+        transition: transform 0.6s ease-out;
+    }
+    .nav-lines-container{
+        display: block;    
+    }
+    .nav-button a{  
+        border:0;
+        font-size: 15vw;
+        height: 10vh;
+    }
+    .topnav a:hover{
+        color:white;
+    }
+}
+.nav-lines-container-active{
+    transform: translateX(0%);
+}
+@keyframes navButtonFade{
+    from {
+        opacity: 0;
+        transform: translateX(-3.125rem)
+    }
+    to{
+        opacity: 1;
+        transform:translateX(0rem) ;
+    }
+}
+.toggle .nav-line-one{
+    transform: rotate(-50deg) translate(-0.65rem,0.375rem);
+    background-color: white;
+    }
+.toggle .nav-line-two{
+    opacity:0;
+    }
+.toggle .nav-line-three{
+    transform: rotate(50deg) translate(-0.65rem,-0.375rem);
+    background-color: white;    
+    }
+
+
+.title{
+    font-size: 310vw;
+    position:();
+}
+.background-container{
+    color:();
+}
+.background-image{
+    content: ();
+    position: relative;
+    width:(100%);
+    background-position:(center);
+    background-size:(cover);
+}
+.background-image img{
+    width: 100%;
+    height:auto;
+}
+.background-image-title{
+    color: black;
+    font-size: 1000%;
+    position: absolute;
+    top: 16.25rem;
+    width:100%;
+    text-align:center;
+    text-shadow: 5px 5px 10px #333;
+    font-weight: bold;
+    line-height: 80%;
+    font-family: 'Londrina Shadow', cursive;
+}
+.background-image-title::after{
+    content:"";
+    background-color: black;
+    box-shadow: 5px 5px 10px #333;
+    width: 60%;
+    height:7%;
+    z-index:998;
+    position: absolute;
+    bottom: -19%;
+    left:50%;
+    border-radius: 50%;
+    transform: translateX(-50%)
+}  
+section{
+    padding:(7rem 0);
+}
+.card-wrapper{
+    display:flex; 
+    align-items:center;
+    align-content:center;
+    flex-direction: column;
+
+}
+.card{
+    width: 20rem;
+    background-color: white;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    margin: 2rem 0;
+    box-shadow: .5rem .5rem 3rem rgba(0,0,0,0.2);
+    border-start-end-radius: 10%;
+}
+.card:hover{
+    box-shadow: .8rem .8rem .5rem rgba(0,0,0,0.2);
+    width: 20.5rem;
+}
+.card .btn{
+    padding: 1rem 2.5rem;
+    background-color: transparent;
+    border-radius: 2rem;
+    border:solid;
+    margin:1rem 0;
+    text-transform: uppercase;
+    color: black;
+    font-size: 1.1rem;
+    transform: all .5s;
+    font-family: 'Alata', sans-serif;
+    
+}
+.card .btn:hover{
+    transform: translateY(-2px);
+    box-shadow: .5rem .5rem 2rem rgba(0,0,0,0.2);
+    color:gold;
+}
+.card .btn:active{
+    transform: translateY(0);
+    box-shadow: none;
+}
+.card .card-image{
+    width: 100%;
+    height: 26rem;
+    object-fit: cover;
+    -webkit-clip-path: polygon(0 0, 100% 0%, 100% 78%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0%, 100% 78%, 0% 100%);
+}
+.profile-image{
+    width: 15rem;
+    height: 15rem;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-top: -11rem;
+    z-index: 998;
+    border: 0.5rem solid gold;
+
+}
+.card h1{
+    font-size: 2.5rem;
+    color:black;
+    margin:1.5rem, 0;
+    font-family: 'Londrina Shadow', cursive;
+}
+.job-title{
+    columns: black;
+    font-size: 1.5rem;
+    font-weight: 300;
+    
+}
+.about{
+    font-size: 1.5rem;
+    margin: 1.5rem, 0;
+    font-style: italic;
+    text-align: center;
+    color: #333;
+}
+
+@media screen and (min-width: 700px){
+    .card-wrapper{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content:center;
+        align-items: center;
+    }
+    .card{
+        margin: 2rem;
+    }
+    @keyframes fadeIn {
+        from{
+            opacity: 0;
+        }
+        to{
+            opacity: 1;
+        }
+    }
+    .card:nth-child(1){
+        animation: fadeIn .5s .3s backwards;
+    }
+    .card:nth-child(2){
+        animation: fadeIn .5s .6s backwards;
+    }
+    .card:nth-child(3){
+        animation: fadeIn .5s .9s backwards;
+    }
+    .card:nth-child(4){
+        animation: fadeIn .5s 1.2s backwards;
+    }
+}
+  
+@media all and (max-width: 1124px){
+    .background-image-title{
+        font-size: 10vw;
+    }
+}
+.mission-container{
+    position:absolute;
+    width:100%;
+    box-sizing:border-box;
+    box-shadow: 5px, 5px, 5px, 5px rgba(0,0,0,0.2);
+    z-index: 998;
+    
+}
+.mission-image img{
+    width: 100%;
+    height: auto;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position:relative;
+    
+    
+}
+.mission-description{
+    font-family: 'Alata', sans-serif;
+    font-size: 200%;
+    color: black;
+    width:100%;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 145%;
+}
+.mission-heading{
+    font-family: 'Londrina Shadow', cursive;
+    font-size: 700%;
+    width: 100%;
+}
+
