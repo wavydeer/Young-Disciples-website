@@ -212,7 +212,7 @@ width: 1.875rem;
     box-sizing:();
 }
 
-.homepage-grid-3{
+/* .homepage-grid-3{
   
 }
 
@@ -221,7 +221,7 @@ width: 1.875rem;
 }
 .homepage-grid-5{
     
-}
+} */
 .homepage-grid div:nth-child(even){
 background-color:gold;
 }
