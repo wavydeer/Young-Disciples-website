@@ -1,3 +1,4 @@
+/* NAV BAR */
 *{
     margin: 0;
     padding: 0;
@@ -130,7 +131,7 @@ width: 1.875rem;
     transform: rotate(50deg) translate(-0.65rem,-0.375rem);
     background-color: white;    
     }
-
+/* END OF NAV BAR */
 
 .title{
     font-size: 310vw;
