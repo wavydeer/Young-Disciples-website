@@ -106,6 +106,7 @@ width: 1.875rem;
     .topnav a:hover{
         color:white;
     }
+    
 }
 .nav-lines-container-active{
     transform: translateX(0%);
