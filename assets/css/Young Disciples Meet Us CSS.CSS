@@ -136,11 +136,11 @@ width: 1.875rem;
 
 .title{
     font-size: 310vw;
-    position:();
 }
 .background-container{
     color:();
 }
+
 .background-image{
     content: ();
     position: relative;
@@ -148,21 +148,32 @@ width: 1.875rem;
     background-position:(center);
     background-size:(cover);
 }
+
 .background-image img{
     width: 100%;
     height:auto;
 }
 .background-image-title{
-    color: black;
+
+    position: absolute; /* taken out of the normal flow of the document */
+    top: 50%; /* moved down by 50% of the screen height */
+    transform: translateY(-50%); /* moved back up (Y axis) by half of its height to achieve the perfect center */
+    width: 100%; /* needs to be defined to keep the default block behavior */
+    text-align: center;
+    margin: 0; /* again, for perfect center */
+    font-family: 'Londrina Shadow', cursive;
     font-size: 1000%;
+    text-shadow: 5px 5px 10px #333;
+    font-weight: bold;
+    line-height: 80%;
+    
+    /* 
+    color: black;
     position: absolute;
     top: 16.25rem;
     width:100%;
     text-align:center;
-    text-shadow: 5px 5px 10px #333;
-    font-weight: bold;
-    line-height: 80%;
-    font-family: 'Londrina Shadow', cursive;
+     */
 }
 .background-image-title::after{
     content:"";
