@@ -158,7 +158,7 @@ width: 1.875rem;
     position: absolute; /* taken out of the normal flow of the document */
     top: 50%; /* moved down by 50% of the screen height */
     transform: translateY(-50%); /* moved back up (Y axis) by half of its height to achieve the perfect center */
-    width: 100%; /* needs to be defined to keep the default block behavior */
+    width: 100%; /* needs to be defined to keep the default block behavior ok */
     text-align: center;
     margin: 0; /* again, for perfect center */
     font-family: 'Londrina Shadow', cursive;
@@ -166,7 +166,7 @@ width: 1.875rem;
     text-shadow: 5px 5px 10px #333;
     font-weight: bold;
     line-height: 80%;
-    
+
     /* 
     color: black;
     position: absolute;
