@@ -93,3 +93,29 @@ img {
 #nav__link-donate {
     color: red;
 }
+
+.donate-popup {
+    position: fixed;
+    transition: .5s;
+    z-index: 1000;
+    width: 100vw;
+    height: 100vh;
+    user-select: none;
+}
+
+.donate-popup__container {
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform:translate(-50%);
+    border-radius: 1rem;
+    box-shadow:0 0 .625pc black;
+    width:25rem;
+    height: auto;
+    text-align: center;
+    background-color: var(--color-container);
+}
+
+.donate-popup__title {
+    margin: 3rem;
+}
