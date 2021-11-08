@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,500,300,700);
 /* NAV BAR */
 *{
     margin: 0;
@@ -268,6 +269,7 @@ section{
     
 }
 .about{
+    
     font-size: 1.5rem;
     margin: 1.5rem, 0;
     font-style: italic;
@@ -312,6 +314,7 @@ section{
         font-size: 10vw;
     }
 }
+/*
 .mission-container{
     position:absolute;
     width:100%;
@@ -343,4 +346,81 @@ section{
     font-size: 700%;
     width: 100%;
 }
+*/
 
+
+  /* FOOTER */
+  .footer-distributed{
+      background: gold;
+      box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+      box-sizing: border-box;
+      width: 100%;
+      text-align: left;
+      font: bold 16px sans-serif;
+      padding: 55px 50px;
+  }
+  
+  .footer-distributed .footer-left,
+  .footer-distributed .footer-right,
+  .footer-distributed .footer-right{
+      display: inline-block;
+      vertical-align: top;
+  }
+  
+  /* Footer left */
+  
+  .footer-distributed .footer-left{
+      width: 70%;
+  }
+  
+
+  /* Footer Right */
+  
+  .footer-distributed .footer-right{
+      width: 25%;
+  }
+  
+  .footer-distributed .footer-right i{
+      background-color:  #000000;
+      color: #000000;
+      font-size: 25px;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 42px;
+      margin: 10px 15px;
+      vertical-align: middle;
+  }
+  
+  
+  .footer-distributed .footer-right p{
+      display: inline-block;
+      color: #000000;
+      font-size:20px;
+      font-weight:400;
+      vertical-align: middle;
+      margin:1;
+  }
+  
+  .footer-distributed .footer-right p span{
+      display:block;
+      font-weight: normal;
+      font-size:20px;
+      line-height:2;
+  }
+  
+  .footer-distributed .footer-right p a{
+      color:  black;
+      font-size:30px;
+      text-decoration: none;;
+      font-family: 'Londrina Shadow', cursive;
+  }
+  
+  /* Footer Right */
+  
+  .footer-distributed .footer-right{
+      width: 20%;
+  }
+/* END FOOTER */
+  
