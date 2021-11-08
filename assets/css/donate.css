@@ -3,9 +3,9 @@
     --header-height: 6rem;
 
     /* colors */
-    --color-primary: #76e676;
+    --color-primary: orange;
     --color-secondary: #cdf887;
-    --color-alt: orange;
+    --color-alt: gold;
     --color-container: #FAFAFA;
     --color-title: #1c1c1c;
     --color-text: rgb(126, 126, 126);
@@ -77,7 +77,7 @@ img {
 .nav__link {
     display: flex;
     flex-direction: column;
-    color: var(--color-secondary);
+    color: var(--color-title);
     font-size: 250%;
     font-weight: bold;
     line-height: 100%;
@@ -125,6 +125,7 @@ img {
 .donate__fields {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 4rem;
 }
 
 .donate__content {
@@ -148,25 +149,34 @@ img {
     outline: none;
 }
 
-.button {
-    margin: 2rem;
+.btn {
+    padding: 1rem 2.5rem;
+    background-color: transparent;
+    border-radius: 2rem;
+    border:solid;
+    margin:1rem 0;
+    text-transform: uppercase;
+    color: var(--color-title);
+    font-size: 1.1rem;
+    transform: all .5s;
+    font-family: 'Alata', sans-serif;
 }
 
-.donate__button {
-    background-color: var(--color-secondary);
-    color: red;
-    border-radius: .5rem;
-    padding: 1rem 2rem;
-    font-size: 150%;
-    font-family: 'Londrina Shadow', cursive;
-    font-weight: bold;
+.btn:active{
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+.btn:hover{
+    transform: translateY(-2px);
+    box-shadow: .5rem .5rem 2rem rgba(0,0,0,0.2);
+    color: var(--color-primary);
 }
 
 #donate__cancel {
     margin-right: 10rem;
-    color: black;
 }
 
-/* .donate-popup {
+.hide-div {
     display: none;
-} */
+}
