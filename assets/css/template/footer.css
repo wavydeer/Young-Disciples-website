@@ -1,0 +1,40 @@
+@import url('/assets/css/style.css');
+
+.footer {
+    bottom: 0;
+
+    background: var(--color-container);
+    box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.1);
+    border-top: 2px solid;
+    height: auto;
+    width: 100vw;
+    font-family: 'Alata', sans-serif;
+    padding-top: 1.5rem;
+    color: var(--color-title);
+}
+
+.footer__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.footer__subtitle {
+    max-width: 32rem;
+    margin: 1rem auto;
+    line-height: 1.75rem;
+    font-size: 1rem;
+}
+
+.footer__email {
+    margin: 1rem 0 3rem 0;
+    color: var(--color-text);
+}
+
+.icon {
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+    transition: 0.3s;
+}

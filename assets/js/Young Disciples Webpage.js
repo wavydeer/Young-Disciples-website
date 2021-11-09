@@ -1,1 +1,0 @@
-document.getElementById("picture").style.opacity = "0.5%";

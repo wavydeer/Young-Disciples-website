@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Londrina+Shadow&family=Rajdhani&display=swap');
+
+/* variables */
+:root {
+    --header-height: 6rem;
+
+    /* colors */
+    --color-primary: orange;
+    --color-secondary: gold;
+    --color-alt: #cdf887;
+    --color-container: #FAFAFA;
+    --color-title: #1c1c1c;
+    --color-text: rgb(126, 126, 126);
+}
+/* end of variables */
+
+/* default values */
+*, ::before, ::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+main {
+    margin-top: var(--header-height);
+}
+
+h1, h2, h3, ul, p {
+    margin: 0;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+/* end of default values */

@@ -1,0 +1,54 @@
+@import url('/assets/css/style.css');
+
+.header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    padding: 0 1rem;
+    z-index: var(--z-fixed);
+    background-color: var(--color-container);
+    border-bottom: 2px solid;
+    box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.nav {
+    height: var(--header-height);
+    margin: auto 1.5rem auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 1.5rem;
+}
+
+.nav__item {
+    text-align: center;
+}
+
+.nav__list {
+    display: grid;
+    display: flex;
+    column-gap: 2rem;
+}
+
+.nav__link {
+    display: flex;
+    flex-direction: column;
+    color: var(--color-title);
+    font-size: 250%;
+    font-weight: bold;
+    line-height: 100%;
+    font-family: 'Londrina Shadow', cursive;
+}
+
+.nav__link:hover {
+    color: var(--color-secondary);
+}
+
+.active-link {
+    color: var(--color-primary);
+}
+
+#nav__link-donate {
+    color: red;
+}
