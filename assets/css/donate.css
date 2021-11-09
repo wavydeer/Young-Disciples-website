@@ -180,3 +180,24 @@ img {
 .hide-div {
     display: none;
 }
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    padding-top: 2rem;
+}
+
+.footer__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: calc(100% - 10rem);
+    row-gap: 3.5rem;
+}
+
+.footer-background {
+    background-color: var(--color-container);
+    padding: 2rem 0 3rem;
+    border-top: 2px solid;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}

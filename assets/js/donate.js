@@ -11,11 +11,7 @@ donateOpen.addEventListener('click', () => {
     })
 })
 
-//remove # from url address bar
-jQuery(document).ready(function($) {
-
-    $(".link").click(function(event){
-        event.preventDefault();
-        $('html,body').animate({scrollTop:$(this.hash).offset().top}, 0);
-    });
+// //remove # from url address bar
+$(window).on('hashchange', function(e){
+    history.replaceState ("", document.title, e.originalEvent.oldURL);
 });
