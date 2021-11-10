@@ -1,5 +1,4 @@
 @import url('/assets/css/style.css');
-
 .header {
     width: 100%;
     position: fixed;
@@ -55,4 +54,8 @@
 
 #nav__link-donate {
     color: red;
+}
+
+#nav__link-donate:hover {
+    color: var(--color-primary);
 }

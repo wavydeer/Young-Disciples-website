@@ -11,6 +11,8 @@ $(window).on('load', function() {
     })
 })
 
+// =========================================================
+
 // load navbar and footer
 $(function(){
     $("#navbar").load("template/navbar.html")
@@ -24,3 +26,8 @@ $(function(){
 const navbar = document.getElementById('navbar')
 navbar.style.position = "absolute"
 navbar.style.zIndex = 10000
+
+// =========================================================
+
+// ensure that style.css is loaded for the html file to use
+$('head').append('<link rel="stylesheet" type="text/css" href="/assets/css/style.css">');

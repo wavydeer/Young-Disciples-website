@@ -1,10 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Alata&family=Londrina+Shadow&family=Rajdhani&display=swap&Open+Sans:400,500,300,700');
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Londrina+Shadow&family=Rajdhani&Open+Sans:400,500,300,700&family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
 
 /* variables */
+
 :root {
     --header-height: 4rem;
-
     /* colors */
     --color-primary: orange;
     --color-secondary: gold;
@@ -13,16 +12,26 @@
     --color-title: #1c1c1c;
     --color-text: rgb(126, 126, 126);
 }
+
+
 /* end of variables */
 
+
 /* default values */
-*, ::before, ::after {
+
+*,
+ ::before,
+ ::after {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
 
-html, 
+* {
+    font-family: "Poppins", sans-serif;
+}
+
+html,
 body {
     max-width: 100%;
     overflow-x: hidden;
@@ -36,7 +45,11 @@ main {
     margin-top: var(--header-height);
 }
 
-h1, h2, h3, ul, p {
+h1,
+h2,
+h3,
+ul,
+p {
     margin: 0;
 }
 
@@ -53,15 +66,16 @@ img {
     max-width: 100%;
     height: auto;
 }
-/* end of default values */
 
+
+/* end of default values */
 
 .btn {
     padding: 1rem 2.5rem;
     background-color: transparent;
     border-radius: 2rem;
-    border:solid;
-    margin:1rem 0;
+    border: solid;
+    margin: 1rem 0;
     text-transform: uppercase;
     color: var(--color-title);
     font-size: 1.1rem;
@@ -70,13 +84,13 @@ img {
     font-family: 'Alata', sans-serif;
 }
 
-.btn:active{
+.btn:active {
     transform: translateY(0);
     box-shadow: none;
 }
 
-.btn:hover{
+.btn:hover {
     transform: translateY(-2px);
-    box-shadow: .5rem .5rem 2rem rgba(0,0,0,0.2); 
-    color: var(--color-primary); 
+    box-shadow: .5rem .5rem 2rem rgba(0, 0, 0, 0.2);
+    color: var(--color-primary);
 }
