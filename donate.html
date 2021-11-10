@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Young Disciples of Jesus Christ - Donate</title>
+
+    <link rel="stylesheet" href="assets/css/donate.css">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
+    <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/donate.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div id="navbar"></div>
+
+    <main>
+        <div class="donate__conatainer container">
+            <div class="donate__image">
+                <img src="assets/img/MeetUs-title-image.jpeg" alt="">
+            </div>
+            
+            <form action="" method="post" class="donate__form">
+                <div class="donate__amount donate__field ">
+                    <input type="text" class="donate__input" required>
+                    <span class="donate__input-bar"></span>
+                    <label class="donate__label">Amount</label>
+                </div>
+
+                <div class="donate__info-container">
+                    <h3 class="donate__info">Personal Information</h3>
+                    <hr class="horizontal-break">
+                </div>
+    
+                <div class="donate__billing">
+                    <div class="donate-group">
+                        <div class="donate__field">
+                            <input type="text" name="fname" id="" class="donate__input" required>
+                            <span class="donate__input-bar"></span>
+                            <label class="donate__label">First Name</label>
+                        </div>
+
+                        <div class="donate__field">
+                            <input type="text" name="lname" id="" class="donate__input" required>
+                            <span class="donate__input-bar"></span>
+                            <label class="donate__label">Last Name</label>
+                        </div>
+                    </div>
+
+                    <div class="donate-group">
+                        <div class="donate__field">
+                            <input type="text" name="email" id="" class="donate__input" required>
+                            <span class="donate__input-bar"></span>
+                            <label class="donate__label">Email</label>
+                        </div>
+
+                        <div class="donate__field">
+                            <input type="text" name="phone" id="" class="donate__input" required>
+                            <span class="donate__input-bar"></span>
+                            <label class="donate__label">Phone</label>
+                        </div>
+                    </div>
+                    
+                    <div class="donate__info-container">
+                        <h3 class="donate__info">Billing Address</h3>
+                        <hr class="horizontal-break">
+                    </div>
+
+                    <div class="donate-group">
+                        <div class="donate__billing-address donate__field">
+                            <input type="text" name="address" id="" class="donate__input" required>
+                            <span class="donate__input-bar"></span>
+                            <label class="donate__label">Address</label>
+                        </div>
+        
+                        <div class="donate__billing-city donate__field">
+                            <input type="text" name="city" id="" class="donate__input" required>
+                            <span class="donate__input-bar"></span>
+                            <label class="donate__label">city</label>
+                        </div>
+                    </div>
+
+                    <div class="donate-group">
+                        <div class="donate__billing-state dropdown__menu">
+                            <div class="dropdown__list">
+                                <div class="dropdown__container">
+                                    <div class="dropdown__option">
+                                        <input type="radio" class="dropdown__button" id="automobiles" name="state"/>
+                                        <label for="aa" class="dropdown__label">Alabama</label>
+                                    </div>
+                            
+                                    <div class="dropdown__option">
+                                        <input type="radio" class="dropdown__button" id="film" name="state" />
+                                        <label for="fl" class="dropdown__label">Florida</label>
+                                    </div>
+                            
+                                    <div class="dropdown__option">
+                                        <input type="radio" class="dropdown__button" id="science" name="state" />
+                                        <label for="il" class="dropdown__label">Illinois</label>
+                                    </div>
+                            
+                                    <div class="dropdown__option">
+                                        <input type="radio" class="dropdown__button" id="art" name="state" />
+                                        <label for="wa" class="dropdown__label">Washington</label>
+                                    </div>
+                                </div>
+                                <div class="dropdown__select">
+                                    State <i class='bx bxs-chevron-down icon dropdown__arrow'></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="donate__billing-address donate__field">
+                            <input type="text" name="zip-code" id="" class="donate__input" required>
+                            <span class="donate__input-bar"></span>
+                            <label class="donate__label">Zip Code</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="donate__message donate__field">
+                    <textarea  rows="4" cols="50" class="donate__input"></textarea>
+                    <span class="donate__input-bar"></span>
+                    <label class="donate__label">Leave a comment</label>
+                </div>
+
+                <div class="donate__form-submit">
+                    <a href="" class="btn payment">Payment Method</a>
+                </div>
+            </form>
+        </div>
+    </main>
+    
+    <div id="footer"></div>
+</body>
+</html>

@@ -9,9 +9,5 @@ $(function(){
 });
 
 $(function(){
-    $("#donate").load("template/donate.html"); 
-});
-
-$(function(){
     $("#footer").load("template/footer.html"); 
 });
