@@ -3,7 +3,14 @@ $(window).on('hashchange', function(e){
     history.replaceState ("", document.title, e.originalEvent.oldURL);
 });
 
-// load each the unchangeble portions
+// make default <a href="#"> tag not do anything
+$('a[href="#"]').click(function (e) {
+    e.preventDefault();
+});
+
+
+
+// load navbar and footer
 $(function(){
     $("#navbar").load("template/navbar.html"); 
 });
