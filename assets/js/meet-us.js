@@ -1,3 +1,13 @@
+// wait for whole page to load
+$(window).on('load', function() {
+    // active link on navbar
+    $("#nav__link-meet-us").addClass("active-link")
+})
+
+
+// =====================================================
+
+// populate cards
 const imagelocation = 'assets/img/'
 
 const individuals = [
