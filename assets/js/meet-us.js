@@ -104,9 +104,13 @@ const individuals = [
     },
 ]
 
+// go through each individual in the array
 individuals.forEach(e => {
+    // create container div
     const cardContainer = document.createElement("div")
     cardContainer.className = 'card'
+
+    // create all the inner elements for the container div
 
     const backgroundPicture = document.createElement('img')
     backgroundPicture.src = e.backgroundPicture
@@ -129,9 +133,11 @@ individuals.forEach(e => {
 
     const contactButton = document.createElement('a')
     contactButton.innerText = 'Contact'
+    contactButton.data
     contactButton.href = '#'
     contactButton.className = 'btn'
 
+    // add the elements into the container div
     cardContainer.appendChild(backgroundPicture)
     cardContainer.appendChild(profilePicture)
     cardContainer.appendChild(title)
@@ -139,5 +145,6 @@ individuals.forEach(e => {
     cardContainer.appendChild(description)
     cardContainer.appendChild(contactButton)
 
+    // add the container div to the screen
     document.querySelector('.card-wrapper').appendChild(cardContainer)
 })
