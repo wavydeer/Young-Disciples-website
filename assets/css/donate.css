@@ -1,10 +1,5 @@
 @import url('style.css');
 
-#navbar {
-    position: absolute;
-    z-index: 1;
-}
-
 .donate__conatainer {
     display: flex;
     justify-content: center;
@@ -150,6 +145,7 @@ textarea ~ .donate__input-bar {
 
 .dropdown__arrow {
     float: right;
+    color: var(--color-container);
 }
 
 .dropdown__option,

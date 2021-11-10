@@ -11,3 +11,8 @@ $(function(){
 $(function(){
     $("#footer").load("template/footer.html"); 
 });
+
+// make sure the nav bar is always on top of everything
+const navbar = document.getElementById('navbar')
+navbar.style.position = "absolute"
+navbar.style.zIndex = 10000;
