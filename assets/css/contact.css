@@ -1,4 +1,4 @@
-.container {
+.contact__container {
     position: relative;
     width: 100%;
     min-height: 100vh;
@@ -304,7 +304,7 @@ textarea.input {
 }
 
 @media (max-width: 480px) {
-    .container {
+    .contact__container {
         padding: 1.5rem;
     }
     .contact-info:before {

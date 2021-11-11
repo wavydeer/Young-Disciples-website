@@ -3,14 +3,17 @@
 /* variables */
 
 :root {
-    --header-height: 4rem;
+    --header-height: 3.5rem;
     /* colors */
-    --color-primary: orange;
-    --color-secondary: gold;
-    --color-alt: #cdf887;
-    --color-container: #FAFAFA;
-    --color-title: #1c1c1c;
-    --color-text: rgb(126, 126, 126);
+    --hue-color: 39;
+    --color-primary: hsl(var(--hue-color), 69%, 61%);
+    --color-secondary: hsl(var(--hue-color), 57%, 53%);
+    --color-alt: hsl(var(--hue-color), 92%, 85%);
+    --color-title: hsl(var(--hue-color), 8%, 15%);
+    --color-text: hsl(var(--hue-color), 8%, 45%);
+    --color-text-secondary: hsl(var(--hue-color), 8%, 65%);
+    --color-input: hsl(var(var(--hue-color), 70%, 96%));
+    --color-container: white;
 }
 
 
@@ -41,8 +44,8 @@ html {
     scroll-behavior: smooth;
 }
 
-main {
-    margin-top: var(--header-height);
+body {
+    margin: var(--header-height) 0 0 0;
 }
 
 h1,
@@ -67,6 +70,11 @@ img {
     height: auto;
 }
 
+.container {
+    max-width: 968px;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
 
 /* end of default values */
 
@@ -93,4 +101,23 @@ img {
     transform: translateY(-2px);
     box-shadow: .5rem .5rem 2rem rgba(0, 0, 0, 0.2);
     color: var(--color-primary);
+}
+
+
+/* ====================== media queries ==================== */
+
+    /* for small devices */
+@media screen and (max-width: 320px) {
+    .container {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+}
+
+/* For large devices */
+@media screen and (min-width: 992px){
+    .container{
+      margin-left: auto;
+      margin-right: auto;
+    }
 }

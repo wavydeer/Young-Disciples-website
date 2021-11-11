@@ -2,7 +2,6 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    width: 70%;
     margin: 10px auto;
 }
 
@@ -16,6 +15,45 @@
 .horizontal-break {
     border: 2px solid black;
     margin-top: .2rem;
+}
+
+.donate__img {
+    width: 10000px;
+    height: auto;
+    opacity: .2;
+}
+
+.background-image-title {
+    position: absolute;
+    /* taken out of the normal flow of the document */
+    top: 50%;
+    /* moved down by 50% of the screen height */
+    transform: translateY( -200%);
+    /* moved back up (Y axis) by half of its height to achieve the perfect center */
+    width: 100%;
+    /* needs to be defined to keep the default block behavior ok */
+    text-align: center;
+    margin: 0;
+    /* again, for perfect center */
+    font-family: "Londrina Shadow", cursive;
+    font-size: 1000%;
+    text-shadow: 5px 5px 10px #333;
+    font-weight: bold;
+    line-height: 80%;
+}
+
+.background-image-title::after {
+    content: "";
+    background-color: black;
+    box-shadow: 5px 5px 10px #333;
+    width: 60%;
+    height: 7%;
+    z-index: 998;
+    position: absolute;
+    bottom: -19%;
+    left: 50%;
+    border-radius: 50%;
+    transform: translateX(-50%);
 }
 
 .donate__form {
@@ -156,7 +194,7 @@ textarea ~ .donate__input-bar {
 }
 
 .dropdown__option:hover {
-    background: var(--color-secondary);
+    background: var(--color-alt);
 }
 
 .dropdown__button {
