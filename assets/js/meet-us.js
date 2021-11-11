@@ -33,18 +33,18 @@ const individuals = [
         backgroundPicture : imagelocation + 'Jenny-background.jpeg'
     },
     {
+        name : 'Eluid Philip',
+        proffession : 'Lead Treasurer',
+        description : 'As lead, I maintain control and advise with the financial decision of the youth. Planning fundraisers and events are ways we benefit in making money for the youth.',
+        profilePicture : imagelocation + 'Philip-profile.JPG',
+        backgroundPicture : imagelocation + 'Philip-background.jpeg'
+    },
+    {
         name : 'Jessica Cherivil',
         proffession : 'Chior Director',
         description : 'I am the overseer of the chior. I plan meetings, teach and practice with the team. I am the lead when performing at events and in house, directing the notes and the sequence of the songs.',
         profilePicture : imagelocation + 'Jessica-profile.jpg',
         backgroundPicture : imagelocation + 'Jessica-background.jpeg'
-    },
-    {
-        name : 'Malcolm Verdier',
-        proffession : 'Treasurer/Advisor',
-        description : 'I assist with the youth treasury, while also being an advisor on college and financial dealings. I carry a seat in the decision making when there are any changed within the youth.',
-        profilePicture : imagelocation + 'Malcolm-profile.PNG',
-        backgroundPicture : imagelocation + 'Malcolm-background1.jpg'
     },
     {
         name : 'Junior Marseille',
@@ -61,18 +61,18 @@ const individuals = [
         backgroundPicture : imagelocation + 'Evona-background.PNG'
     },
     {
-        name : 'Lusie Pierre',
-        proffession : 'Counselor',
-        description : 'I assist where ever is needed within the church. When I am on my free time I am as a counselor to those going through tough times and serious issues.',
-        profilePicture : imagelocation + 'Lusie-profile.jpeg',
-        backgroundPicture : imagelocation + 'Lusie-background.jpeg'
-    },
-    {
         name : 'Bienta Bien-Aime',
         proffession : 'Advisor/Planner',
         description : 'When the youth decideds to take a trip I am usually the one on duty making the arrangements. I also help other with financial decisions and life advice.',
         profilePicture : imagelocation + 'Bienta-profile.jpeg',
         backgroundPicture : imagelocation + 'Bienta-background.jpeg'
+    },
+    {
+        name : 'Malcolm Verdier',
+        proffession : 'Treasurer/Advisor',
+        description : 'I assist with the youth treasury, while also being an advisor on college and financial dealings. I carry a seat in the decision making when there are any changed within the youth.',
+        profilePicture : imagelocation + 'Malcolm-profile.PNG',
+        backgroundPicture : imagelocation + 'Malcolm-background1.jpg'
     },
     {
         name : 'George Blaise',
@@ -89,11 +89,11 @@ const individuals = [
         backgroundPicture : imagelocation + 'Fallande-background.jpeg'
     },
     {
-        name : 'Eluid Philip',
-        proffession : 'Lead Treasurer',
-        description : 'As lead, I maintain control and advise with the financial decision of the youth. Planning fundraisers and events are ways we benefit in making money for the youth.',
-        profilePicture : imagelocation + 'Philip-profile.JPG',
-        backgroundPicture : imagelocation + 'Philip-background.jpeg'
+        name : 'Lusie Pierre',
+        proffession : 'Counselor',
+        description : 'I assist where ever is needed within the church. When I am on my free time I am as a counselor to those going through tough times and serious issues.',
+        profilePicture : imagelocation + 'Lusie-profile.jpeg',
+        backgroundPicture : imagelocation + 'Lusie-background.jpeg'
     },
     {
         name : 'Patrick Dor',
@@ -127,9 +127,13 @@ individuals.forEach(e => {
     proffession.innerText = e.proffession
     proffession.className = 'job-title'
 
+    const descriptionContainer = document.createElement('div')
+    descriptionContainer.className = 'about-container'
+
     const description = document.createElement('p')
     description.innerText = e.description
     description.className = 'about'
+    descriptionContainer.appendChild(description)
 
     const contactButton = document.createElement('a')
     contactButton.innerText = 'Contact'
@@ -142,7 +146,7 @@ individuals.forEach(e => {
     cardContainer.appendChild(profilePicture)
     cardContainer.appendChild(title)
     cardContainer.appendChild(proffession)
-    cardContainer.appendChild(description)
+    cardContainer.appendChild(descriptionContainer)
     cardContainer.appendChild(contactButton)
 
     // add the container div to the screen

@@ -13,7 +13,7 @@
     --color-text: hsl(var(--hue-color), 8%, 45%);
     --color-text-secondary: hsl(var(--hue-color), 8%, 65%);
     --color-input: hsl(var(var(--hue-color), 70%, 96%));
-    --color-container: white;
+    --color-container: rgb(248, 247, 241);
 }
 
 
