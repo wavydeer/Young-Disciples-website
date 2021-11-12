@@ -20,7 +20,7 @@
 }
 
 .change-theme{
-    color: var(--title-color);
+    color: white;
     font-size: 1.15rem;
     cursor: pointer;
 }
@@ -34,25 +34,17 @@
 .nav__logo,
 .nav__toggle,
 .nav__close {
-    color: var(--color-title);
+    color: white;
 }
 
 .nav__logo {
-    text-transform: uppercase;
-    font-family: 'Londrina Shadow', cursive;
-    font-weight: bold;
-    font-size: 100%;
-    border: 2px solid var(--color-title);
-
+    font-weight: 550;
+    
     display: inline-flex;
+    flex-direction: column;
     align-items: center;
     column-gap: .5rem;
     transition: .3s;
-}
-
-.nav__logo:hover {
-    color: var(--color-primary);
-    border: 1.5px solid var(--color-primary);
 }
 
 .nav__toggle {
@@ -92,14 +84,25 @@
 }
 
 .nav__link {
-    color: var(--color-title);
+    color: white;
+    letter-spacing: 3px;
     font-size: 150%;
     text-transform: uppercase;
     font-family: 'Londrina Shadow', cursive;
-    font-weight: bold;
+    font-weight: 550;
+    white-space: nowrap;
 }
 
 .nav__link:hover {
+    color: var(--color-primary);
+}
+
+#nav__link-donate {
+    color: rgb(236, 162, 162);
+}
+
+#nav__link-donate:hover {
+    font-size: 160%;
     color: var(--color-primary);
 }
 

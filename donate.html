@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,109 +16,37 @@
     <div id="navbar"></div>
 
     <main>
-        <div class="donate__conatainer">
-            <div>
-                <img src="assets/img/MeetUs-title-image.jpeg" alt="" class="donate__img">
-                <h1 class="background-image-title">Donate</h1>
-            </div>
+        <div class="payment__method-container">
+            <form action="" class="form">
+                <div class="payment__method-bar"></div>
+                <h1 class="form__title">Payment Method</h1>
 
-            <form action="" method="post" class="donate__form" autocomplete="off">
-                <div style="display: flex; justify-content: center;">
-                    <div class="donate__amount donate__field ">
-                        <input type="text" class="donate__input" required>
-                        <span class="donate__input-bar"></span>
-                        <label class="donate__label">Amount</label>
-                    </div>
+                <div class="form__div">
+                    <input type="text" class="form__input" placeholder=" ">
+                    <label for="" class="form__label">Amount</label>
                 </div>
 
-                <div class="donate__info-container">
-                    <h3 class="donate__info">Personal Information</h3>
-                    <hr class="horizontal-break">
+                <div class="form__div">
+                    <input type="password" class="form__input" placeholder=" ">
+                    <label for="" class="form__label">Card Number</label>
                 </div>
 
-                <div class="donate__billing">
-                    <div class="donate-group">
-                        <div class="donate__field">
-                            <input type="text" name="fname" id="" class="donate__input" required>
-                            <span class="donate__input-bar"></span>
-                            <label class="donate__label">First Name</label>
-                        </div>
-
-                        <div class="donate__field">
-                            <input type="text" name="lname" id="" class="donate__input" required>
-                            <span class="donate__input-bar"></span>
-                            <label class="donate__label">Last Name</label>
-                        </div>
-                    </div>
-
-                    <div class="donate-group">
-                        <div class="donate__field">
-                            <input type="text" name="email" id="" class="donate__input" required>
-                            <span class="donate__input-bar"></span>
-                            <label class="donate__label">Email</label>
-                        </div>
-
-                        <div class="donate__field">
-                            <input type="text" name="phone" id="" class="donate__input" required>
-                            <span class="donate__input-bar"></span>
-                            <label class="donate__label">Phone</label>
-                        </div>
-                    </div>
-
-                    <div class="donate__info-container">
-                        <h3 class="donate__info">Billing Address</h3>
-                        <hr class="horizontal-break">
-                    </div>
-
-                    <div class="donate-group">
-                        <div class="donate__billing-address donate__field">
-                            <input type="text" name="address" id="" class="donate__input" required>
-                            <span class="donate__input-bar"></span>
-                            <label class="donate__label">Address</label>
-                        </div>
-
-                        <div class="donate__billing-city donate__field">
-                            <input type="text" name="city" id="" class="donate__input" required>
-                            <span class="donate__input-bar"></span>
-                            <label class="donate__label">city</label>
-                        </div>
-                    </div>
-
-                    <div class="donate-group">
-                        <div class="donate__billing-state dropdown__menu">
-                            <div class="dropdown__list">
-                                <div class="dropdown__container">
-                                    <!-- DO NOT DELETE !!!
-
-                                    <div class="dropdown__option">
-                                        <input type="radio" class="dropdown__button" id="alabama" name="state"/>
-                                        <label for="aa" class="dropdown__label">Alabama</label>
-                                    </div> 
-                                -->
-                                </div>
-                                <div class="dropdown__select">
-                                    State <i class='bx bxs-chevron-down icon dropdown__arrow'></i>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="donate__billing-address donate__field">
-                            <input type="text" name="zip-code" id="" class="donate__input" required>
-                            <span class="donate__input-bar"></span>
-                            <label class="donate__label">Zip Code</label>
-                        </div>
-                    </div>
+                <div class="form__div">
+                    <input type="password" class="form__input" placeholder=" ">
+                    <label for="" class="form__label">Expiration Date</label>
                 </div>
 
-                <div class="donate__message donate__field">
-                    <textarea rows="4" cols="50" class="donate__input"></textarea>
-                    <span class="donate__input-bar"></span>
-                    <label class="donate__label">Leave a comment</label>
+                <div class="form__div">
+                    <input type="password" class="form__input" placeholder=" ">
+                    <label for="" class="form__label">CVC</label>
                 </div>
 
-                <div class="donate__form-submit">
-                    <a href="" class="btn payment">Payment Method</a>
+                <div class="form__div">
+                    <input type="password" class="form__input" placeholder=" ">
+                    <label for="" class="form__label">Name on Card</label>
                 </div>
+                
+                <input type="submit" class="form__button" value="Sign In">
             </form>
         </div>
     </main>

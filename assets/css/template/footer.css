@@ -10,7 +10,13 @@
     width: 100vw;
     font-family: 'Alata', sans-serif;
     padding-top: 1.5rem;
-    color: var(--color-title);
+    color: white;
+}
+
+footer .logo:hover .logo-title, 
+footer .logo:hover .logo-subtitle {
+    color: white;
+    border: 1.5px solid white;
 }
 
 .footer__container {
@@ -30,7 +36,7 @@
 
 .footer__email {
     margin: 1rem 0 3rem 0;
-    color: var(--color-text);
+    color: rgb(143, 143, 143);
 }
 
 .icon {

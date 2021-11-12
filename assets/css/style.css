@@ -13,7 +13,9 @@
     --color-text: hsl(var(--hue-color), 8%, 45%);
     --color-text-secondary: hsl(var(--hue-color), 8%, 65%);
     --color-input: hsl(var(var(--hue-color), 70%, 96%));
-    --color-container: rgb(248, 247, 241);
+    --color-container: #384351;
+    /* --color-container: rgb(248, 247, 241); */
+    /*  background: #384351; */
 }
 
 
@@ -76,7 +78,30 @@ img {
     margin-right: 1.5rem;
 }
 
+
 /* end of default values */
+
+.logo-title,
+.logo-subtitle {
+    text-transform: uppercase;
+    border: 1.5px solid white;
+    font-family: 'Londrina Shadow', cursive;
+    white-space: nowrap;
+}
+
+.logo-title {
+    font-size: 30px;
+}
+
+.logo-subtitle {
+    font-size: 20px;
+}
+
+.logo:hover .logo-title,
+.logo:hover .logo-subtitle {
+    color: var(--color-primary);
+    border: 1.5px solid var(--color-primary);
+}
 
 .btn {
     padding: 1rem 2.5rem;
@@ -106,7 +131,9 @@ img {
 
 /* ====================== media queries ==================== */
 
-    /* for small devices */
+
+/* for small devices */
+
 @media screen and (max-width: 320px) {
     .container {
         margin-left: 1rem;
@@ -114,10 +141,12 @@ img {
     }
 }
 
+
 /* For large devices */
-@media screen and (min-width: 992px){
-    .container{
-      margin-left: auto;
-      margin-right: auto;
+
+@media screen and (min-width: 992px) {
+    .container {
+        margin-left: auto;
+        margin-right: auto;
     }
 }
