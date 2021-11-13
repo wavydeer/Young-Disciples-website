@@ -9,9 +9,8 @@
     --color-primary: hsl(var(--hue-color), 69%, 61%);
     --color-secondary: hsl(var(--hue-color), 57%, 53%);
     --color-alt: hsl(var(--hue-color), 92%, 85%);
-    --color-title: hsl(var(--hue-color), 8%, 15%);
-    --color-text: hsl(var(--hue-color), 8%, 45%);
-    --color-text-secondary: hsl(var(--hue-color), 8%, 65%);
+    --color-title: #000000;
+    --color-text: #000000;
     --color-input: hsl(var(var(--hue-color), 70%, 96%));
     --color-body : rgb(248, 247, 241);
     --color-container: #384351;
@@ -23,7 +22,8 @@
 body.dark-theme {
     --color-body : #59687a;
     --color-container: #384351;
-    --color-container-secondary: rgb(209, 209, 209);
+    --color-container-secondary: #384351;
+    --color-text: #ffffff67;
 }
 
 /* end of variables */
@@ -108,7 +108,8 @@ img {
 .logo:hover .logo-title,
 .logo:hover .logo-subtitle {
     color: var(--color-primary);
-    border: 1.5px solid var(--color-primary);
+    font-weight: 570;
+    border: 1.2px solid var(--color-primary);
 }
 
 .btn {

@@ -60,13 +60,13 @@ section {
 
 .card {
     width: 20rem;
-    background-color: white;
+    background-color: var(--color-container-secondary);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: 2rem 0;
-    box-shadow: 0.5rem 0.5rem 3rem rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.486);
     border-start-end-radius: 10%;
     border-radius: 1rem;
     
@@ -74,7 +74,7 @@ section {
 }
 
 .card:hover {
-    box-shadow: 0.8rem 0.8rem 0.5rem rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 40px black;
     transform: scale(1.05);
 }
 
@@ -97,9 +97,9 @@ section {
     border: 0.5rem solid var(--color-primary);
 }
 
-.card h1 {
+.card-title {
     font-size: 2.5rem;
-    color: black;
+    color: var(--color-title);
     margin: 1.5rem, 0;
     font-family: "Londrina Shadow", cursive;
 }
@@ -120,7 +120,7 @@ section {
     padding-right: 1rem;
     font-style: italic;
     text-align: center;
-    color: #333;
+    color: var(--color-text);
 }
 
 @media screen and (min-width: 700px) {

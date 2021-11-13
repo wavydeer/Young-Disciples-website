@@ -31,14 +31,15 @@
     column-gap: 1rem;
 }
 
-.nav__logo,
+.nav .logo,
 .nav__toggle,
-.nav__close {
-    color: white;
+.nav__close,
+.nav__link {
+    color: var(--color-input);
 }
 
-.nav__logo {
-    font-weight: 550;
+.nav .logo {
+    font-weight: 600;
     
     display: inline-flex;
     flex-direction: column;
@@ -84,12 +85,11 @@
 }
 
 .nav__link {
-    color: white;
     letter-spacing: 3px;
     font-size: 150%;
     text-transform: uppercase;
     font-family: 'Londrina Shadow', cursive;
-    font-weight: 550;
+    font-weight: 600;
     white-space: nowrap;
 }
 
@@ -115,7 +115,7 @@
 }
 
 .scroll-header {
-    box-shadow: 0 10px 10px hsla(var(--hue-color), 4%, 15%, .1);
+    box-shadow: 0 10px 40px black;
 }
 
 /* postion for desktop */
