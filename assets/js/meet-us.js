@@ -108,7 +108,7 @@ $(individuals).each(function(key, value) {
         <div class= "card">
             <img src= ${value.backgroundPicture} class="card-image">
             <img src= ${value.profilePicture} class="profile-image">
-            <h1>${value.name}</h1>
+            <h1 class="card-title">${value.name}</h1>
             <p class="job-title">${value.proffession}</p>
 
             <div class="about-container">

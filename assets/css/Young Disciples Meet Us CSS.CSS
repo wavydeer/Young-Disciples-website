@@ -60,7 +60,7 @@ section {
 
 .card {
     width: 20rem;
-    background-color: white;
+    background-color: var(--color-container-secondary);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -97,9 +97,9 @@ section {
     border: 0.5rem solid var(--color-primary);
 }
 
-.card h1 {
+.card-title {
     font-size: 2.5rem;
-    color: black;
+    color: var(--color-title);
     margin: 1.5rem, 0;
     font-family: "Londrina Shadow", cursive;
 }
@@ -120,7 +120,7 @@ section {
     padding-right: 1rem;
     font-style: italic;
     text-align: center;
-    color: #333;
+    color: var(--color-text);
 }
 
 @media screen and (min-width: 700px) {
