@@ -15,10 +15,16 @@
     --color-input: hsl(var(var(--hue-color), 70%, 96%));
     --color-body : rgb(248, 247, 241);
     --color-container: #384351;
+    --color-container-secondary: white;
     /* --color-container: rgb(248, 247, 241); */
     /*  background: #384351; */
 }
 
+body.dark-theme {
+    --color-body : #59687a;
+    --color-container: #384351;
+    --color-container-secondary: rgb(209, 209, 209);
+}
 
 /* end of variables */
 

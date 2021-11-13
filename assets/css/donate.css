@@ -12,7 +12,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 0.5em;
+    height: 0.7em;
     font-size: 20px;
     font-weight: bold;
     background: var(--color-primary);
@@ -22,8 +22,8 @@
 .form {
     width: 660px;
     border-radius: 1rem;
-    background: white;
-    box-shadow: 0 27px 55px 0 rgba(0, 0, 0, 0.3), 0 17px 17px 0 rgba(0, 0, 0, 0.15);
+    background: var(--color-container-secondary);
+    box-shadow: 0 27px 55px 0 var(--color-container), 0 17px 17px 0 var(--color-body);
 }
 
 .form__title {
@@ -72,7 +72,7 @@
     left: 1rem;
     top: 1rem;
     padding: 0 .25rem;
-    background-color: #fff;
+    background-color: var(--color-container-secondary);
     color: var(--input-color);
     font-size: var(--normal-font-size);
     transition: .3s;
