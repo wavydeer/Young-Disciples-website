@@ -61,7 +61,7 @@ const individuals = [{
     },
     {
         name: 'Bienta Bien-Aime',
-        proffession: 'Advisor/Planner',
+        proffession: 'Event Coordinator',
         description: 'When the youth decideds to take a trip I am usually the one on duty making the arrangements. I also help other with financial decisions and life advice.',
         profilePicture: imagelocation + 'Bienta-profile.jpeg',
         backgroundPicture: imagelocation + 'Bienta-background.jpeg'
@@ -108,7 +108,7 @@ $(individuals).each(function(key, value) {
         <div class= "card">
             <img src= ${value.backgroundPicture} class="card-image">
             <img src= ${value.profilePicture} class="profile-image">
-            <h1>Pauldette Dor</h1>
+            <h1>${value.name}</h1>
             <p class="job-title">${value.proffession}</p>
 
             <div class="about-container">
