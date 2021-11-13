@@ -10,6 +10,9 @@
     <script src="assets/js/main.js" defer></script>
     <script src="assets/js/donate.js" defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
+    <script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
+
 </head>
 
 <body>
@@ -22,31 +25,33 @@
                 <h1 class="form__title">Payment Method</h1>
 
                 <div class="form__div">
-                    <input type="text" class="form__input" placeholder=" ">
+                    <input type="text" class="form__input" name="amount" placeholder=" ">
                     <label for="" class="form__label">Amount</label>
                 </div>
 
                 <div class="form__div">
-                    <input type="password" class="form__input" placeholder=" ">
+                    <input type="text" class="form__input" name="cardNumber" placeholder=" ">
                     <label for="" class="form__label">Card Number</label>
                 </div>
-
-                <div class="form__div">
-                    <input type="password" class="form__input" placeholder=" ">
-                    <label for="" class="form__label">Expiration Date</label>
+                
+                <div class="input-row">
+                    <div class="form__div">
+                        <input type="text" class="form__input" name="expirationDate" placeholder=" ">
+                        <label for="" class="form__label">MM/YYYY</label>
+                    </div>
+                    
+                    <div class="form__div">
+                        <input type="text" class="form__input" name="cvc" placeholder=" ">
+                        <label for="" class="form__label">CVC</label>
+                    </div>
                 </div>
-
+                    
                 <div class="form__div">
-                    <input type="password" class="form__input" placeholder=" ">
-                    <label for="" class="form__label">CVC</label>
-                </div>
-
-                <div class="form__div">
-                    <input type="password" class="form__input" placeholder=" ">
+                    <input type="text" class="form__input" name="nameOnCard" placeholder=" ">
                     <label for="" class="form__label">Name on Card</label>
                 </div>
-                
-                <input type="submit" class="form__button" value="Sign In">
+                <div id="error-message"></div>
+                <input type="submit" class="form__button" value="Donate">
             </form>
         </div>
     </main>

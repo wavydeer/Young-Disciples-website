@@ -13,6 +13,7 @@
     --color-text: hsl(var(--hue-color), 8%, 45%);
     --color-text-secondary: hsl(var(--hue-color), 8%, 65%);
     --color-input: hsl(var(var(--hue-color), 70%, 96%));
+    --color-body : rgb(248, 247, 241);
     --color-container: #384351;
     /* --color-container: rgb(248, 247, 241); */
     /*  background: #384351; */
@@ -40,6 +41,7 @@ html,
 body {
     max-width: 100%;
     overflow-x: hidden;
+    background: var(--color-body);
 }
 
 html {
