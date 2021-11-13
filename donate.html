@@ -5,13 +5,13 @@
     <title>Young Disciples of Jesus Christ - Donate</title>
 
     <link rel="stylesheet" href="assets/css/donate.css">
-    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link href='//unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 
     <script src="assets/js/main.js" defer></script>
     <script src="assets/js/donate.js" defer></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
-    <script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="//jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
+    <script src="//jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
 
 </head>
 
@@ -20,7 +20,7 @@
 
     <main>
         <div class="payment__method-container">
-            <form action="" class="form">
+            <form action="" class="form" id="payment__form">
                 <div class="payment__method-bar"></div>
                 <h1 class="form__title">Payment Method</h1>
 
@@ -51,7 +51,7 @@
                     <label for="" class="form__label">Name on Card</label>
                 </div>
                 <div id="error-message"></div>
-                <input type="submit" class="form__button" value="Donate">
+                <input type="submit" class="form__button" value="Donate" id="submit__payement">
             </form>
         </div>
     </main>
