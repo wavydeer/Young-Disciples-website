@@ -19,6 +19,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 0 5rem;
 }
 
 .change-theme{
@@ -90,7 +91,6 @@ body.dark-theme .change-theme {
 }
 
 .nav__link {
-    padding: .5rem 10px;
     color: var(--color-title);
     letter-spacing: 3px;
     font-size: 150%;
@@ -130,7 +130,7 @@ body.dark-theme .change-theme {
 @media screen and (min-width: 823px) {
     .nav {
         height: calc(var(--header-height) + 1.5rem);
-        column-gap: 3rem;
+        column-gap: 1.5rem;
     }
 
     .nav__toggle,
@@ -140,12 +140,23 @@ body.dark-theme .change-theme {
 
     .nav__list {
         flex-direction: row;
-        column-gap: 3rem;
+        column-gap: .5rem;
     }
 
     .nav__menu {
         margin-left: auto;
     }
+
+    .nav__link {
+        padding: .5rem 5px;
+    }
 }
 
+/* FIXME */
+
+@media screen and (min-width: 1190px) {
+    .nav__link {
+        padding: .5rem 10px;
+    }
+}
 

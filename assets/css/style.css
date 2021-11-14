@@ -20,10 +20,10 @@
 }
 
 body.dark-theme {
-    --color-title: #fff;
     --color-body: #59687a;
     --color-container: #384351;
     --color-container-secondary: #384351;
+    --color-title: rgba(255, 255, 255, 0.774);
     --color-text: #ffffff67;
 }
 
