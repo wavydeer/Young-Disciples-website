@@ -12,7 +12,7 @@
     --color-title: #000000;
     --color-text: #000000;
     --color-input: hsl(var(var(--hue-color), 70%, 96%));
-    --color-body : rgb(248, 247, 241);
+    --color-body: rgb(248, 247, 241);
     --color-container: #d3d3d3;
     --color-container-secondary: white;
     /* --color-container: rgb(248, 247, 241); */
@@ -20,12 +20,13 @@
 }
 
 body.dark-theme {
-    --color-title : #fff;
-    --color-body : #59687a;
+    --color-title: #fff;
+    --color-body: #59687a;
     --color-container: #384351;
     --color-container-secondary: #384351;
     --color-text: #ffffff67;
 }
+
 
 /* end of variables */
 
@@ -81,6 +82,9 @@ img {
     height: auto;
 }
 
+
+/* end of default values */
+
 .container {
     max-width: 968px;
     margin-left: 1.5rem;
@@ -88,12 +92,14 @@ img {
 }
 
 
-/* end of default values */
+/* ====================================================== */
 
+
+/*  temporary logo */
 .logo-title,
 .logo-subtitle {
     font-weight: 600;
-    color:  var(--color-title);
+    color: var(--color-title);
     text-transform: uppercase;
     border: 1.5px solid var(--color-title);
     font-family: 'Londrina Shadow', cursive;
@@ -115,6 +121,13 @@ img {
     border: 1.2px solid var(--color-primary);
 }
 
+
+
+/* =================================================== */
+
+
+
+/* buttons */
 .btn {
     padding: 1rem 2.5rem;
     background-color: transparent;
@@ -140,90 +153,41 @@ img {
     color: var(--color-primary);
 }
 
-/* PAGE HEADER */
-.page-header {
-    position: relative;
-    margin-bottom: 45px;
-    padding: 210px 0 90px 0;
-    text-align: center;
-    background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(../img/page-header.jpg);
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+
+
+/* ========================================================= */
+
+
+
+/* scroll up button */
+.scrollup {
+    position: fixed;
+    background-color: var(--color-primary);
+    right: 1rem;
+    bottom: -30%;
+    display: inline-flex;
+    padding: .5rem;
+    border-radius: .25rem;
+    z-index: 10000;
+    opacity: .8;
+    transition: .4s;
 }
 
-.page-header h2 {
-    position: relative;
-    color: #FDBE33;
-    font-size: 60px;
-    font-weight: 700;
-    margin-bottom: 20px;
-    padding-bottom: 5px;
+.scrollup__icon {
+    font-size: 3rem;
+    color: #FFF;
 }
 
-.page-header h2::after {
-    position: absolute;
-    content: "";
-    width: 100px;
-    height: 2px;
-    left: calc(50% - 50px);
-    bottom: 0;
-    background: #FDBE33;
+.scrollup:hover {
+    background-color: var(--color-secondary);
+    opacity: 1;
 }
 
-.page-header a {
-    position: relative;
-    padding: 0 12px;
-    font-size: 22px;
-    color: #ffffff;
-}
 
-.page-header a:hover {
-    color: #FDBE33;
-}
+/* Show Scroll Up button*/
 
-.page-header a::after {
-    position: absolute;
-    content: "/";
-    width: 8px;
-    height: 8px;
-    top: -2px;
-    right: -7px;
-    text-align: center;
-    color: #ffffff;
-}
-
-.page-header a:last-child::after {
-    display: none;
-}
-
-@media (max-width: 991.98px) {
-    .page-header {
-        padding: 60px 0;
-    }
-    
-    .page-header h2 {
-        font-size: 45px;
-    }
-    
-    .page-header a {
-        font-size: 20px;
-    }
-}
-
-@media (max-width: 767.98px) {
-    .page-header {
-        padding: 45px 0;
-    }
-    
-    .page-header h2 {
-        font-size: 35px;
-    }
-    
-    .page-header a {
-        font-size: 18px;
-    }
+.show-scroll {
+    bottom: 3rem;
 }
 
 

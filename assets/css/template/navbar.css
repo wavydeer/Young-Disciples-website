@@ -103,7 +103,7 @@ body.dark-theme .change-theme {
 
 .nav__link:hover {
     color: var(--color-secondary);
-    font-size: 110%;
+    font-size: 160%;
     border-radius: 1rem;
     box-shadow: 0 0 10px black;
 }
