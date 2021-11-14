@@ -42,12 +42,3 @@ $('.nav__link').each(function () {
         $('#nav-menu').removeClass('show-menu')
     })
 })
-
-// add little shadow to the navbar when scrolling down 
-$(window).scroll(function () {
-    if(this.scrollY >= 80) {
-        $('#header').addClass('scroll-header')
-    } else {
-        $('#header').removeClass('scroll-header')
-    }
-})

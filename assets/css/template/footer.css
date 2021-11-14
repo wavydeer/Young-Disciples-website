@@ -10,7 +10,7 @@
     width: 100vw;
     font-family: 'Alata', sans-serif;
     padding-top: 1.5rem;
-    color: white;
+    color: var(--color-text);
 }
 
 footer .logo:hover .logo-title, 

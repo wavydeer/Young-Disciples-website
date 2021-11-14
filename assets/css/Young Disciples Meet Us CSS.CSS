@@ -69,7 +69,7 @@ section {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.486);
     border-start-end-radius: 10%;
     border-radius: 1rem;
-    
+    user-select: none;
     transition: all .2s ease-in-out; 
 }
 

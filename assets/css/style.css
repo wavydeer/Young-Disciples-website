@@ -7,19 +7,20 @@
     /* colors */
     --hue-color: 39;
     --color-primary: hsl(var(--hue-color), 69%, 61%);
-    --color-secondary: hsl(var(--hue-color), 57%, 53%);
+    --color-secondary: #d4af37;
     --color-alt: hsl(var(--hue-color), 92%, 85%);
     --color-title: #000000;
     --color-text: #000000;
     --color-input: hsl(var(var(--hue-color), 70%, 96%));
     --color-body : rgb(248, 247, 241);
-    --color-container: #384351;
+    --color-container: #d3d3d3;
     --color-container-secondary: white;
     /* --color-container: rgb(248, 247, 241); */
     /*  background: #384351; */
 }
 
 body.dark-theme {
+    --color-title : #fff;
     --color-body : #59687a;
     --color-container: #384351;
     --color-container-secondary: #384351;
@@ -91,8 +92,10 @@ img {
 
 .logo-title,
 .logo-subtitle {
+    font-weight: 600;
+    color:  var(--color-title);
     text-transform: uppercase;
-    border: 1.5px solid white;
+    border: 1.5px solid var(--color-title);
     font-family: 'Londrina Shadow', cursive;
     white-space: nowrap;
 }
