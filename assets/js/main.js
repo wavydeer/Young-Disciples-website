@@ -11,6 +11,23 @@ $(window).on('load', function() {
     })
 })
 
+
+// =========================================================
+
+
+// ensure that style.css is loaded for the html file to use
+$('head').append(`
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+`)
+
+// button shows at button of the screen to scroll back to top of page
+$('main').append(`
+    <a href="#" class="scrollup" id="scroll-up">
+        <i class='bx bx-chevron-up scrollup__icon'></i>
+    </a>
+`)
+
 // =========================================================
 
 // load navbar and footer
@@ -30,23 +47,9 @@ const navbar = document.getElementById('navbar')
 navbar.style.position = "absolute"
 navbar.style.zIndex = 10000
 
-// =========================================================
-
-// ensure that style.css is loaded for the html file to use
-$('head').append(`
-    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
-    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-`)
 
 // ==========================================================
 
-
-// button shows at button of the screen to scroll back to top of page
-$('main').append(`
-    <a href="#" class="scrollup" id="scroll-up">
-        <i class='bx bx-chevron-up scrollup__icon'></i>
-    </a>
-`)
 
 $(window).scroll(function() {
     if (this.scrollY >= 200) $('#scroll-up').addClass('show-scroll')

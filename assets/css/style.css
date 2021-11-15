@@ -60,6 +60,10 @@ body {
     margin: var(--header-height) 0 0 0;
 }
 
+main {
+    margin-top: calc(var(--header-height) / 2);
+}
+
 h1,
 h2,
 h3,
