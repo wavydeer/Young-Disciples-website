@@ -1,16 +1,7 @@
-// wait for whole page to load
-$(window).on('load', function() {
-    // active link on navbar
-    $("#nav__link-meet-us").addClass("active-link")
-})
-
-
-// =====================================================
-
-// populate cards
 const imagelocation = 'assets/img/'
 
-const individuals = [{
+const individuals = [
+    {
         name: 'Pauldette Dor',
         proffession: 'President',
         description: 'As President I oversee all ministry programs directed specifically within the Youth. I lead in the development, coordinatation and lead of all church youth activities.',

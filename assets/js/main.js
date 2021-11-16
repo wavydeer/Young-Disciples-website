@@ -30,10 +30,13 @@ $('main').append(`
 
 // =========================================================
 
-// load navbar and footer
-$(function() {
-    $("#navbar").load("template/navbar.html")
-})
+
+// load navbar
+$("#navbar").load("template/navbar.html", function () { 
+    // highlight the link of the loaded file on the navbar
+    var currentFile = (document.location.pathname.match(/[^\/]+$/)[0]).split('.')[0]
+    $(`#nav__link-${currentFile}`).addClass('active-link')
+});
 
 $(function() {
     $("#footer").load("template/footer.html")
@@ -45,12 +48,12 @@ $(function() {
 // make sure the nav bar is always on top of everything
 const navbar = document.getElementById('navbar')
 navbar.style.position = "absolute"
-navbar.style.zIndex = 10000
+navbar.style.zIndex = 1000000
 
 
 // ==========================================================
 
-
+//
 $(window).scroll(function() {
     if (this.scrollY >= 200) $('#scroll-up').addClass('show-scroll')
     else $('#scroll-up').removeClass('show-scroll')

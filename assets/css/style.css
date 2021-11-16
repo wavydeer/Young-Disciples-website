@@ -15,6 +15,7 @@
     --color-body: rgb(248, 247, 241);
     --color-container: #d3d3d3;
     --color-container-secondary: white;
+    --color-container-alt: #d3d3d3;
     /* --color-container: rgb(248, 247, 241); */
     /*  background: #384351; */
 }
@@ -23,6 +24,7 @@ body.dark-theme {
     --color-body: #59687a;
     --color-container: #384351;
     --color-container-secondary: #384351;
+    --color-container-alt: #212831;
     --color-title: rgba(255, 255, 255, 0.774);
     --color-text: #ffffff67;
 }
