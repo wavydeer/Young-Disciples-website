@@ -5,7 +5,7 @@ $(window).on('load', function() {
         history.replaceState("", document.title, e.originalEvent.oldURL)
     })
 
-    // make default <a href="#"> tag not do anything
+    // make default <a href="#"> tag not reload the page
     $('a[href="#"]').click(function(e) {
         e.preventDefault();
     })
@@ -15,45 +15,55 @@ $(window).on('load', function() {
 // =========================================================
 
 
-// ensure that style.css is loaded for the html file to use
+// ensure that style.css and icons are loaded for the html file to use
 $('head').append(`
     <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 `)
 
-// button shows at button of the screen to scroll back to top of page
+// put button at the end of the screen to scroll back to top of page
 $('main').append(`
     <a href="#" class="scrollup" id="scroll-up">
         <i class='bx bx-chevron-up scrollup__icon'></i>
     </a>
 `)
 
+
 // =========================================================
 
 
-// load navbar
-$("#navbar").load("template/navbar.html", function () { 
-    // highlight the link of the loaded file on the navbar
-    var currentFile = (document.location.pathname.match(/[^\/]+$/)[0]).split('.')[0]
-    $(`#nav__link-${currentFile}`).addClass('active-link')
+$(function() {
+    // load navbar
+    $.get("template/navbar.html", function(data) {
+        $("#navbar").append(data);
+
+        // make sure the navbar is always on top of everthing
+        $('#navbar').css({
+            position: 'absolute',
+            zIndex: 10000000
+        })
+
+        // highlight the link of the loaded file on the navbar
+        var currentFile = (document.location.pathname.match(/[^\/]+$/)[0]).split('.')[0]
+        $(`#nav__link-${currentFile}`).addClass('active-link')
+    });
+
+    // load footer
+    $.get("template/footer.html", function(data) {
+        $("#footer").append(data);
+    });
+
+    // load header
+    $.get("template/page-header.html", function(data) {
+        $("#page-header").append(data);
+    });
 });
-
-$(function() {
-    $("#footer").load("template/footer.html")
-})
-$(function() {
-    $("#page-header").load("template/page-header.html")
-})
-
-// make sure the nav bar is always on top of everything
- const navbar = document.getElementById('navbar')
- navbar.style.position = "absolute"
- navbar.style.zIndex = 1000000
 
 
 // ==========================================================
 
-//
+
+//  show scroll up button when you scroll past 200 down the screen
 $(window).scroll(function() {
     if (this.scrollY >= 200) $('#scroll-up').addClass('show-scroll')
     else $('#scroll-up').removeClass('show-scroll')
