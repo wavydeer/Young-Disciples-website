@@ -46,9 +46,9 @@ $(function() {
 })
 
 // make sure the nav bar is always on top of everything
-const navbar = document.getElementById('navbar')
-navbar.style.position = "absolute"
-navbar.style.zIndex = 1000000
+ const navbar = document.getElementById('navbar')
+ navbar.style.position = "absolute"
+ navbar.style.zIndex = 1000000
 
 
 // ==========================================================
