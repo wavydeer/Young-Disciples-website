@@ -114,6 +114,6 @@ $(individuals).each(function(key, value) {
 })
 
 $('.card .btn').click(function () {
-    localStorage.setItem('person', $('.card').attr("data-person"))
+    sessionStorage.setItem('person', $('.card').attr("data-person"))
     location.href = 'contact.html';
 })

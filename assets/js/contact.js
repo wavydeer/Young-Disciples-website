@@ -17,20 +17,26 @@ inputs.forEach((input) => {
     input.addEventListener("blur", blurFunc);
 });
 
+// ========================================================
+
+const data = {
+    person: '',
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
+}
+
 // if the user got to this page by contacting a person from meet us page
-if (!(localStorage.getItem('person') === null)) {
+if (!(sessionStorage.getItem('person') === null)) {
     // say who they clicked on
-    $('.contact-form .title').text(`contact ${localStorage.getItem('person')}`)
+    $('.contact-form .title').text(`contact ${sessionStorage.getItem('person')}`)
     // add to stuff to send to the backend
-} else {
-    
+    data.person = sessionStorage.getItem('person')
+    // remove it from sessionStorage
+    sessionStorage.removeItem('person')
 }
 
 $('.contact__form').submit(function () {
 
 })
-
-// remove the person when the page is not loaded
-$(window).on("unload", function(e) {
-    localStorage.removeItem('person')
-});
