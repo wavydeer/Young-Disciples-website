@@ -43,7 +43,7 @@ body.dark-theme .change-theme {
 .nav__toggle,
 .nav__close,
 .nav__link {
-    color: var(--color-input);
+    color: var(--color-title);
 }
 
 .nav .logo {

@@ -39,7 +39,7 @@ footer .logo:hover .logo-subtitle {
     color: rgb(143, 143, 143);
 }
 
-.icon {
+.footer-icon {
     font-size: 1.2rem;
     margin-right: 0.5rem;
     transition: 0.3s;

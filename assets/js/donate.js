@@ -1,148 +1,60 @@
-const form = document.querySelector('.form');
-const name = document.getElementById('name');
-const number = document.getElementById('number');
-const date = document.getElementById('date');
-const cvv = document.getElementById('cvv');
+var stripe = Stripe('pk_test_6pRNASCoBOKtIshFeQd4XMUh');
+var elements = stripe.elements();
 
-const visa = document.querySelector('.card');
+var card = elements.create('card', {
+    hidePostalCode: true,
+    style: {
+        base: {
+            iconColor: '#666EE8',
+            color: '#31325F',
+            lineHeight: '40px',
+            fontWeight: 300,
+            fontFamily: 'Helvetica Neue',
+            fontSize: '15px',
 
-/*  SHOW ERROR  */
-function showError(element, error) {
-    if(error === true) {
-        element.style.opacity = '1';
-    } else {
-        element.style.opacity = '0';
+            '::placeholder': {
+                color: '#CFD7E0',
+            },
+        },
     }
-};
-
-/*  CHANGE THE FORMAT NAME  */
-name.addEventListener('input', function() {
-    let alert1 = document.getElementById('alert-1');
-    let error = this.value === '';
-    showError(alert1, error);
-    document.getElementById('card-name').textContent = this.value;
 });
+card.mount('#card-element');
 
-/*  CHANGE THE FORMAT CARD NUMBER*/
-number.addEventListener('input', function(e) {
-    this.value = numberAutoFormat();
+function setOutcome(result) {
+    var successElement = document.querySelector('.success');
+    var errorElement = document.querySelector('.error');
+    successElement.classList.remove('visible');
+    errorElement.classList.remove('visible');
 
-    //show error when is different of 16 numbers and 3 white space
-    let error = this.value.length !== 19;
-    let alert2 = document.getElementById('alert-2');
-    showError(alert2, error);
+    if (result.token) {
+        // In this example, we're simply displaying the token
+        successElement.querySelector('.token').textContent = result.token.id;
+        successElement.classList.add('visible');
 
-    document.querySelector('.card__number').textContent = this.value;
-});
-
-function numberAutoFormat() {
-    let valueNumber = number.value;
-    // if white space change to ''. If is not a number between 0-9 change to ''
-    let v = valueNumber.replace(/\s+/g, '').replace(/[^0-9]/gi, '');
-
-    // the value got min of 4 digits and max of 16
-    let matches = v.match(/\d{4,16}/g);
-    let match = matches && matches[0] || '';
-    let parts = [];
-
-    for (i = 0; i < match.length; i += 4) {
-        // after 4 digits add a new element to the Array
-        // e.g. "4510023" -> [4510, 023]
-        parts.push(match.substring(i, i + 4));
-    }
-
-    if (parts.length) {
-        // add a white space after 4 digits
-        return parts.join(' ');
-    } else {
-        return valueNumber;
-    }
-};
-
-/*  CHANGE THE FORMAT DATE  */
-date.addEventListener('input', function(e) {
-    this.value = dateAutoFormat();
-    
-    // show error if is not a valid date
-    let alert3 = document.getElementById('alert-3');
-    showError(alert3, isNotDate(this));
-
-    let dateNumber = date.value.match(/\d{2,4}/g);
-    document.getElementById('month').textContent = dateNumber[0];
-    document.getElementById('year').textContent = dateNumber[1];
-});
-
-function isNotDate(element) {
-    let actualDate = new Date();
-    let month = actualDate.getMonth() + 1; // start january 0 we need to add + 1
-    let year = Number(actualDate.getFullYear().toString().substr(-2)); // 2022 -> 22
-    let dateNumber = element.value.match(/\d{2,4}/g);
-    let monthNumber = Number(dateNumber[0]);
-    let yearNumber = Number(dateNumber[1]);
-    
-    if(element.value === '' || monthNumber < 1 || monthNumber > 12 || yearNumber < year || (monthNumber <= month && yearNumber === year)) {
-        return true;
-    } else {
-        return false;
+        // In a real integration, you'd submit the form with the token to your backend server
+        //var form = document.querySelector('form');
+        //form.querySelector('input[name="token"]').setAttribute('value', result.token.id);
+        //form.submit();
+    } else if (result.error) {
+        errorElement.textContent = result.error.message;
+        errorElement.classList.add('visible');
     }
 }
 
-function dateAutoFormat() {
-    let dateValue = date.value;
-    // if white space -> change to ''. If is not a number between 0-9 -> change to ''
-    let v = dateValue.replace(/\s+/g, '').replace(/[^0-9]/gi, '');
-
-    // min of 2 digits and max of 4
-    let matches = v.match(/\d{2,4}/g);
-    let match = matches && matches[0] || '';
-    let parts = [];
-
-    for (i = 0; i < match.length; i += 2) {
-        // after 4 digits add a new element to the Array
-        // e.g. "4510023" -> [4510, 023]
-        parts.push(match.substring(i, i + 2));
-    }
-
-    if (parts.length) {
-        // add a white space after 4 digits
-        return parts.join('/');
-    } else {
-        return dateValue;
-    }
-};
-
-/*  CHANGE THE FORMAT CVV  */
-cvv.addEventListener('input', function(e) {
-    let alert4 = document.getElementById('alert-4');
-    let error = this.value.length != 3;
-    showError(alert4, error)
+card.on('change', function(event) {
+    setOutcome(event);
 });
 
-/* CHECK IF KEY PRESSED IS A NUMBER (input of card number, date and cvv) */
-function isNumeric(event) {
-    if ((event.keyCode < 48 || event.keyCode > 57) && (event.keyCode > 31)) {
-        return false;
-    }
-};
-
-/*  VALIDATION FORM WHEN PRESS THE BUTTON   */
-form.addEventListener('submit', function (e) {
-    // 1. if there is not any name
-    // 2. if the length of the number card is not valid (16 numbers and 3 white space)
-    // 3. if is not a valid date (4 number and "/" or is not a valid date)
-    // 4. if is not a valid cvv
-
-    if(name.value === '' || number.value.length !== 19 || date.value.length !== 5 || isNotDate(date) === true || cvv.value.length < 3) {
-        e.preventDefault();
-    } else {
-        alert('go to next part')
-    }
-
-    // 5. if any input is empty show the alert of that input
-    let input = document.querySelectorAll('input');
-    for( i = 0; i < input.length; i++) {
-        if(input[i].value === '') {
-            input[i].nextElementSibling.style.opacity = '1';
-        }
-    }
+document.querySelector('form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var options = {
+        name: document.getElementById('first-name').value + " " + document.getElementById('last-name').value,
+        address_line1: document.getElementById('address-line1').value,
+        address_line2: document.getElementById('address-line2').value,
+        address_city: document.getElementById('address-city').value,
+        address_state: document.getElementById('address-state').value,
+        address_zip: document.getElementById('address-zip').value,
+        address_country: document.getElementById('address-country').value,
+    };
+    stripe.createToken(card, options).then(setOutcome);
 });

@@ -18,7 +18,9 @@
 <body>
 
     <div id="navbar"></div>
-
+<!-- ##################################### -->
+<!-- Note: You have to rename the containers because they are messing up the other things
+        Also Fix up the colors and change to Primary colors -->
     <header class="header1" id="inicio">
 
         <div class="contenedor head">
@@ -28,12 +30,49 @@
     </header>
 
     <main>
+        <div class="container" id="app">
+            <div class="tab">
+              
+              <div class="menu">
+                <div class="menu__item menu__item--first" :class="[ active === 0 ? 'is-active' : '']" @click="selectedContent(0)">First</div>
+                <div class="menu__item menu__item--second" :class="[ active === 1 ? 'is-active' : '']" @click="selectedContent(1)">Second</div>
+                <div class="menu__item menu__item--thirst" :class="[ active === 2 ? 'is-active' : '']" @click="selectedContent(2)">Thirst</div>
+                <div class="menu__line" :class="className"></div>
+              </div>
+              
+              <div class="contents">
+                <transition :name="animation" mode="out-in">
+                  <div class="contents__content" v-if="active === 0" key="0">
+                    <span class="material-icons">build</span>
+                    <h2>First Section</h2>
+                    <p>Quasi dignissimos eos ea hic impedit ipsum, aliquam nihil laborum ad, esse consequatur, delectus minus!</p>
+                    <button>Learn more</button>
+                  </div>
+                  
+                  <div class="contents__content" v-if="active === 1" key="1">
+                    <span class="material-icons">flash_on</span>
+                    <h2>Second Section</h2>
+                    <p>Molestiae dolore itaque at dolor, odio blanditiis sequi, tempore illum doloremque repellat dolores deserunt debitis, rem eaque! Magnam placeat esse vero quisquam!</p>
+                    <button>Learn more</button>
+                  </div>
+                  
+                  <div class="contents__content" v-if="active === 2" key="2">
+                    <span class="material-icons">lock</span>
+                    <h2>Thirst Section</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, cum maxime reprehenderit quisquam ratione eaque veritatis perspiciatis totam.</p>
+                    <button>Learn more</button>
+                  </div>
+                </transition>
+              </div>
+            </div>
+          </div>
+        <!-- Programs Slider -->
         <section class="programs">
             <div class="general-container">
                 <input class="radio" type="radio" name="card" id="card-1" checked />
                 <label class="content" for="card-1">
                     <span class="icon">
-                        <i class="fas fa-sun"></i>
+                        <i class='bx bxs-music' ></i>
                     </span>
                     <h3 class="card-title">
                         Praise Team
@@ -43,7 +82,7 @@
                 <input class="radio" type="radio" name="card" id="card-2" />
                 <label class="content" for="card-2">
                     <span class="icon">
-                        <i class="fas fa-cloud-rain"></i>
+                        <i class = 'fas fa-church'></i>
                     </span>
                     <h3 class="card-title">
                         The Chior
@@ -53,7 +92,7 @@
                 <input class="radio" type="radio" name="card" id="card-3" />
                 <label class="content" for="card-3">
                     <span class="icon">
-                        <i class="fas fa-cloud-moon"></i>
+                        <i class="fas fa-male"></i>
                     </span>
                     <h3 class="card-title">
                         Mens Ministry
@@ -63,7 +102,7 @@
                 <input class="radio" type="radio" name="card" id="card-4" />
                 <label class="content" for="card-4">
                     <span class="icon">
-                        <i class="fas fa-snowflake"></i>
+                        <i class="fas fa-female"></i>
                     </span>
                     <h3 class="card-title">
                         Womens Ministry
@@ -73,13 +112,14 @@
                 <input class="radio" type="radio" name="card" id="card-5" />
                 <label class="content" for="card-5">
                     <span class="icon">
-                        <i class="fas fa-poo-storm"></i>
+                        <i class='bx bxs-baby-carriage'></i>
                     </span>
                     <h3 class="card-title">
                         Kids Ministry
                         <span class="subtitle">Led by Jenny</span>
                     </h3>
                 </label>
+                
             </div>
         </section>
 

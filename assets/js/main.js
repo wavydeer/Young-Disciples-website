@@ -19,6 +19,7 @@ $(window).on('load', function() {
 $('head').append(`
     <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
 `)
 
 // put button at the end of the screen to scroll back to top of page
@@ -71,4 +72,54 @@ $(window).scroll(function() {
 
 $("#scroll-up").click(function() {
     $(window).scrollTop(0);
+});
+
+
+// ==========================================================
+
+$('body').append(`
+    <div id="context-menu">
+        <div class="item" data-action="reload">
+            <i class="fa fa-refresh"></i> Reload
+        </div>
+    </div>
+`)
+
+// show right click menu
+$(document).bind("contextmenu", function(event) {
+
+    // Avoid the real one
+    event.preventDefault();
+
+    // Show contextmenu
+    $("#context-menu").addClass('active')
+
+    // In the right position (the mouse)
+    $("#context-menu").css({
+        top: event.pageY + "px",
+        left: event.pageX + "px"
+    });
+});
+
+
+// If the document is clicked somewhere
+$(document).bind("mousedown", function(e) {
+    // If the clicked element is not the menu
+    if (!$(e.target).parents("#context-menu").length > 0) {
+        // Hide it
+        $("#context-menu").removeClass('active')
+    }
+});
+
+
+// If the menu element is clicked
+$("#context-menu .item").click(function() {
+    // This is the triggered action name
+    switch ($(this).attr("data-action")) {
+
+        // A case for each action. Your actions here
+        case "reload":
+            location.reload()
+            break;
+    }
 });
