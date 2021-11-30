@@ -5,7 +5,7 @@ $(document).ajaxComplete(function(){  // wait until all default jquery functions
         boxShadow: 'none'
     })
 
-    // make the navbar position into the picture
+    // make the navbar go into the picture
     $('body').css({
         margin: 'unset'
     })
@@ -16,13 +16,13 @@ $(document).ajaxComplete(function(){  // wait until all default jquery functions
             $('.nav__header').css({
                 background: 'var(--color-container)',
                 boxShadow: '0 0 10px black'
-            })
+            }).addClass('navbar-scroll')  // add scroll down animation
         // change the background of navbar to transparent when looking at the background picture
         } else {
             $('.nav__header').css({
                 background: 'transparent',
                 boxShadow: 'none'
-            })
+            }).removeClass('navbar-scroll')  // remove scroll animation
         }
     })
 })

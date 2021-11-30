@@ -1,178 +1,148 @@
-// dropdown menu for states
-// const states = [
-//     'Alabama',
-//     'Alaska',
-//     'Arizona',
-//     'Arkansas',
-//     'California',
-//     'Colorado',
-//     'Connecticut',
-//     'Delaware',
-//     'Florida',
-//     'Georgia',
-//     'Hawaii',
-//     'Idaho',
-//     'Illinois',
-//     'Indiana',
-//     'Iowa',
-//     'Kansas',
-//     'Kentucky',
-//     'Louisiana',
-//     'Maine',
-//     'Maryland',
-//     'Massachusetts',
-//     'Michigan',
-//     'Minnesota',
-//     'Mississippi',
-//     'Missouri',
-//     'Montana',
-//     'Nebraska',
-//     'Nevada',
-//     'New Hampshire',
-//     'New Jersey',
-//     'New Mexico',
-//     'New York',
-//     'North Carolina',
-//     'North Dakota',
-//     'Ohio',
-//     'Oklahoma',
-//     'Oregon',
-//     'Pennsylvania',
-//     'Rhode Island',
-//     'South Carolina',
-//     'South Dakota',
-//     'Tennessee',
-//     'Texas',
-//     'Utah',
-//     'Vermont',
-//     'Virginia',
-//     'Washington',
-//     'West Virginia',
-//     'Wisconsin',
-//     'Wyoming',
-// ]
+const form = document.querySelector('.form');
+const name = document.getElementById('name');
+const number = document.getElementById('number');
+const date = document.getElementById('date');
+const cvv = document.getElementById('cvv');
 
-// // go through the array of states
-// for (let i = 0; i < states.length; i++) {
-//     // create the div which contain a state
-//     const stateDiv = document.createElement("div")
-//     stateDiv.className = 'dropdown__option'
+const visa = document.querySelector('.card');
 
-//     // create a radio input so they can be selected
-//     const stateInput = document.createElement('input')
-//     stateInput.type = 'radio'
-//     stateInput.className = 'dropdown__button'
-//     stateInput.name = 'state'
-//     stateInput.id = states[i]
+/*  SHOW ERROR  */
+function showError(element, error) {
+    if(error === true) {
+        element.style.opacity = '1';
+    } else {
+        element.style.opacity = '0';
+    }
+};
 
-//     // create a label so user can see what they are selected
-//     const stateLabel = document.createElement('label')
-//     stateLabel.className = 'dropdown__label'
-//     stateLabel.innerText = states[i]
+/*  CHANGE THE FORMAT NAME  */
+name.addEventListener('input', function() {
+    let alert1 = document.getElementById('alert-1');
+    let error = this.value === '';
+    showError(alert1, error);
+    document.getElementById('card-name').textContent = this.value;
+});
 
-//     // add button and label to the state container
-//     stateDiv.appendChild(stateInput)
-//     stateDiv.appendChild(stateLabel)
+/*  CHANGE THE FORMAT CARD NUMBER*/
+number.addEventListener('input', function(e) {
+    this.value = numberAutoFormat();
 
-//     // add state container to the document
-//     document.querySelector('.dropdown__container').appendChild(stateDiv)
-// }
+    //show error when is different of 16 numbers and 3 white space
+    let error = this.value.length !== 19;
+    let alert2 = document.getElementById('alert-2');
+    showError(alert2, error);
 
-// // ================================================================
+    document.querySelector('.card__number').textContent = this.value;
+});
 
-// // show and hide drop down menu
-// $('.dropdown__select').click(function () {
-//     $('.dropdown__container').toggleClass('active')
-// })
+function numberAutoFormat() {
+    let valueNumber = number.value;
+    // if white space change to ''. If is not a number between 0-9 change to ''
+    let v = valueNumber.replace(/\s+/g, '').replace(/[^0-9]/gi, '');
 
-// // add what user selected as the drop down menu title
-// $('.dropdown__option').each(function () {
-//     $(this).click(function () {
-//         $('.dropdown__select').innerHTML = $('label').innerHTML
-//         $('.dropdown__container').removeClass('active')
-//     })
-// })
+    // the value got min of 4 digits and max of 16
+    let matches = v.match(/\d{4,16}/g);
+    let match = matches && matches[0] || '';
+    let parts = [];
 
-// // =============================================================== 
+    for (i = 0; i < match.length; i += 4) {
+        // after 4 digits add a new element to the Array
+        // e.g. "4510023" -> [4510, 023]
+        parts.push(match.substring(i, i + 4));
+    }
 
-// // form
-// $('.payment').click(function (e) {
-//     e.preventDefault()
-//     $('.donate__form').trigger('reset')
-// })
+    if (parts.length) {
+        // add a white space after 4 digits
+        return parts.join(' ');
+    } else {
+        return valueNumber;
+    }
+};
 
-// so everything can be locally scoped, similar to (if __name__ = '__main__')
-(function($, window, document) {
+/*  CHANGE THE FORMAT DATE  */
+date.addEventListener('input', function(e) {
+    this.value = dateAutoFormat();
+    
+    // show error if is not a valid date
+    let alert3 = document.getElementById('alert-3');
+    showError(alert3, isNotDate(this));
 
-    // when the window is ready this runs
-    $(function() {
-        // method for how many characters a filed have
-        jQuery.validator.addMethod("exactlength", function(value, element, param) {
-            return this.optional(element) || value.length == param;
-        }, $.validator.format("Please enter exactly {0} characters."));
+    let dateNumber = date.value.match(/\d{2,4}/g);
+    document.getElementById('month').textContent = dateNumber[0];
+    document.getElementById('year').textContent = dateNumber[1];
+});
 
-        // method for date "mm/yyyy" fromat
-        jQuery.validator.addMethod("expireformat", function(value, element) {
-            return value.match(/^\d{1,2}\/\d{4}$/);
-        }, "")
+function isNotDate(element) {
+    let actualDate = new Date();
+    let month = actualDate.getMonth() + 1; // start january 0 we need to add + 1
+    let year = Number(actualDate.getFullYear().toString().substr(-2)); // 2022 -> 22
+    let dateNumber = element.value.match(/\d{2,4}/g);
+    let monthNumber = Number(dateNumber[0]);
+    let yearNumber = Number(dateNumber[1]);
+    
+    if(element.value === '' || monthNumber < 1 || monthNumber > 12 || yearNumber < year || (monthNumber <= month && yearNumber === year)) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
-        // form validation
-        $('#payment__form').validate({
-            rules: {
-                amount: {
-                    required: true,
-                    number: true
-                },
-                cardNumber: {
-                    required: true,
-                    number: true,
-                    exactlength: 16
-                },
-                expirationDate: {
-                    required: true,
-                    expireformat: true
-                },
-                cvc: {
-                    required: true,
-                    number: true,
-                    exactlength: 3
-                },
-                nameOnCard: {
-                    required: true,
-                    lettersonly: true,
-                    maxlength: 35
-                }
-            },
-            messages: {
-                amount: {
-                    required: "Amount cannot be empty!",
-                    number: "Invalid donation amount!"
-                },
-                cardNumber: "Invalid card number!",
-                expirationDate: "Invalid expiration date!",
-                cvc: "Invalid CVC",
-                nameOnCard: "Enter the name as it appears on the card"
-            },
+function dateAutoFormat() {
+    let dateValue = date.value;
+    // if white space -> change to ''. If is not a number between 0-9 -> change to ''
+    let v = dateValue.replace(/\s+/g, '').replace(/[^0-9]/gi, '');
 
-            // show errors 1 by 1 in a div
-            showErrors: function(errorMap, errorList) {
-                $("#payment__form").find("input").each(function() {
-                    $(this).removeClass("error");
-                });
+    // min of 2 digits and max of 4
+    let matches = v.match(/\d{2,4}/g);
+    let match = matches && matches[0] || '';
+    let parts = [];
 
-                $("#error-message").html("");
-                if (errorList.length) {
-                    $("#error-message").html(errorList[0]['message']);
-                    $(errorList[0]['element']).addClass("error");
-                }
-            },
+    for (i = 0; i < match.length; i += 2) {
+        // after 4 digits add a new element to the Array
+        // e.g. "4510023" -> [4510, 023]
+        parts.push(match.substring(i, i + 2));
+    }
 
-            submitHandler: function(form, event) { 
-                event.preventDefault();
-                alert("Do some stuff...");
-                //submit via ajax
-            }
+    if (parts.length) {
+        // add a white space after 4 digits
+        return parts.join('/');
+    } else {
+        return dateValue;
+    }
+};
 
-        })
-    })
-}(window.jQuery, window, document))
+/*  CHANGE THE FORMAT CVV  */
+cvv.addEventListener('input', function(e) {
+    let alert4 = document.getElementById('alert-4');
+    let error = this.value.length != 3;
+    showError(alert4, error)
+});
+
+/* CHECK IF KEY PRESSED IS A NUMBER (input of card number, date and cvv) */
+function isNumeric(event) {
+    if ((event.keyCode < 48 || event.keyCode > 57) && (event.keyCode > 31)) {
+        return false;
+    }
+};
+
+/*  VALIDATION FORM WHEN PRESS THE BUTTON   */
+form.addEventListener('submit', function (e) {
+    // 1. if there is not any name
+    // 2. if the length of the number card is not valid (16 numbers and 3 white space)
+    // 3. if is not a valid date (4 number and "/" or is not a valid date)
+    // 4. if is not a valid cvv
+
+    if(name.value === '' || number.value.length !== 19 || date.value.length !== 5 || isNotDate(date) === true || cvv.value.length < 3) {
+        e.preventDefault();
+    } else {
+        alert('go to next part')
+    }
+
+    // 5. if any input is empty show the alert of that input
+    let input = document.querySelectorAll('input');
+    for( i = 0; i < input.length; i++) {
+        if(input[i].value === '') {
+            input[i].nextElementSibling.style.opacity = '1';
+        }
+    }
+});

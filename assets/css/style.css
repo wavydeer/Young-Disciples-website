@@ -7,11 +7,11 @@
     /* colors */
     --hue-color: 39;
     --color-primary: hsl(var(--hue-color), 69%, 61%);
-    --color-secondary: #d4af37;
+    --color-secondary: #d8c587;
     --color-alt: hsl(var(--hue-color), 92%, 85%);
     --color-title: #000000;
-    --color-text: #000000;
-    --color-input: hsl(var(var(--hue-color), 70%, 96%));
+    --color-text: #494949;
+    --color-input: #bebebe1c;
     --color-body: rgb(248, 247, 241);
     --color-container: #d3d3d3;
     --color-container-secondary: white;
@@ -174,7 +174,7 @@ img {
     display: inline-flex;
     padding: .5rem;
     border-radius: .25rem;
-    z-index: 10000;
+    z-index: 1000000;
     opacity: .8;
     transition: .4s;
 }

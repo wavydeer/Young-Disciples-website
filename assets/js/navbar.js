@@ -1,3 +1,7 @@
+$('head').append(`
+    <link rel="stylesheet" href="/assets/css/template/navbar.css">
+`)
+
 // dark theme
 const themeButton = document.getElementById('theme-button')
 const darkTheme = 'dark-theme'
