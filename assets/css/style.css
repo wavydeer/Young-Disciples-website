@@ -97,6 +97,13 @@ img {
     margin-right: 1.5rem;
 }
 
+.section-title {
+    text-align: center;
+    font-size: 48px;
+    font-weight: 500;
+    font-family: "Rajdhani", sans-serif;
+    margin-top: var(--header-height);
+}
 
 /* ====================================================== */
 

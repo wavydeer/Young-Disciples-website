@@ -19,78 +19,55 @@
 <body>
     <div id="navbar"></div>
     <main>
-        <section class="schedule-section">
-            <div class="inner-width">
-                <h1>Weekly Schedule</h1>
-                <div class="schedule">
-                    
+        <section class="schedule__section">
+            <div class="schedule__wrapper">
+                <div class="schedule__container">
+                    <h1 class="section-title">Weekly Schedule</h1>
+                    <div class="schedule-carousel owl-carousel">
+                        <div class="schedule">
+                            <h1 class="schedule-day">Wednesday</h1>
+                            <h3 class="schedule-title">Bible Study</h3>
+                            <h4 class="schedule-time">07:00 PM - 09:00 PM</h4>
+                            <p class="schedule-description">FIXME add a description</p>
+                        </div>
+                        <div class="schedule">
+                            <h1 class="schedule-day">Thursday</h1>
+                            <h3 class="schedule-title">Men / Women ministry</h3>
+                            <h4 class="schedule-time">07:00 PM - 09:00 PM</h4>
+                            <p class="schedule-description">FIXME add a description</p>
+                        </div>
+                        <div class="schedule">
+                            <h1 class="schedule-day">Saturday</h1>
+                            <h3 class="schedule-title">Youth</h3>
+                            <h4 class="schedule-time">07:00 PM - 09:00 PM</h4>
+                            <p class="schedule-description">FIXME add a description</p>
+                        </div>
+                        <div class="schedule">
+                            <h1 class="schedule-day">Sunday Morning</h1>
+                            <h3 class="schedule-title">Morning Service</h3>
+                            <h4 class="schedule-time">09:30 AM - 01:00 PM</h4>
+                            <p class="schedule-description">FIXME add a description</p>
+                        </div>
+                        <div class="schedule">
+                            <h1 class="schedule-day">Sunday Evening</h1>
+                            <h3 class="schedule-title">Sunday night Worship</h3>
+                            <h4 class="schedule-time">07:30 PM - 09:30 PM</h4>
+                            <p class="schedule-description">FIXME add a description</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="schedule-section">
-            <h1>Weekly Schedule</h1>
-            <div class="schedule__carousel">
-                <div class="schedule__day-card active">
-                    <h1 class="schedule__day-title">Wednesday</h1>
-
-                    <div class="schedule__event">
-                        <h3 class="schedule__event-title">Bible Study</h3>
-                        <h4 class="schedule__event-time">07:00 PM - 09:00 PM</h4>
-                        <p class="schedule__event-description"></p>
-                    </div>
-                </div>
-
-                <div class="schedule__day-card next">
-                    <h1 class="schedule__day-title">Thursday</h1>
-
-                    <div class="schedule__event">
-                        <h3 class="schedule__event-title">Men / Women ministry</h3>
-                        <h4 class="schedule__event-time">07:00 PM - 09:00 PM</h4>
-                        <p class="schedule__event-description"></p>
-                    </div>
-                </div>
-
-                <div class="schedule__day-card">
-                    <h1 class="schedule__day-title">Saturday</h1>
-
-                    <div class="schedule__event">
-                        <h3 class="schedule__event-title">Youth</h3>
-                        <h4 class="schedule__event-time">04:00 PM - 07:30 PM</h4>
-                        <p class="schedule__event-description"></p>
-                    </div>
-                </div>
-
-                <div class="schedule__day-card prev">
-                    <h1 class="schedule__day-title">Sunday</h1>
-
-                    <div class="schedule__event">
-                        <h3 class="schedule__event-title">Sunday Service</h3>
-                        <h4 class="schedule__event-time">09:30 AM - 01:00 PM</h4>
-                        <p class="schedule__event-description"></p>
-                    </div>
-
-                    <div class="schedule__event">
-                        <h3 class="schedule__event-title">Sunday night Prayer</h3>
-                        <h4 class="schedule__event-time">07:30 PM - 09:30 PM</h4>
-                        <p class="schedule__event-description"></p>
-                    </div>
-                </div>
-
-                <div class="button-container">
-                    <div class="button"><i class="bx bx-chevron-left"></i></div>
-                    <div class="button"><i class="bx bx-chevron-right"></i></div>
-                </div>
+        <section>
+            <h1 class="section-title">Special Events</h1>
+            <div class="event-container">
+                <!-- populated from join.js -->
+            </div>
         </section>
 
         <section>
-            <h1>Special Events</h1>
-
-            <div class="event-container"></div>
-        </section>
-
-        <section>
-            <h1>Location</h1>
+            <h1 class="section-title">Location</h1>
             <div class="location__map-wrapper">
                 <iframe class="location__map"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3589.439757636959!2d-80.21326528452616!3d25.887910309682237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b1dd47c83629%3A0x407ca8bc1f8e59f8!2s12320%20NW%207th%20Ave%2C%20North%20Miami%2C%20FL%2033168!5e0!3m2!1sen!2sus!4v1637727272747!5m2!1sen!2sus"

@@ -1,16 +1,62 @@
-
-/* ============================================== */
-
-.schedule__day-title {
-    text-align: center;
-    margin: 2rem auto;
+.schedule__section {
+    display: flex;
+    align-items: center;
 }
 
-.schedule__event {
-    text-align: center;
-    margin: 6rem;
+.schedule__wrapper {
+    width: 100%;
 }
 
+.schedule__container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+    position: relative;
+}
+
+.schedule-carousel {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.schedule {
+    background: var(--color-container);
+    border-radius: 1rem;
+    padding: 3rem 0;
+}
+
+.owl-dots {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.owl-dot {
+    width: 14px;
+    height: 14px;
+    background: #333 !important;
+    margin: 0 6px;
+    border-radius: 50%;
+    outline: none;
+    transition: .3s linear;
+}
+
+.owl-dot.active {
+    background: var(--color-primary) !important;
+}
+
+
+.owl-nav .owl-prev,
+.owl-nav .owl-next {
+    position: absolute;
+    top: 35%;
+    left: 0;
+    transform: translate(0,-50%);
+}
+
+.owl-nav .owl-next {
+    left: auto;
+    right: 0;
+}
 
 /* special events */
 
@@ -55,7 +101,7 @@
 .event .event-left .month {
     font-size: 16px;
     font-weight: normal;
-    text-transform: uppercase;
+    text-transform: capitalize;
 }
 
 .event .event-right {
@@ -106,10 +152,15 @@ body.dark-theme .event .event-right .event-timing {
         padding: 0;
         border-radius: 8px 8px 0 0;
     }
-    .event .event-left .event-date .date,
-    .event .event-left .event-date .month {
-        display: inline-block;
-        font-size: 24px;
+    .event .event-left .event-date {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 20px;
+        min-width: 9rem;
+    }
+    .event-date .date {
+        font-size: 16px;
+        font-weight: normal;
     }
     .event .event-left .event-date {
         padding: 10px 0;
@@ -117,7 +168,14 @@ body.dark-theme .event .event-right .event-timing {
 }
 
 
+/* ========================================================== */
+
+
 /* location map */
+.location__map-wrapper {
+    margin-top: 2rem;
+    border-top: 1px solid var(--color-text);
+}
 
 .location__map {
     width: 100%;
