@@ -25,6 +25,21 @@
     padding: 3rem 2rem;
 }
 
+.schedule-title {
+    font-size: 28px;
+    font-weight: 400;
+    white-space: nowrap;    
+}
+
+.schedule hr {
+    margin: 1rem 0;
+    border-color: silver;
+}
+
+.schedule-description {
+    color: var(--color-text);
+}
+
 .owl-dots {
     text-align: center;
     margin-top: 40px;
