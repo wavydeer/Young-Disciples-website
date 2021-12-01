@@ -79,6 +79,12 @@ $("#scroll-up").click(function() {
 
 $('body').append(`
     <div id="context-menu">
+        <div class="item" data-action="back">
+            <i class="fas fa-undo"></i> Back
+        </div>
+        <div class="item" data-action="forward">
+            <i class="fas fa-redo"></i> Forward
+        </div>
         <div class="item" data-action="reload">
             <i class="fa fa-refresh"></i> Reload
         </div>
@@ -116,10 +122,14 @@ $(document).bind("mousedown", function(e) {
 $("#context-menu .item").click(function() {
     // This is the triggered action name
     switch ($(this).attr("data-action")) {
-
-        // A case for each action. Your actions here
+        case 'back':
+            history.back()
+            break
+        case 'forward':
+            history.forward()
+            break
         case "reload":
             location.reload()
-            break;
+            break
     }
 });

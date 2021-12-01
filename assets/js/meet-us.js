@@ -96,7 +96,7 @@ const individuals = [
 
 $(individuals).each(function(key, value) {
     $('.card-wrapper').append(`
-        <div class= "card" data-person="${(value.name).split(' ')[0]}">
+        <div class= "card">
             <img src= ${value.backgroundPicture} class="card-image">
             <img src= ${value.profilePicture} class="profile-image">
             <h1 class="card-title">${value.name}</h1>
@@ -108,12 +108,12 @@ $(individuals).each(function(key, value) {
                 </p>
             </div>
 
-            <a href="#ok" class="btn">Contact</a> 
+            <a href="#ok" class="btn" data-person="${value.name}">Contact</a> 
         </div>
     `)
 })
 
 $('.card .btn').click(function () {
-    sessionStorage.setItem('person', $('.card').attr("data-person"))
+    sessionStorage.setItem('person', $(this).attr("data-person"))
     location.href = 'contact.html';
 })

@@ -30,7 +30,7 @@ const data = {
 // if the user got to this page by contacting a person from meet us page
 if (!(sessionStorage.getItem('person') === null)) {
     // say who they clicked on
-    $('.contact-form .title').text(`contact ${sessionStorage.getItem('person')}`)
+    $('.contact-form .title').text(`Contact "${sessionStorage.getItem('person')}"`)
     // add to stuff to send to the backend
     data.person = sessionStorage.getItem('person')
     // remove it from sessionStorage
@@ -38,5 +38,6 @@ if (!(sessionStorage.getItem('person') === null)) {
 }
 
 $('.contact__form').submit(function () {
-
+    // input validation
+    // send to backend
 })
