@@ -1,36 +1,38 @@
-$('.schedule-carousel').owlCarousel({
-    margin: 20,
-    loop: true,
-    autoplay: true,
-    autoplayTimeout: 8000,
-    autoplayHoverPause: true,
-    smartSpeed: 1000,
-    nav: false,
-    navText : [
-        '<i class="fas fa-chevron-left nav-btn"></i>',
-        '<i class="fas fa-chevron-right nav-btn"></i>'
-    ],
-    responsive: {
-        0: {
-            items: 1
-        },
-        600: {
-            items: 2
-        },
-        1000 : {
-            items: 3
+
+$(document).ready(function() {
+    $('.schedule-carousel').owlCarousel({
+        margin: 20,
+        loop: true,
+        autoplay: true,
+        autoplayTimeout: 8000,
+        autoplayHoverPause: true,
+        smartSpeed: 1000,
+        nav: false,
+        navText: [
+            '<i class="fas fa-chevron-left nav-btn"></i>',
+            '<i class="fas fa-chevron-right nav-btn"></i>'
+        ],
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 2
+            },
+            1000: {
+                items: 3
+            }
         }
-    }
+    })
 })
 
+
 // ===============================================================================================
 // ===============================================================================================
 // ===============================================================================================
 
 
-const eventList = 
-[
-    {
+const eventList = [{
         title: 'Red Capert Egg roll Thursday',
         description: 'Standing on a capert that is red while eating some eggs that have been rolled',
         time: '06:00 PM',

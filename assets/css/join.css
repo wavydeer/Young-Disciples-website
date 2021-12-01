@@ -22,7 +22,7 @@
 .schedule {
     background: var(--color-container);
     border-radius: 1rem;
-    padding: 3rem 0;
+    padding: 3rem 2rem;
 }
 
 .owl-dots {
@@ -43,21 +43,6 @@
 .owl-dot.active {
     background: var(--color-primary) !important;
 }
-
-
-.owl-nav .owl-prev,
-.owl-nav .owl-next {
-    position: absolute;
-    top: 35%;
-    left: 0;
-    transform: translate(0,-50%);
-}
-
-.owl-nav .owl-next {
-    left: auto;
-    right: 0;
-}
-
 /* special events */
 
 .event-container {
