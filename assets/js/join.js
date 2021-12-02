@@ -1,4 +1,3 @@
-
 $(document).ready(function() {
     $('.schedule-carousel').owlCarousel({
         margin: 20,
@@ -7,7 +6,7 @@ $(document).ready(function() {
         autoplayTimeout: 8000,
         autoplayHoverPause: true,
         smartSpeed: 1000,
-        nav: false,
+        nav: true,
         navText: [
             '<i class="fas fa-chevron-left nav-btn"></i>',
             '<i class="fas fa-chevron-right nav-btn"></i>'
@@ -16,16 +15,15 @@ $(document).ready(function() {
             0: {
                 items: 1
             },
-            600: {
+            882: {
                 items: 2
             },
-            1000: {
+            1180: {
                 items: 3
             }
         }
     })
 })
-
 
 // ===============================================================================================
 // ===============================================================================================
