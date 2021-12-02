@@ -45,7 +45,7 @@ $(function() {
         })
 
         // highlight the link of the loaded file on the navbar
-        var currentFile = (document.location.pathname.match(/[^\/]+$/)[0]).split('.')[0]
+        var currentFile = (location.pathname.match(/[^\/]+$/)[0]).split('.')[0]
         $(`#nav__link-${currentFile}`).addClass('active-link')
     });
 
@@ -66,8 +66,12 @@ $(function() {
 
 //  show scroll up button when you scroll past 200 down the screen
 $(window).scroll(function() {
-    if (this.scrollY >= 200) $('#scroll-up').addClass('show-scroll')
-    else $('#scroll-up').removeClass('show-scroll')
+    if (this.scrollY >= 200) {
+        $('#scroll-up').addClass('show-scroll')
+    }
+    else {
+        $('#scroll-up').removeClass('show-scroll')
+    }
 })
 
 $("#scroll-up").click(function() {
@@ -76,60 +80,3 @@ $("#scroll-up").click(function() {
 
 
 // ==========================================================
-
-$('body').append(`
-    <div id="context-menu">
-        <div class="item" data-action="back">
-            <i class="fas fa-undo"></i> Back
-        </div>
-        <div class="item" data-action="forward">
-            <i class="fas fa-redo"></i> Forward
-        </div>
-        <div class="item" data-action="reload">
-            <i class="fa fa-refresh"></i> Reload
-        </div>
-    </div>
-`)
-
-// show right click menu
-$(document).bind("contextmenu", function(event) {
-
-    // Avoid the real one
-    event.preventDefault();
-
-    // Show contextmenu
-    $("#context-menu").addClass('active')
-
-    // In the right position (the mouse)
-    $("#context-menu").css({
-        top: event.pageY + "px",
-        left: event.pageX + "px"
-    });
-});
-
-
-// If the document is clicked somewhere
-$(document).bind("mousedown", function(e) {
-    // If the clicked element is not the menu
-    if (!$(e.target).parents("#context-menu").length > 0) {
-        // Hide it
-        $("#context-menu").removeClass('active')
-    }
-});
-
-
-// If the menu element is clicked
-$("#context-menu .item").click(function() {
-    // This is the triggered action name
-    switch ($(this).attr("data-action")) {
-        case 'back':
-            history.back()
-            break
-        case 'forward':
-            history.forward()
-            break
-        case "reload":
-            location.reload()
-            break
-    }
-});
