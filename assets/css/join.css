@@ -9,6 +9,7 @@
 
 .schedule__container {
     max-width: 1200px;
+    width: 90%;
     margin: auto;
     padding: 0 20px;
     position: relative;
@@ -23,12 +24,13 @@
     background: var(--color-container);
     border-radius: 1rem;
     padding: 3rem 2rem;
+    min-height: 400px;
 }
 
 .schedule-title {
     font-size: 28px;
     font-weight: 400;
-    white-space: nowrap;    
+    white-space: nowrap;
 }
 
 .schedule hr {
@@ -58,6 +60,32 @@
 .owl-dot.active {
     background: var(--color-primary) !important;
 }
+
+.owl-carousel .nav-btn {
+    position: absolute;
+    cursor: pointer;
+    top: 175px !important;
+    font-size: 50px;
+    color: var(--color-container);
+}
+
+.owl-carousel .fa-chevron-right.nav-btn {
+    right: -5%;
+}
+
+.owl-carousel .fa-chevron-left.nav-btn {
+    left: -5%;
+}
+
+@media screen and (max-width: 700px) {
+    .owl-carousel .fa-chevron-right.nav-btn {
+        right: -10%;
+    }
+    .owl-carousel .fa-chevron-left.nav-btn {
+        left: -10%;
+    }
+}
+
 /* special events */
 
 .event-container {
@@ -172,6 +200,7 @@ body.dark-theme .event .event-right .event-timing {
 
 
 /* location map */
+
 .location__map-wrapper {
     margin-top: 2rem;
     border-top: 1px solid var(--color-text);
