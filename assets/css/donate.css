@@ -1,120 +1,374 @@
+/* ############################################################# */
+
+
+/* MAIN LANDING SECTION OF DONATE PAGE */
+
+
+/* ############################################################# */
+
 * {
     font-size: 15px;
 }
 
-.payment__container {
-    background: var(--color-container-secondary);
-    display: flex;
+.section-a .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 3rem;
     align-items: center;
     justify-content: center;
-    min-height: 100%;
+    height: 100vh;
+    width: auto;
 }
 
-form {
-    width: 480px;
-    margin: 20px 0;
+.section-a h1 {
+    font-size: 4rem;
+    color: var(--primary-color);
 }
 
-.group {
-    background: white;
-    box-shadow: 0 7px 14px 0 rgba(49, 49, 93, 0.10), 0 3px 6px 0 rgba(0, 0, 0, 0.08);
-    border-radius: 4px;
-    margin-bottom: 20px;
+.section-a p {
+    margin: 1rem 0;
 }
 
-label {
-    position: relative;
-    color: #8898AA;
-    font-weight: 300;
-    height: 40px;
-    line-height: 40px;
-    display: flex;
-    flex-direction: row;
-}
-
-.group label:not(:last-child) {
-    border-bottom: 1px solid #F0F5FA;
-}
-
-label>span {
-    width: 120px;
-    text-align: right;
-    margin-right: 30px;
-}
-
-.field {
-    background: transparent;
-    font-weight: 300;
-    border: 0;
-    color: #31325F;
-    outline: none;
-    flex: 1;
-    padding-right: 10px;
-    padding-left: 10px;
-    cursor: text;
-}
-
-.field::-webkit-input-placeholder {
-    color: #CFD7E0;
-}
-
-.field::-moz-placeholder {
-    color: #CFD7E0;
-}
-
-button {
-    float: left;
-    display: block;
-    background: #666EE8;
-    color: white;
-    box-shadow: 0 7px 14px 0 rgba(49, 49, 93, 0.10), 0 3px 6px 0 rgba(0, 0, 0, 0.08);
-    border-radius: 4px;
-    border: 0;
-    margin-top: 20px;
-    font-size: 15px;
-    font-weight: 400;
-    width: 100%;
-    height: 40px;
-    line-height: 38px;
-    outline: none;
-}
-
-button:focus {
-    background: #555ABF;
-}
-
-button:active {
-    background: #43458B;
-}
-
-.outcome {
-    float: left;
-    width: 100%;
-    padding-top: 8px;
-    min-height: 24px;
-    text-align: center;
-}
-
-.success,
-.error {
+.checkout {
     display: none;
-    font-size: 13px;
+    transition: all .3s ease-in-out;
 }
 
-.success.visible,
-.error.visible {
-    display: inline;
+
+/* ############################################################# */
+
+
+/* BILLING ADDRESS SECTION */
+
+
+/* ############################################################# */
+
+
+/*===== GOOGLE FONTS =====*/
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+
+/*===== VARIABLES CSS =====*/
+
+:root {
+    /*===== Colores =====*/
+    --first-color: #1A73E8;
+    --input-color: #80868B;
+    --border-color: #DADCE0;
+    /*===== Fuente y tipografia =====*/
+    --body-font: 'Roboto', sans-serif;
+    --normal-font-size: 1rem;
+    --small-font-size: .75rem;
 }
 
-.error {
-    color: #E4584C;
+
+/*===== FORM =====*/
+
+.l-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-.success {
-    color: #666EE8;
+.form {
+    width: 360px;
+    padding: 4rem 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px rgba(92, 99, 105, .2);
 }
 
-.success .token {
+.form__title {
+    font-weight: 400;
+    margin-bottom: 3rem;
+}
+
+.form__div {
+    position: relative;
+    height: 48px;
+    margin-bottom: 1.5rem;
+}
+
+.form__input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-size: var(--normal-font-size);
+    border: 1px solid var(--border-color);
+    border-radius: .5rem;
+    outline: none;
+    padding: 1rem;
+    background: none;
+    z-index: 1;
+}
+
+.form__label {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    padding: 0 .25rem;
+    background-color: #fff;
+    color: var(--input-color);
+    font-size: var(--normal-font-size);
+    transition: .3s;
+}
+
+.form__button {
+    display: block;
+    margin-left: auto;
+    padding: .75rem 2rem;
+    outline: none;
+    border: none;
+    background-color: var(--first-color);
+    color: #fff;
+    font-size: var(--normal-font-size);
+    border-radius: .5rem;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.form__button:hover {
+    box-shadow: 0 10px 36px rgba(0, 0, 0, .15);
+}
+
+
+/*Input focus move up label*/
+
+.form__input:focus+.form__label {
+    top: -.5rem;
+    left: .8rem;
+    color: var(--first-color);
+    font-size: var(--small-font-size);
     font-weight: 500;
-    font-size: 13px;
+    z-index: 10;
 }
+
+
+/*Input focus sticky top label*/
+
+.form__input:not(:placeholder-shown).form__input:not(:focus)+.form__label {
+    top: -.5rem;
+    left: .8rem;
+    font-size: var(--small-font-size);
+    font-weight: 500;
+    z-index: 10;
+}
+
+
+/*Input focus*/
+
+.form__input:focus {
+    border: 1.5px solid var(--first-color);
+}
+
+
+/* ========================================================================= */
+
+#wrapper {
+    position: absolute;
+    top: 50%;
+    margin-top: -240px;
+    left: 0;
+    width: 100%;
+}
+
+#container {
+    width: 720px;
+    height: 600px;
+    margin: 0 auto;
+    -webkit-box-shadow: 1px 1px 10px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 1px 1px 10px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    overflow: hidden;
+    background: #b3bead;
+    background: linear-gradient(45deg, #b3bead 0%, #dfe5d7 60%, #fcfff4 100%);
+}
+
+#info {
+    width: 52%;
+    height: 480px;
+    float: left;
+    background: linear-gradient(45deg, #95a5a6 0%, rgba(208, 215, 216, 0) 56%, rgba(255, 255, 255, 0) 100%);
+}
+
+#info #product {
+    width: 500px;
+    margin: -50px 0 -85px -65px;
+}
+
+#info p {
+    width: 100%;
+    text-align: center;
+    line-height: 1.5em;
+    letter-spacing: 1px;
+}
+
+#info #price {
+    width: 50%;
+    margin: 0 auto;
+    letter-spacing: 1px;
+}
+
+#info #price h2 {
+    width: 100%;
+    text-align: center;
+    font-weight: 700;
+    color: #000;
+    padding-top: 10px;
+}
+
+#payment {
+    width: 40%;
+    float: right;
+    padding: 95px 50px 25px 0;
+}
+
+#checkout {
+    width: 100%;
+}
+
+#checkout input {
+    margin-bottom: 15px;
+}
+
+#checkout label {
+    float: left;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 0.6em;
+    padding: 0 0 5px 10px;
+}
+
+#checkout #cvc-label {
+    margin-left: 25px;
+}
+
+#checkout .card {
+    width: 29%;
+    margin: 0 10% 25px 10%;
+    border: none;
+    background: none;
+    height: 50px;
+    cursor: pointer;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+#checkout .card:focus {
+    -webkit-filter: none;
+    filter: none;
+}
+
+#checkout #visa {
+    background-image: url("http://enwaara.se/codepen/visa.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+#checkout #mastercard {
+    background-image: url("http://enwaara.se/codepen/mastercard.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 118%;
+}
+
+#checkout #cardnumber,
+#checkout #cardholder,
+#checkout #cvc {
+    width: 100%;
+    background: none;
+    border: 1px solid #6C7A89;
+    padding: 8px 19px;
+    border-radius: 50px;
+    letter-spacing: 1px;
+}
+
+#checkout #cardnumber:focus,
+#checkout #cardholder:focus,
+#checkout #cvc:focus {
+    border: 1px solid #00b894;
+}
+
+#checkout ::-webkit-input-placeholder {
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    color: #BDC3C7;
+}
+
+#checkout #cardnumber {
+    letter-spacing: 3px;
+}
+
+#checkout #cardnumber::-webkit-input-placeholder {
+    font-size: 1em;
+}
+
+#checkout #left {
+    width: 41%;
+    border: 1px solid #6C7A89;
+    border-radius: 50px;
+    overflow: hidden;
+    padding: 3px 5px;
+    float: left;
+}
+
+#checkout #left #month,
+#checkout #left #year {
+    background: none;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    float: left;
+    font-size: 0.8em;
+    letter-spacing: 3px;
+    color: #BDC3C7;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+#checkout #left #month option,
+#checkout #left #year option {
+    background: #ECECEC;
+}
+
+#checkout #left p {
+    float: left;
+    padding-top: 2px;
+    font-size: 1.2em;
+    color: #BDC3C7;
+    letter-spacing: 3px;
+}
+
+#checkout #cvc {
+    width: 48%;
+    float: left;
+    margin-left: 11%;
+}
+
+#checkout .btn {
+    background: #00b894;
+    border: none;
+    width: 100%;
+    padding: 12px 10px 10px 10px;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 400;
+    color: #ECECEC;
+    cursor: pointer;
+}
+
+#checkout .btn:hover {
+    background: #16A085;
+}
+
+
+/* ========================================================================= */
+
+
+/* ========================================================================= */

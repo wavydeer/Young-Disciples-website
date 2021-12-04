@@ -16,11 +16,11 @@ $(document).ajaxComplete(function(){  // wait until all default jquery functions
 
     $(window).scroll(function() {
         // change the background of navbar to solid when looking at the background picture
-        if (window.scrollY >= $('#our-impact__bg-image').height() * 1.2) {
+        if (window.scrollY >= $('.indexHeader').height() / 2) {
             $('.nav__header').css({
                 background: 'var(--color-container)',
                 boxShadow: '0 0 10px black'
-            }).addClass('navbar-scroll')  // add scroll down animation
+            }).addClass('navbar-scroll') // add scroll down animation
         // change the background of navbar to transparent when looking at the background picture
         } else {
             $('.nav__header').css({
@@ -34,3 +34,5 @@ $(document).ajaxComplete(function(){  // wait until all default jquery functions
 // #######################################################
 // END OF Nav Bar Animation
 // ########################################################
+
+

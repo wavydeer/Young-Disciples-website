@@ -1,6 +1,7 @@
 const imagelocation = 'assets/img/'
 
-const individuals = [
+const individuals = 
+[
     {
         name: 'Pauldette Dor',
         proffession: 'President',

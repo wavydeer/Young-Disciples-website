@@ -26,25 +26,49 @@
     </header>
 
     <main>
-        <div class="tab-container">
-            <div class="tabs">
-                <input type="radio" id="radio-1" name="tabs" checked />
-                <label class="tab" for="radio-1">Upcoming<span class="notification"></span></label>
-                <input type="radio" id="radio-2" name="tabs" />
-                <label class="tab" for="radio-2">Development</label>
-                <input type="radio" id="radio-3" name="tabs" />
-                <label class="tab" for="radio-3">Completed</label>
-                <span class="glider"></span>
+        <section class="section-1">
+            <div class= "space"></div> 
+            <div class= "active-tabs-section">
+            <div class="active-tabs">
+                <div class="active-tabs-container">
+                    
+                    <input type="radio" name="active_tabs" id="btn-1" class="btn-1" checked>
+                    <label for="btn-1" class="btn"><i class="fa fa-key"></i> Login</label>
+
+                    <input type="radio" name="active_tabs" id="btn-2" class="btn-2">
+                    <label for="btn-2" class="btn"><i class="fa fa-cog"></i> Settings</label>
+
+                    <input type="radio" name="active_tabs" id="btn-3" class="btn-3">
+                    <label for="btn-3" class="btn"><i class="fa fa-shopping-cart"></i> Buy</label>
+                    
+
+                    <div class="tabs-container">
+
+                        <div class="tab-1">
+                            <p><i class="fa fa-key"></i> Login</p>
+                        </div>
+
+                        <div class="tab-2">
+                            <p><i class="fa fa-cog"></i> Settings</p>
+                        </div>
+
+                        <div class="tab-3">
+                            <p><i class="fa fa-shopping-cart"></i> Buy</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        
+        </section>
+
+
         <!-- Programs Slider -->
         <section class="programs">
             <div class="general-container">
                 <input class="radio" type="radio" name="card" id="card-1" checked />
                 <label class="content" for="card-1">
                     <span class="icon">
-                        <i class='bx bxs-music' ></i>
+                        <i class='bx bxs-music'></i>
                     </span>
                     <h3 class="card-title">
                         Praise Team
@@ -54,7 +78,7 @@
                 <input class="radio" type="radio" name="card" id="card-2" />
                 <label class="content" for="card-2">
                     <span class="icon">
-                        <i class = 'fas fa-church'></i>
+                        <i class='fas fa-church'></i>
                     </span>
                     <h3 class="card-title">
                         The Chior
@@ -91,7 +115,7 @@
                         <span class="subtitle">Led by Jenny</span>
                     </h3>
                 </label>
-                
+
             </div>
         </section>
 

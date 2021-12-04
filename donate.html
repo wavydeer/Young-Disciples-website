@@ -16,62 +16,161 @@
     <div id="navbar"></div>
 
     <main>
-        <div class="payment__container">
-            <form action="" method="POST">
-                <input type="hidden" name="token" />
-                <div class="group">
-                    <label>
-                        <span>Card</span>
-                        <div id="card-element" class="field"></div>
-                    </label>
+        <!-- Showcase -->
+        <section class="section-a">
+            <div class="container">
+                <div>
+                    <h1>Donate to the Young Disciples of Jesus Christ</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
+                        repudiandae rerum libero ipsum asperiores omnis mollitia, nostrum
+                        commodi placeat ea itaque modi corrupti corporis nam voluptas aut
+                        reprehenderit eaque culpa.
+                    </p>
+                    <a href="#" class="btn" id="Donate-btn">Donate</a>
                 </div>
-                <div class="group">
-                    <label>
-                        <span>First name</span>
-                        <input id="first-name" name="first-name" class="field" placeholder="Manoj" />
-                    </label>
-                    <label>
-                        <span>Last name</span>
-                        <input id="last-name" name="last-name" class="field" placeholder="Halugona" />
-                    </label>
-                </div>
-                <div class="group">
-                    <label>
-                        <span>Address</span>
-                        <input id="address-line1" name="address_line1" class="field" placeholder="77 Winchester Lane" />
-                    </label>
-                    <label>
-                        <span>Address (cont.)</span>
-                        <input id="address-line2" name="address_line2" class="field" placeholder="" />
-                    </label>
-                    <label>
-                        <span>City</span>
-                        <input id="address-city" name="address_city" class="field" placeholder="Coachella" />
-                    </label>
-                    <label>
-                        <span>State</span>
-                        <input id="address-state" name="address_state" class="field" placeholder="SA" />
-                    </label>
-                    <label>
-                        <span>ZIP</span>
-                        <input id="address-zip" name="address_zip" class="field" placeholder="92236" />
-                    </label>
-                    <label>
-                        <span>Country</span>
-                        <select name="address_country" id="address-country" class="field">
-                            <option value="IN">USA</option>
-                        </select>
-                    </label>
-                </div>
-                <button type="submit">Donate</button>
-                <div class="outcome">
-                    <div class="error"></div>
-                    <div class="success">
-                        Success! Your Stripe token is <span class="token"></span>
+                <img src="assets/img/African-youth.PNG" alt="" />
+            </div>
+        </section>
+<!-- 
+        <section class="personal-info">
+            <div class="info-container">
+                <h1 class="section-title">Billing Info</h1>
+                <form action="" method="post">
+                    <div class="form__div">
+                        <input type="text" class="form__input" placeholder=" ">
+                        <label for="" class="form__label">Email</label>
+                    </div>
+                    <div class="input-group single">
+                        <div class="input-container">
+                            <input type="text" name="amount" class="input" />
+                            <label for="">Amount</label>
+                            <span>Amount</span>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <div class="input-container">
+                            <input type="text" name="fname" class="input" />
+                            <label for="">First Name</label>
+                            <span>First Name</span>
+                        </div>
+                        <div class="input-container">
+                            <input type="text" name="lname" class="input" />
+                            <label for="">Last Name</label>
+                            <span>Last Name</span>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <div class="input-container">
+                            <input type="text" name="address" class="input" />
+                            <label for="">Street Address</label>
+                            <span>Street Address</span>
+                        </div>
+                        <div class="input-container">
+                            <input type="text" name="apt-num" class="input" />
+                            <label for="">Apt/Suite</label>
+                            <span>Apt/Suite</span>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <div class="input-container">
+                            <input type="text" name="city" class="input" />
+                            <label for="">City</label>
+                            <span>City</span>
+                        </div>
+                        <div class="input-container">
+                            <input type="text" name="state" class="input" list="state-list"/>
+                            <label for="">State</label>
+                            <span>State</span>
+                            <datalist id="state-list">
+                                <option value="Florida - FL"></option>
+                            </datalist>
+                        </div>
+                        <div class="input-container">
+                            <input type="text" name="zip" class="input" />
+                            <label for="">Zip/Postal Code</label>
+                            <span>Zip/Postal Code</span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section> -->
+
+        <section class="checkout">
+            <div id="wrapper">
+                <div id="container">
+                    <div id="info">
+                        <img id="product" src="http://enwaara.se/codepen/product.png" />
+
+                        <p>Activity Bracelet Surge</p>
+                        <p>Black</p>
+
+                        <div id="price">
+
+                            <h2>$ 2 700</h2>
+
+                        </div>
+                    </div>
+
+                    <div id="payment">
+
+                        <form id="checkout">
+
+                            <input class="card" id="visa" type="button" name="card" value="">
+                            <input class="card" id="mastercard" type="button" name="card" value="">
+
+                            <label>Credit Card Number</label>
+                            <input id="cardnumber" type=text pattern="[0-9]{13,16}" name="cardnumber" requierd="true"
+                                placeholder="0123-4567-8901-2345" maxlength="16">
+
+                            <label>Card Holder</label>
+                            <input id="cardholder" type="text" name="name" requierd="true" maxlength="50"
+                                placeholder="Cardholder">
+
+                            <label>Expiration Date</label>
+                            <label id="cvc-label">CVC/CVV</label>
+                            <div id="left">
+                                <select name="month" id="month" onchange="" size="1">
+                                    <option value="00">MM</option>
+                                    <option value="01">01</option>
+                                    <option value="02">02</option>
+                                    <option value="03">03</option>
+                                    <option value="04">04</option>
+                                    <option value="05">05</option>
+                                    <option value="06">06</option>
+                                    <option value="07">07</option>
+                                    <option value="08">08</option>
+                                    <option value="09">09</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                </select>
+                                <p>/</p>
+                                <select name="year" id="year" onchange="" size="1">
+                                    <option value="00">YY</option>
+                                    <option value="01">16</option>
+                                    <option value="02">17</option>
+                                    <option value="03">18</option>
+                                    <option value="04">19</option>
+                                    <option value="05">20</option>
+                                    <option value="06">21</option>
+                                    <option value="07">22</option>
+                                    <option value="08">23</option>
+                                    <option value="09">24</option>
+                                    <option value="10">25</option>
+                                </select>
+                            </div>
+
+
+                            <input id="cvc" type="text" placeholder="Cvc/Cvv" maxlength="3" />
+
+                            <input class="btn" type="button" name="purchase" value="Review">
+                        </form>
+                        <a href="#" class="btn" id="cancel-payment-btn">Cancel</a>
                     </div>
                 </div>
-            </form>
-        </div>
+            </div>
+        </section>
     </main>
 
     <div id="footer"></div>
