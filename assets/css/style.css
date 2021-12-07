@@ -7,7 +7,7 @@
     /* colors */
     --hue-color: 39;
     --color-primary: hsl(var(--hue-color), 69%, 61%);
-    --color-secondary: #d8c587;
+    --color-secondary: #e7bc2e;
     --color-alt: hsl(var(--hue-color), 92%, 85%);
     --color-title: #000000;
     --color-text: #494949;
@@ -84,18 +84,22 @@ a {
 }
 
 img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
 }
 
 
 /* end of default values */
 
-.container {
-    max-width: 968px;
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
+
+.section {
+    margin: 0 1.5rem;
 }
+
+.container {
+    max-width: 1650px;
+    height: auto;
+} 
 
 .section-title {
     text-align: center;
