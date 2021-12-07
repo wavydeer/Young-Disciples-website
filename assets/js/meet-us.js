@@ -21,7 +21,7 @@ $.getJSON('assets/js/meet-us.json', (data) => {
     })
 })
 
-$('.card .btn').click(function () {
+$('.card .btn').click( () => {
     sessionStorage.setItem('person', $(this).parent('.card').attr('data-person')) // can also use closest instead of parent
     location.href = 'contact.html';
 })
