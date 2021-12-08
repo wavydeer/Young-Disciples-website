@@ -2,7 +2,7 @@
 // #######################################################
 // Nav Bar Animation
 // ########################################################
-$(document).ajaxComplete(function(){  // wait until all default jquery functions are loaded
+$(document).ajaxComplete(() => {  // wait until all default jquery functions are loaded
     // make navbar have transparent background and no shadow
     $('.nav__header').css({
         background: 'transparent',
@@ -14,7 +14,7 @@ $(document).ajaxComplete(function(){  // wait until all default jquery functions
         margin: 'unset'
     })
 
-    $(window).scroll(function() {
+    $(window).scroll(() => {
         // change the background of navbar to solid when looking at the background picture
         if (window.scrollY >= $('.indexHeader').height() / 2) {
             $('.nav__header').css({
