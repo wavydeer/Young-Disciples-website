@@ -29,28 +29,27 @@ $(window).on("load", () => {
 });
 
 // #############################################################
-    // special-event__section
+// special-event__section
 // #############################################################
 
 $.getJSON('assets/js/join.json', (data) => {
     $(data.eventList).each((index, item) => {
+        const { title, description, time, day, month, year } = item
         // loop over every event in the list and create a template
         $('.event-container').append(`
             <div class="event">
                 <div class="event-left">
                     <div class="event-date">
-                        <div class="date">${item.day}</div>
-                        <div class="month">${item.month} <br> - <br> ${item.year}</div>
+                        <div class="date">${day}</div>
+                        <div class="month">${month} <br> - <br> ${year}</div>
                     </div>
                 </div>
 
                 <div class="event-right">
-                    <h3 class="event-title">${item.title}</h3>
-
-                    <div class="event-description">${item.description}</div>
-
+                    <h3 class="event-title">${title}</h3>
+                    <div class="event-description">${description}</div>
                     <div class="event-timing">
-                        <i class='bx bxs-time' ></i> ${item.time}
+                        <i class='bx bxs-time' ></i> ${time}
                     </div>
                 </div>
             </div>
