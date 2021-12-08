@@ -45,6 +45,7 @@ body.dark-theme {
 
 * {
     font-family: "Poppins", sans-serif;
+    font-display: swap;
 }
 
 html,
@@ -93,7 +94,7 @@ img {
 
 
 .section {
-    margin: 0 1.5rem;
+    margin: 0 3rem;
 }
 
 .container {
@@ -108,36 +109,6 @@ img {
     font-family: "Rajdhani", sans-serif;
     margin-top: var(--header-height);
     user-select: none;
-}
-
-/* ====================================================== */
-
-
-/*  temporary logo */
-
-.logo-title,
-.logo-subtitle {
-    font-weight: 600;
-    color: var(--color-title);
-    text-transform: uppercase;
-    border: 1.5px solid var(--color-title);
-    font-family: 'Londrina Shadow', cursive;
-    white-space: nowrap;
-}
-
-.logo-title {
-    font-size: 30px;
-}
-
-.logo-subtitle {
-    font-size: 20px;
-}
-
-.logo:hover .logo-title,
-.logo:hover .logo-subtitle {
-    color: var(--color-primary);
-    font-weight: 570;
-    border: 1.2px solid var(--color-primary);
 }
 
 /* ===================================================== */
