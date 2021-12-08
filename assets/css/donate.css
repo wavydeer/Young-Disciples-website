@@ -3,10 +3,9 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 3rem;
 }
 
-.flex > div {
+.donation__section .flex > div {
     width: 100%;
 }
 
@@ -21,12 +20,16 @@
     height: 700px !important;
     border-radius: 3rem;
     padding: 50px;
+    box-shadow: 0 0 10px black;
 }
-
 
 /* ############################################################# */
 /* MAIN LANDING SECTION OF DONATE PAGE */
 /* ############################################################# */
+
+.donation-container.flex{
+    gap: 3rem;
+}
 
 .donation-container {
     min-height: calc(100vh - var(--header-height));
@@ -62,26 +65,22 @@
     border-radius: 1rem;
 }
 
+@media screen and (max-width: 1150px) {
+    .donation-container.flex{
+        flex-direction: column-reverse;
+    }
+}
+
 /* ############################################################# */
 /* BILLING ADDRESS SECTION */
 /* ############################################################# */
 
 
-/* 
-.form__input {
-    position: relative;
-    text-align: center;
-}
-
-.form__input-field {
-    width: 80%;
-    margin-bottom: 1rem;
-} */
-
 
 /* ############################################################# */
 /* CARD INFO SECTION */
 /* ############################################################# */
+
 
 
 /* ############################################################# */
