@@ -4,8 +4,8 @@ $.getJSON('assets/js/meet-us.json', (data) => {
     $(data.individuals).each((index, item) => {
         $('.card-wrapper').append(`
             <div class="card" data-person="${item.name}">
-                <img src= ${imagelocation}${item.backgroundPicture} class="card-image">
-                <img src= ${imagelocation}${item.profilePicture} class="profile-image">
+                <img src= ${imagelocation}${item.backgroundPicture} class="card-image" alt="">
+                <img src= ${imagelocation}${item.profilePicture} class="profile-image" alt="">
                 <h1 class="card-title">${item.name}</h1>
                 <p class="job-title">${item.proffession}</p>
 

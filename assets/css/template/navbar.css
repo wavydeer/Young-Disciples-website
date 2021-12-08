@@ -54,6 +54,11 @@ body.dark-theme .change-theme {
     transition: .3s;
 }
 
+.logo-img {
+    width: 50px;
+    height: auto;
+}
+
 .nav__toggle {
     display: inline-flex;
     font-size: 1.25rem;
