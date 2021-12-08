@@ -29,9 +29,10 @@ $(() => {
     // if the user click donate button in the landing page
     $('#donation-btn').on('click', () => {
         // blur the rest of the page
-        $('.donation-section').css({
-            transition: 'all 3s ease-in-out',
-            filter: 'blur(8px)'
+        $('.donation__section').css({
+            transition: 'all 1s ease-in-out',
+            filter: 'blur(8px)',
+            userSelect: 'none'
         })
         // show the section to put billing credentials
         $('.billing-info-section').css({
@@ -75,9 +76,11 @@ $(() => {
     // if the user click cancel, go back to main landing page
     $('.cancel-btn').on('click', () => {
         // remove blur from page
-        $('.donation-section').css({
+        $('.donation__section').css({
             transition: 'all 0s ease-in-out',
-            filter: 'none'
+            filter: 'none',
+            userSelect: 'auto'
+
         })
         // hide card info container if opened 
         $('.card-info-section').css({
