@@ -1,16 +1,11 @@
-/** add css to the document */
-const loadCSS = $('head').append(`
-    <link rel="stylesheet" href="/assets/css/template/navbar.css">
-`)
-
-/**********************************************************************************************/
-
 /**
- * @constant {arrow function} themeButtonHandler - responsible for the theme of the website
- * * auto executing
+ * @function
+ *
  * change theme when the user clicks the button on the website
  * update and save current theme to local storage
  * retrieve theme from local storage whenever the page loads
+ * 
+ * * Automatic | 1x
  */
 const themeButtonHandler = (() => {
     // dark theme

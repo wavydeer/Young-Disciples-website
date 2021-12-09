@@ -59,7 +59,6 @@ const addYearToDOM = (() => {
  * Show and hide some sections based on what the user is clicking 
  * */
 const pageNavigation = $(() => {
-
     /** @constant hideSection - accepts an html element as a parameter and hides it using css*/
     const hideSection = section => $(section).css({ display: 'none' })
         /** @constant showSection - accepts an html element as a parameter and show it using css*/
@@ -67,6 +66,7 @@ const pageNavigation = $(() => {
 
     /** 
      * @function
+     * When user clicks on donate button, 
      * landing page gets blurred and billing info section is shown 
      * */
     const showBillingSection = (() => {

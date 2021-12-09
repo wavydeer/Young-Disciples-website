@@ -34,6 +34,7 @@ const betterLinks = (() => {
  * * Load the third party fonts and icon
  * 
  * TODO: add headers to page from backend
+ * TODO: Fix style.css link
  */
 const modifyHead = (() => {
     $('head').prepend(`
@@ -53,7 +54,7 @@ const modifyHead = (() => {
                 font-src 'self' https://fonts.gstatic.com/s/ https://unpkg.com/boxicons@2.0.9/fonts/ https://ka-f.fontawesome.com/releases/v5.15.4/webfonts/"
         >
         <link rel="icon" type="image/png" href="/assets/img/placeholder.png"/>   
-        <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+        <link rel="stylesheet" type="text/css" href="/out/css/style.css">
         <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
         <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
     `)

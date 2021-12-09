@@ -58,7 +58,7 @@
 
 /* ########################## */
 
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300);
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,300');
 .section-1{
   margin: 7rem 7vw 20rem 7vw !important;
   background: #333;    
