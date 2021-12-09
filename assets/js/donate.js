@@ -17,7 +17,6 @@ const addStateToDOM = (() => {
     })
 })()
 
-addStateToDom
 /** 
  * @function 
  * Get a list of all the months from "months" array in "donate.json" file.
