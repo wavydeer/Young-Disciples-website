@@ -23,6 +23,12 @@
     box-shadow: 0 0 10px black;
 }
 
+.fade-out {
+    transition: 'all 1s ease-in-out';
+    filter: 'blur(8px)';
+    user-select: 'none';    
+}
+
 /* ############################################################# */
 /* MAIN LANDING SECTION OF DONATE PAGE */
 /* ############################################################# */
