@@ -118,12 +118,12 @@ textarea.input {
     transform: translateY(0);
 }
 
-.btn {
-    color: white !important;
+.contact__container .btn {
+    color: white;
 }
 
-.btn:hover {
-    color: #fff !important;
+.contact__container .btn:hover {
+    color: #fff;
 }
 
 .input-container span {
@@ -337,7 +337,7 @@ textarea.input {
     .input {
         padding: 0.45rem 1.2rem;
     }
-    .btn {
+    .contact__container .btn {
         padding: 0.45rem 1.2rem;
     }
 }

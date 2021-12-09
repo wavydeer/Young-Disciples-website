@@ -12,10 +12,10 @@
 .donation__form > .section {
     display: none;
     background: var(--color-container);
-    position: absolute;
-    top: 20%;
+    position: fixed;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
     width: 1000px;
     height: 700px !important;
     border-radius: 3rem;

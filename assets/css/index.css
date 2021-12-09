@@ -30,20 +30,20 @@
 /* navigation bar scroll down animation */
 
 .navbar-scroll {
-	opacity: 1;
-	animation-name: fadeInOpacity;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in;
-	animation-duration: .5s;
+    opacity: 1;
+    animation-name: fadeInOpacity;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: .5s;
 }
 
 @keyframes fadeInOpacity {
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 
@@ -59,33 +59,33 @@
 /* ########################## */
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,300');
-.section-1{
-  margin: 7rem 7vw 20rem 7vw !important;
-  background: #333;    
-  text-align: center;
-  height: 40vh !important;
-  width: 30vw;
-  border-radius: 6px 6px 6px 6px; /* rounded corners */
-  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%,rgba(255,255,255,0.4) 100%), url("https://www.destructoid.com/wp-content/uploads/2021/09/Lost-in-Random-Shadowman-screenshot.jpg");
-  background-size: auto;
-  background-attachment: fixed; 
-  background-repeat: no-repeat;
-  max-height: 0%;
+.section-1 {
+    margin: 7rem 7vw 20rem 7vw !important;
+    background: #333;
+    text-align: center;
+    height: 40vh !important;
+    width: 30vw;
+    border-radius: 6px 6px 6px 6px;
+    /* rounded corners */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(255, 255, 255, 0.4) 100%), url("https://www.destructoid.com/wp-content/uploads/2021/09/Lost-in-Random-Shadowman-screenshot.jpg");
+    background-size: auto;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    max-height: 0%;
 }
 
-.active-tabs-section{
-  display: inline-block;
+.active-tabs-section {
+    display: inline-block;
 }
+
 .active-tabs {
-   
     height: 20vh;
     width: 90vw;
     position: relative;
-    
 }
 
 .active-tabs-container {
-    text-align:match-parent;
+    text-align: match-parent;
 }
 
 .active-tabs input {
@@ -94,7 +94,7 @@
     visibility: hidden;
 }
 
-.btn {
+.index-page .btn {
     background: --primary-color;
     color: transparent;
     cursor: pointer;
@@ -129,12 +129,11 @@
     float: right;
     top: 4vh;
     background: white;
-    
 }
 
 .tab-1,
 .tab-2,
-.tab-3{
+.tab-3 {
     height: 200px;
     width: 100%;
     box-shadow: 2px 2px 0 0 rgba(0, 0, 0, 0.3);

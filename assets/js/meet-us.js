@@ -1,16 +1,6 @@
 /** where images are located */
 const imagelocation = 'assets/img/';
 
-const goToContactPage = () => {
-    // click eventListener for contact button
-    $('.card .btn').on('click', (card) => {
-        // save which leader has been clicked in session sotrage
-        sessionStorage.setItem('person', $(card.target).parent('.card').attr('data-person'))
-            // go to contact page in a new window
-        window.open('contact.html')
-    })
-}
-
 /** 
  * @function
  *  get Leaders from backend and load it into the DOM
@@ -19,10 +9,26 @@ const goToContactPage = () => {
  * TODO: use Fetch API
  */
 const getLeaders = (() => {
-    $.getJSON('assets/js/meet-us.json', (data) => {
-        $(data.individuals).each((index, card) => {
+    /**
+     * @function
+     * Each card has a contact button and when it is clicked,
+     * this function saves it to session storage,
+     * and opens a new window to contact.html
+     */
+    const contactButtonLogic = () => {
+        // click eventListener for contact button
+        $('.card .btn').on('click', (card) => {
+            // save which leader has been clicked in session sotrage
+            sessionStorage.setItem('person', $(card.target).parent('.card').attr('data-person'))
+                // go to contact page in a new window
+            window.open('contact.html')
+        })
+    }
+
+    const generateCards = $.getJSON('assets/js/meet-us.json', (data) => {
+        $(data.individuals).each((index, cardObject) => {
             // extract the necessary datapoints from "card"
-            const { name, proffession, description, profilePicture, backgroundPicture } = card
+            const { name, proffession, description, profilePicture, backgroundPicture } = cardObject
 
             // add each leader as a card which users can contact to the dom
             $('.card-wrapper').append(`
@@ -43,6 +49,6 @@ const getLeaders = (() => {
             `)
         })
         // add listener to go to contact page if user click contact button
-        goToContactPage()
+        contactButtonLogic()
     })
 })()
