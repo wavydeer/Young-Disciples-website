@@ -2,7 +2,12 @@
 
 /**********************************************************************************************/
 
-/** @function betterLinks - modify the <a> */
+/** 
+ * @function 
+ * Modify the <a> to stop the page from reload
+ * and stop it from adding "#link" to the URI
+ * 
+ * */
 const betterLinks = (() => {
     $(window).on('load', () => {
         // * remove # from url address bar
@@ -20,12 +25,14 @@ const betterLinks = (() => {
 /**********************************************************************************************/
 
 /** 
- * @function modifyHead - Add the necessary resources to the document's head
- * add all the neccessary resources and some meta tags to the head of the document
+ * @function
+ * Add all the neccessary resources and some meta tags to the head of the document
+ * 
  * * Ensure Content-Security-Policy header metta
  * * Load the logo for the favicon 
  * * Load style.css which contains all the css variables
  * * Load the third party fonts and icon
+ * 
  * TODO: add headers to page from backend
  */
 const modifyHead = (() => {
@@ -54,7 +61,12 @@ const modifyHead = (() => {
 
 /**********************************************************************************************/
 
-/** @function loadTemplates - Loading navbar and footer template */
+/** 
+ * @function 
+ * Loading navbar and footer template 
+ * 
+ * TODO: Fix links
+ * */
 const loadTemplates = $(() => {
     // load navbar
     $.get("template/navbar.html", (data) => {
@@ -87,11 +99,10 @@ const loadTemplates = $(() => {
 })
 
 /** 
- * @function scrollBtnHandler - scroll up button
- * * auto executing
- * create scroll up button
- * @param {number} showScroll - show scroll up button if user scroll furthan than this
- * scroll to the top of the page if the user click the scroll up button
+ * @function 
+ * create scroll up button and scroll to the top of the page if the user clicks it
+ * 
+ *  * Automatic | 1x
  */
 const scrollBtnHandler = (() => {
     const showScroll = 200

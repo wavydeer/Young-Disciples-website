@@ -1,11 +1,15 @@
 /** 
- * @function addYearToDOM - add each state to the DOM as an option for your address input
- * * auto executing
- * get data from "states" array in "donate.json" file
+ * @function 
+ * Get a list of all the states from "states" array in "donate.json" file.
+ * For each state, append an option to the states input field of billing info section
+ * 
+ * * Automatic | 1x
+ * 
+ * TODO: Fix Link
  */
-const addYearToDom = (() => {
-    $.getJSON('assets/js/donate.json', (data) => {
-        $(data.states).each((index, state) => {
+const addStateToDOM = (() => {
+    $.getJSON('assets/js/donate.json', ({states}) => {
+        $(states).each((index, state) => {
             $('.billing-info-section datalist[id=state-list]').append(`
                 <option value="${state}"></option>
             `)
@@ -13,12 +17,17 @@ const addYearToDom = (() => {
     })
 })()
 
+addStateToDom
 /** 
- * @function addMonthToDom - add each month to the DOM as an option for expiration date input
- * * auto executing
- * get data from "month" array in "donate.json" file
+ * @function 
+ * Get a list of all the months from "months" array in "donate.json" file.
+ * For each month, append an option to the months input field of billing info section
+ * 
+ * * Automatic | 1x
+ * 
+ * TODO: Fix Link
  */
-const addMonthToDom = (() => {
+const addMonthToDOM = (() => {
     $.getJSON('assets/js/donate.json', (data) => {
         $(data.months).each((index, month) => {
             $('.card-info-section datalist[id=months-list]').append(`
@@ -29,9 +38,11 @@ const addMonthToDom = (() => {
 })()
 
 /**
- * @function addYearToDOM - add years to the DOM as an option for expiration date input
- * * auto executing
- * loop 19 times starting from the current year
+ * @function 
+ * itirates 19 times starting from the current year,
+ * append each year as an option for the card's expiration date
+ * 
+ * * Automatic | 1x
  */
 const addYearToDOM = (() => {
     currentYear = new Date().getFullYear()
@@ -44,7 +55,10 @@ const addYearToDOM = (() => {
 
 /**********************************************************************************************/
 
-/** @function pageNavigation - show and hide some sections based on what the user is clicking */
+/** 
+ * @function 
+ * Show and hide some sections based on what the user is clicking 
+ * */
 const pageNavigation = $(() => {
 
     /** @constant hideSection - accepts an html element as a parameter and hides it using css*/
@@ -52,13 +66,19 @@ const pageNavigation = $(() => {
         /** @constant showSection - accepts an html element as a parameter and show it using css*/
     const showSection = section => $(section).css({ display: 'block' })
 
-    /** @function showBillingSection - landing page gets blurred and billing info section is shown */
+    /** 
+     * @function
+     * landing page gets blurred and billing info section is shown 
+     * */
     const showBillingSection = (() => {
         $('#donation-btn').on('click', () => {
             $('.donation__section').addClass('fade-out') // blur the rest of the page
             showSection('.billing-info-section') // show the section to put billing credentials
 
-            /** @function ShowCardInfoSection - billing info section gets hidden and card info section is shown */
+            /** 
+             * @function 
+             * Billing info section gets hidden and card info section is shown 
+             * */
             const ShowCardInfoSection = (() => {
                 $('#billing-submit-btn').on('click', () => {
                     showSection('.card-info-section') // show the section to put card credentials
@@ -71,7 +91,10 @@ const pageNavigation = $(() => {
                     hideSection('.card-info-section') // hide card info container
                 })
 
-                /** @function showReviewSection - billing info section gets hidden and review section is shown */
+                /** 
+                 * @function
+                 * Billing info section gets hidden and review section is shown 
+                 * */
                 const showReviewSection = (() => {
                     $('#card-submit-btn').on('click', () => {
                         alert('review section - not implemented')

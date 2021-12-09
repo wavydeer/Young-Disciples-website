@@ -12,18 +12,20 @@ const goToContactPage = () => {
 }
 
 /** 
- * @function getLeaders - get Leaders from backend and load it into the DOM
+ * @function
+ *  get Leaders from backend and load it into the DOM
+ * 
  * ! use Fetch API
  * TODO: use Fetch API
  */
 const getLeaders = (() => {
     $.getJSON('assets/js/meet-us.json', (data) => {
         $(data.individuals).each((index, card) => {
-                // extract the necessary datapoints from "card"
-                const { name, proffession, description, profilePicture, backgroundPicture } = card
+            // extract the necessary datapoints from "card"
+            const { name, proffession, description, profilePicture, backgroundPicture } = card
 
-                // add each leader as a card which users can contact to the dom
-                $('.card-wrapper').append(`
+            // add each leader as a card which users can contact to the dom
+            $('.card-wrapper').append(`
                 <div class="card" data-person="${name}">
                     <img src= ${imagelocation}${backgroundPicture} class="card-image" alt="">
                     <img src= ${imagelocation}${profilePicture} class="profile-image" alt="">
@@ -39,8 +41,8 @@ const getLeaders = (() => {
                     <a class="btn">Contact</a> 
                 </div>
             `)
-            })
-            // add listener to go to contact page if user click contact button
+        })
+        // add listener to go to contact page if user click contact button
         goToContactPage()
     })
 })()

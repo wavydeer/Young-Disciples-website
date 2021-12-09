@@ -29,7 +29,10 @@ const manageCarousel = $( window ).on("load", () => {
 /**********************************************************************************************/
 
 /** 
- * @function loadSpecialEvents - get special events from backend and load it into the DOM
+ * @function
+ * 
+ * Get special events from backend and load it into the DOM
+ * 
  * ! use Fetch API
  * TODO: use Fetch API
  */
