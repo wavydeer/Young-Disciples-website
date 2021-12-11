@@ -5,17 +5,24 @@
     justify-content: center;
 }
 
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: gold;
+    outline: 1px solid black;
+}
+
 .donation__section .flex > div {
     width: 100%;
 }
 
 .donation__form > .section {
+    /* position: fixed;
     display: none;
-    background: var(--color-container);
-    position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); */
+    background: var(--color-container);
     width: 1000px;
     height: 700px !important;
     border-radius: 3rem;

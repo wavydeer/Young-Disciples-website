@@ -7,13 +7,14 @@
     --color-primary: hsl(var(--hue-color), 69%, 61%);
     --color-secondary: #e7bc2e;
     --color-alt: hsl(var(--hue-color), 92%, 85%);
-    --color-title: #000000;
+    /* --color-container: #000000; */
     --color-text: #494949;
     --color-input: #bebebe1c;
     --color-body: rgb(248, 247, 241);
-    --color-container: #d3d3d3;
+    --color-container: #F2EBD8; 
     --color-container-secondary: white;
     --color-container-alt: #d3d3d3;
+    --color-title:rgb(0, 0, 0);
     /* --color-container: rgb(248, 247, 241); */
     /*  background: #384351; */
 }

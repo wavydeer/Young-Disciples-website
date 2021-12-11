@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "postcss:watch": "postcss assets/css/style.css -d out/css/ -w"
+    "postcss:watch": "postcss src/assets/css/style.css -d out/css/ -w"
   },
   "repository": {
     "type": "git",

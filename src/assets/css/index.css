@@ -19,7 +19,7 @@
 
 .indexHeader {
     height: 100vh;
-    background-image: linear-gradient(to top, rgba(219, 183, 85, 0.6) 0%, rgba(0, 0, 0, 0.5) 100%), url('/assets/img/Young-Disciples-Women.jpg');
+    background-image: linear-gradient(to top, rgba(219, 183, 85, 0.6) 0%, rgba(0, 0, 0, 0.5) 100%), url('/src/assets/img/Young-Disciples-Women.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -93,14 +93,17 @@ https://codepen.io/Coding_Journey/pen/BEMgbX
     }
   } */
 
+  body {
+    min-width: 550px
 
+}
 #content {
     position: relative;
-    margin-bottom: 200px;
+    /* margin-bottom: 200px; */
 }
 
 #content .info {
-    background: white;
+    background: var(--color-container-secondary);
     padding: 150px 0 75px 0;
 }
 
@@ -121,7 +124,7 @@ https://codepen.io/Coding_Journey/pen/BEMgbX
     right: 0;
     bottom: -15px;
     margin: auto;
-    background: #257596;
+    background: var(--color-secondary);
 }
 
 #content .info>p:nth-child(2) {
@@ -134,10 +137,10 @@ https://codepen.io/Coding_Journey/pen/BEMgbX
 
 #content .button {
     position: relative;
-    height: 50px;
+    height: 75px;
     width: 250px;
-    border: 2px solid #257596;
-    color: #257596;
+    border: 2px solid var(--color-secondary);
+    color: var(--color-secondary);
     margin: 75px auto;
     text-align: center;
     font-size: 20px;
@@ -150,7 +153,7 @@ https://codepen.io/Coding_Journey/pen/BEMgbX
 }
 
 #content .button:hover {
-    color: white;
+    color: var(--color-container-secondary);
 }
 
 #content .button::before {
@@ -161,7 +164,7 @@ https://codepen.io/Coding_Journey/pen/BEMgbX
     width: 0;
     height: 100%;
     z-index: -1;
-    background: #257596;
+    background: var(--color-secondary);
     -webkit-transition: width 0.2s;
     transition: width 0.2s;
 }
@@ -178,7 +181,7 @@ https://codepen.io/Coding_Journey/pen/BEMgbX
     position: relative;
     width: 100%;
     height: 100vh;
-    background-image: url('/assets/img/Junior-profile.webp');
+    background-image: url('/src/assets/img/Praise-team-dinner.JPG');
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;
@@ -198,7 +201,7 @@ https://codepen.io/Coding_Journey/pen/BEMgbX
     width: 274px;
     height: 300px;
     z-index: 300;
-    top: 104px;
+    top: 0;
     bottom: 0;
     left: 0;
     right: 0;
@@ -217,7 +220,6 @@ https://codepen.io/Coding_Journey/pen/BEMgbX
     text-align: center;
     font-weight: 700;
     text-transform: uppercase;
-    margin-bottom: 30px;
 }
 
 #content .gallery .text-cont .promo-text>img {
@@ -228,8 +230,8 @@ https://codepen.io/Coding_Journey/pen/BEMgbX
 
 #content .gallery .text-cont .button {
     margin: 0 auto;
-    border-color: black;
-    color: black;
+    border-color: var(--color-title);
+    color: var(--color-title);
     background: transparent;
     opacity: 0;
     -webkit-transition: opacity 0.2s;
@@ -276,10 +278,14 @@ https://codepen.io/Coding_Journey/pen/BEMgbX
 }
 
 #content .gallery .row .photo-item>img {
-    min-width: 450px;
-    max-width: 550px;
-    position: absolute;
-    bottom: 0;
+    /* margin-left: 125px;
+    width: auto; */
+    height: 900px;
+    width: auto;
+    /* min-width: 450px; */
+    /* max-width: 550px; */
+    /* position: absolute; */
+    /* bottom: 0; */
 }
 
 #content .gallery #hero-image:after,
@@ -289,7 +295,8 @@ https://codepen.io/Coding_Journey/pen/BEMgbX
     position: absolute;
     width: 100%;
     height: 0%;
-    background-color: rgba(37, 117, 150, 0.8);
+    background-color: var(--color-secondary);
+    opacity: 50%;
     top: 0;
     left: 0;
     -webkit-transition: height 0.2s;
@@ -312,7 +319,7 @@ https://codepen.io/Coding_Journey/pen/BEMgbX
 }
 
 #content .transparent-text {
-    background-color: #F2EBD8;
+    background-color: var(--color-container);
     height: 800px;
 }
 
@@ -323,7 +330,7 @@ https://codepen.io/Coding_Journey/pen/BEMgbX
     width: 75%;
     height: 670px;
     overflow: hidden;
-    background-image: url('/assets/img/Junior-profile.webp');
+    background-image: url('/src/assets/img/Praise-team-dinner.JPG');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -359,18 +366,6 @@ https://codepen.io/Coding_Journey/pen/BEMgbX
 
 
 /* ###################################################################################### */
-
-.head {
-    text-align: center;
-    padding: 0;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    color: #fff;
-}
-
 :root {
     --dark-blue: #1F4782;
     --dark-gray: #303335;
@@ -381,16 +376,47 @@ https://codepen.io/Coding_Journey/pen/BEMgbX
 }
 
 .programs body {
-    background: linear-gradient(90deg, #CAF3F2 0%, #6FE3E1 100%);
     display: flex;
     flex-wrap: wrap;
+    background-color:--color-container-secondary;
     flex-direction: column;
     font-family: 'Roboto', sans-serif;
     font-size: 1rem;
     justify-content: center;
     height: 100%;
     position: relative;
+    
+    
+    
 }
+.programs-head {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+    flex-direction: column;
+    color: var(--color-title);
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 100px 0 25px 0;
+}
+.programs h1:after {
+    width: 80px;
+    height: 2px;
+    position:relative;
+    content: '';
+    left: 0;
+    right: 0;
+    bottom: -20px;
+    margin: auto;
+    background: var(--color-secondary);
+}
+
 
 .general-container {
     display: flex;
@@ -400,6 +426,9 @@ https://codepen.io/Coding_Journey/pen/BEMgbX
     margin: 0 auto;
     max-width: 100%;
     width: 80rem;
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+    
 }
 
 @media only screen and (max-width: 700px) {
@@ -426,7 +455,7 @@ https://codepen.io/Coding_Journey/pen/BEMgbX
 }
 
 .content {
-    background: var(--white) url('/assets/img/Praise-team-dinner.JPG') 100% / cover no-repeat;
+    background: var(--white) url('/src/assets/img/Praise-team-dinner.JPG') 100% / cover no-repeat;
     border-radius: 3rem;
     cursor: pointer;
     flex: 1;
@@ -455,19 +484,19 @@ https://codepen.io/Coding_Journey/pen/BEMgbX
 }
 
 .content:nth-of-type(2) {
-    background-image: url('/assets/img/Praise-team-dinner.JPG');
+    background-image: url('/src/assets/img/Praise-team-dinner.JPG');
 }
 
 .content:nth-of-type(3) {
-    background-image: url('/assets/img/Praise-team-dinner.JPG');
+    background-image: url('/src/assets/img/Praise-team-dinner.JPG');
 }
 
 .content:nth-of-type(4) {
-    background-image: url('/assets/img/Praise-team-dinner.JPG');
+    background-image: url('/src/assets/img/Praise-team-dinner.JPG');
 }
 
 .content:nth-of-type(5) {
-    background-image: url('/assets/img/Praise-team-dinner.JPG');
+    background-image: url('/src/assets/img/Praise-team-dinner.JPG');
 }
 
 .content:nth-of-type(2) .icon {
