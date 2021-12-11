@@ -25,7 +25,7 @@ const getLeaders = (() => {
         })
     }
 
-    const generateCards = $.getJSON('assets/js/meet-us.json', (data) => {
+    const generateCards = $.getJSON('assets/json/leaders.json', (data) => {
         $(data.individuals).each((index, cardObject) => {
             // extract the necessary datapoints from "card"
             const { name, proffession, description, profilePicture, backgroundPicture } = cardObject

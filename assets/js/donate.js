@@ -8,7 +8,7 @@
  * TODO: Fix Link
  */
 const addStateToDOM = (() => {
-    $.getJSON('assets/js/donate.json', ({states}) => {
+    $.getJSON('assets/json/donate.json', ({states}) => {
         $(states).each((index, state) => {
             $('.billing-info-section datalist[id=state-list]').append(`
                 <option value="${state}"></option>
@@ -27,7 +27,7 @@ const addStateToDOM = (() => {
  * TODO: Fix Link
  */
 const addMonthToDOM = (() => {
-    $.getJSON('assets/js/donate.json', (data) => {
+    $.getJSON('assets/json/donate.json', (data) => {
         $(data.months).each((index, month) => {
             $('.card-info-section datalist[id=months-list]').append(`
                 <option value="${month}"></option>

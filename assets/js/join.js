@@ -37,7 +37,7 @@ const manageCarousel = $( window ).on("load", () => {
  * TODO: use Fetch API
  */
 const loadSpecialEvents = (() => {
-    $.getJSON('assets/js/join.json', (data) => {
+    $.getJSON('assets/json/events.json', (data) => {
         $(data.eventList).each((index, item) => {
             const { title, description, time, day, month, year } = item
             // loop over every event in the list and create a template
