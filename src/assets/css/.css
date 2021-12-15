@@ -63,7 +63,8 @@ body {
 }
 
 main {
-    margin-top: calc(var(--header-height) / 2);
+    /* This is creating a weird space on top of the home page under the picture
+     margin-top: calc(var(--header-height) / 2); */
 }
 
 h1,
