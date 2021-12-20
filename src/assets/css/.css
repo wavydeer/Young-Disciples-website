@@ -127,6 +127,7 @@ img {
     transform: all .5s;
     text-decoration: underline;
     font-family: 'Alata', sans-serif;
+    text-align: center;
 }
 
 .btn:active {

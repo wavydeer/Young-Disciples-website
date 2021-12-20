@@ -7,21 +7,24 @@
 
 .grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    background: gold;
-    outline: 1px solid black;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
-.donation__section .flex > div {
+.flex > div {
     width: 100%;
 }
 
+.fade-out {
+    filter: blur(1.5px);
+    user-select: none;
+}
+
 .donation__form > .section {
-    /* position: fixed;
+    position: fixed;
     display: none;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); */
+    transform: translate(-50%, -50%);
     background: var(--color-container);
     width: 1000px;
     height: 700px !important;
@@ -30,11 +33,35 @@
     box-shadow: 0 0 10px black;
 }
 
-.fade-out {
-    transition: 'all 1s ease-in-out';
-    filter: 'blur(8px)';
-    user-select: 'none';    
+.btns-container {
+    margin: 0 50px;
+    place-items: center;
 }
+
+.btns-container .btn {
+    width: 10rem;
+}
+
+.input-container {
+    position: relative;
+    text-align: center;
+}
+
+.form__input-field {
+    position: relative;
+    width: calc(100% - 60px);
+    height: 3rem;
+    border: none;
+    border-radius: 10px;
+    padding-left: 10px;
+    font-size: medium;
+}
+
+.form__input-field:focus {
+    border: 2px solid var(--color-primary);
+    outline: none;
+}
+
 
 /* ############################################################# */
 /* MAIN LANDING SECTION OF DONATE PAGE */
@@ -56,7 +83,7 @@
     margin-bottom: 3rem;
 }
 
-.donation-btn {
+.btn-secondary {
     background: var(--color-primary);
     font-size: 40px;
     padding: 3px 10px;
@@ -66,11 +93,11 @@
     transition: all .3s ease-in-out;
 }
 
-.donation-btn:hover {
+.btn-secondary:hover {
     background: var(--color-secondary);
 }
 
-.donation-btn:focus {
+.btn-secondary:focus {
     color: red;
 }
 

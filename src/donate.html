@@ -22,7 +22,7 @@
                         commodi placeat ea itaque modi corrupti corporis nam voluptas aut
                         reprehenderit eaque culpa.
                     </p>
-                    <a href="#" class="donation-btn" id="donation-btn">Donate</a>
+                    <a href="#" class="btn-secondary" id="donation-btn">Donate</a>
                 </div>
                 <div class="donation-left">
                     <img src="assets/img/African-youth.webp" alt="Donation" class="donation-img">
@@ -72,13 +72,13 @@
                             </datalist>
                         </div>
                         <div class="input-container">
-                            <input type="text" class="form__input-field" placeholder="Zip/Postal code">
+                            <input type="text" class="form__input-field" placeholder="Zip/Postal code" maxlength="5">
                         </div>
                     </div>
 
                     <div class="btns-container grid">
-                        <a href="#" class="cancel-btn">Cancel</a>
-                        <a href="#" class="submit-btn" id="billing-submit-btn">Next</a>
+                        <a href="#" class="btn cancel-btn" id="cancel-btn">Cancel</a>
+                        <a href="#" class="btn submit-btn" id="billing-submit-btn">Next</a>
                     </div>
                 </div>
             </section>
@@ -101,37 +101,39 @@
 
                     <div class="form__input grid">
                         <div class="input-container">
-                            <div class="form__input-inner">
-                                <input type="text" class="form__input-field" placeholder="Month" list="months-list">
-                                <datalist id="months-list">
-                                    <!-- populated by donate.js file -->
-                                </datalist>
-                            </div>
+                            <input type="text" class="form__input-field" placeholder="Month" list="months-list">
+                            <datalist id="months-list">
+                                <!-- populated by donate.js file -->
+                            </datalist>
+                        </div>
 
-                            <div class="form__input-inner">
-                                <input type="text" class="form__input-field" placeholder="Year" list="years-list">
-                                <datalist id="years-list">
-                                    <!-- populated by donate.js file -->
-                                </datalist>
-                            </div>
+                        <div class="input-container">
+                            <input type="text" class="form__input-field" placeholder="Year" list="years-list">
+                            <datalist id="years-list">
+                                <!-- populated by donate.js file -->
+                            </datalist>
                         </div>
                         
                         <div class="input-container">
-                            <input type="text" class="form__input-field" placeholder="CVV/CVC">
+                            <input type="text" class="form__input-field" placeholder="CVV/CVC" maxlength="4">
                         </div>
                     </div>
                     <div class="btns-container grid">
-                        <a href="#" class="cancel-btn">Cancel</a>
-                        <a href="#" class="prev-btn" id="card-prev-btn">Previous</a>
-                        <a href="#" class="submit-btn" id="card-submit-btn">Next</a>
+                        <a href="#" class="btn prev-btn" id="card-prev-btn">Previous</a>
+                        <a href="#" class="btn next-btn" id="card-submit-btn">Next</a>
                     </div>
                 </div>
             </section>
 
-            <div class="form-btn submit">
-                <a href="#" class="" id="submit-btn">submit</a>
-            </div>
-
+            <section class="review-section section">
+                <div class="review-container">
+                    <div class="btns-container grid">
+                        <a href="#" class="btn" id="review-prev-btn">Previous</a>
+                        <a href="#" class="btn" id="review-submit-btn">Submit</a>
+                                    </div>
+                    </div>
+                </div>
+            </section>
         </form>
     </main>
 

@@ -73,7 +73,6 @@ const pageNavigation = $(() => {
         $('#donation-btn').on('click', () => {
             $('.donation__section').addClass('fade-out') // blur the rest of the page
             showSection('.billing-info-section') // show the section to put billing credentials
-
             /** 
              * @function 
              * Billing info section gets hidden and card info section is shown 
@@ -96,7 +95,8 @@ const pageNavigation = $(() => {
                  * */
                 const showReviewSection = (() => {
                     $('#card-submit-btn').on('click', () => {
-                        alert('review section - not implemented')
+                        hideSection('.card-info-section')
+                        showSection('.review-section')
                     })
                 })()
             })()

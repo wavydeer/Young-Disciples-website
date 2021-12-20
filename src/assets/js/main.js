@@ -49,10 +49,10 @@ const modifyHead = (() => {
             content="
                 default-src 'self';
                 connect-src 'self' https://ka-f.fontawesome.com/releases/v5.15.4/css/;
-                script-src 'self' 'unsafe-inline' https://kit.fontawesome.com/ https://cdnjs.cloudflare.com/ajax/;
-                style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/ https://unpkg.com/boxicons@2.0.9/css/ https://cdnjs.cloudflare.com/ajax/;
-                font-src 'self' https://fonts.gstatic.com/s/ https://unpkg.com/boxicons@2.0.9/fonts/ https://ka-f.fontawesome.com/releases/v5.15.4/webfonts/";
-                frame-src 'self' https://www.google.com/
+                script-src 'self' 'unsafe-inline' https://kit.fontawesome.com/ https://cdnjs.cloudflare.com/;
+                style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/ https://unpkg.com/boxicons@2.0.9/css/ https://cdnjs.cloudflare.com/;
+                font-src 'self' https://fonts.gstatic.com/s/ https://unpkg.com/boxicons@2.0.9/fonts/ https://ka-f.fontawesome.com/releases/v5.15.4/webfonts/;
+                frame-src 'self' https://www.google.com/"
         >
         <link rel="icon" type="image/png" href="assets/img/placeholder.png"/>   
         <link rel="stylesheet" type="text/css" href="/out/css/style.css">
