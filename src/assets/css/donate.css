@@ -1,0 +1,128 @@
+.flex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.flex > div {
+    width: 100%;
+}
+
+.fade-out {
+    filter: blur(1.5px);
+    user-select: none;
+}
+
+.donation__form > .section {
+    position: fixed;
+    display: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--color-container);
+    width: 1000px;
+    height: 700px !important;
+    border-radius: 3rem;
+    padding: 50px;
+    box-shadow: 0 0 10px black;
+}
+
+.btns-container {
+    margin: 0 50px;
+    place-items: center;
+}
+
+.btns-container .btn {
+    width: 10rem;
+}
+
+.input-container {
+    position: relative;
+    text-align: center;
+}
+
+.form__input-field {
+    position: relative;
+    width: calc(100% - 60px);
+    height: 3rem;
+    border: none;
+    border-radius: 10px;
+    padding-left: 10px;
+    font-size: medium;
+}
+
+.form__input-field:focus {
+    border: 2px solid var(--color-primary);
+    outline: none;
+}
+
+
+/* ############################################################# */
+/* MAIN LANDING SECTION OF DONATE PAGE */
+/* ############################################################# */
+
+.donation-container.flex{
+    gap: 3rem;
+}
+
+.donation-container {
+    min-height: calc(100vh - var(--header-height));
+}
+
+.donation-right {
+    text-align: center;
+}
+
+.donation-description {
+    margin-bottom: 3rem;
+}
+
+.btn-secondary {
+    background: var(--color-primary);
+    font-size: 40px;
+    padding: 3px 10px;
+    margin-top: 500px;
+    border-radius: 10px;
+    color: white;
+    transition: all .3s ease-in-out;
+}
+
+.btn-secondary:hover {
+    background: var(--color-secondary);
+}
+
+.btn-secondary:focus {
+    color: red;
+}
+
+.donation-img {
+    border-radius: 1rem;
+}
+
+@media screen and (max-width: 1150px) {
+    .donation-container.flex{
+        flex-direction: column-reverse;
+    }
+}
+
+/* ############################################################# */
+/* BILLING ADDRESS SECTION */
+/* ############################################################# */
+
+
+
+/* ############################################################# */
+/* CARD INFO SECTION */
+/* ############################################################# */
+
+
+
+/* ############################################################# */
+/* REVIEW DONATION SECTION */
+/* ############################################################# */

@@ -1,0 +1,29 @@
+{
+  "name": "young-disciples-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "postcss:watch": "postcss src/assets/css/style.css -d out/css/ -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stlyed/Young-Disciples-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stlyed/Young-Disciples-website/issues"
+  },
+  "homepage": "https://github.com/stlyed/Young-Disciples-website#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.0",
+    "cssnano": "^5.0.12",
+    "postcss": "^8.4.4",
+    "postcss-cli": "^9.0.2",
+    "postcss-import": "^14.0.2",
+    "precss": "^4.0.0"
+  },
+  "dependencies": {}
+}
