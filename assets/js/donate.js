@@ -1,94 +1,116 @@
-// add all the states to the state input field
-$.getJSON('assets/js/donate.json', (data) => {
-    $(data.states).each((index, item) => {
-        $('.billing-info-section datalist[id=state-list]').append(`
-            <option value="${item}"></option>
+/** 
+ * @function 
+ * Get a list of all the states from "states" array in "donate.json" file.
+ * For each state, append an option to the states input field of billing info section
+ * 
+ * * Automatic | 1x
+ * 
+ * TODO: Fix Link
+ */
+const addStateToDOM = (() => {
+    $.getJSON('assets/js/donate.json', ({states}) => {
+        $(states).each((index, state) => {
+            $('.billing-info-section datalist[id=state-list]').append(`
+                <option value="${state}"></option>
+            `)
+        })
+    })
+})()
+
+/** 
+ * @function 
+ * Get a list of all the months from "months" array in "donate.json" file.
+ * For each month, append an option to the months input field of billing info section
+ * 
+ * * Automatic | 1x
+ * 
+ * TODO: Fix Link
+ */
+const addMonthToDOM = (() => {
+    $.getJSON('assets/js/donate.json', (data) => {
+        $(data.months).each((index, month) => {
+            $('.card-info-section datalist[id=months-list]').append(`
+                <option value="${month}"></option>
+            `)
+        })
+    })
+})()
+
+/**
+ * @function 
+ * itirates 19 times starting from the current year,
+ * append each year as an option for the card's expiration date
+ * 
+ * * Automatic | 1x
+ */
+const addYearToDOM = (() => {
+    currentYear = new Date().getFullYear()
+    for (let year = currentYear; year < currentYear + 20; year++) {
+        $('.card-info-section datalist[id=years-list]').append(`
+            <option value="${year}"></option>
         `)
-    })
-})
+    }
+})()
 
-// add all of the months to the month input field
-$.getJSON('assets/js/donate.json', (data) => {
-    $(data.months).each((index, item) => {
-        $('.card-info-section datalist[id=months-list]').append(`
-            <option value="${item}"></option>
-        `)
-    })
-})
+/**********************************************************************************************/
 
-// add the years to the year input field
-// get today's year and add 20 to  it and add it to the input field
-for (let year = new Date().getFullYear(); year < new Date().getFullYear() + 20; year++) {
-    $('.card-info-section datalist[id=years-list]').append(`
-        <option value="${year}"></option>
-    `)
-}
+/** 
+ * @function 
+ * Show and hide some sections based on what the user is clicking 
+ * */
+const pageNavigation = $(() => {
 
-// when the document is ready
-$(() => {
-    // if the user click donate button in the landing page
-    $('#donation-btn').on('click', () => {
-        // blur the rest of the page
-        $('.donation__section').css({
-            transition: 'all 1s ease-in-out',
-            filter: 'blur(8px)',
-            userSelect: 'none'
-        })
-        // show the section to put billing credentials
-        $('.billing-info-section').css({
-            display: 'block'
-        })
+    /** @constant hideSection - accepts an html element as a parameter and hides it using css*/
+    const hideSection = section => $(section).css({ display: 'none' })
+        /** @constant showSection - accepts an html element as a parameter and show it using css*/
+    const showSection = section => $(section).css({ display: 'block' })
 
-        // if the user click next in the billing info page
-        $('#billing-submit-btn').on('click', () => {
-            // show the section to put card credentials
-            $('.card-info-section').css({
-                    display: 'block'
+    /** 
+     * @function
+     * landing page gets blurred and billing info section is shown 
+     * */
+    const showBillingSection = (() => {
+        $('#donation-btn').on('click', () => {
+            $('.donation__section').addClass('fade-out') // blur the rest of the page
+            showSection('.billing-info-section') // show the section to put billing credentials
+
+            /** 
+             * @function 
+             * Billing info section gets hidden and card info section is shown 
+             * */
+            const ShowCardInfoSection = (() => {
+                $('#billing-submit-btn').on('click', () => {
+                    showSection('.card-info-section') // show the section to put card credentials
+                    hideSection('.billing-info-section') // hide the section to put card credentials
                 })
-                // hide the section to put card credentials
-            $('.billing-info-section').css({
-                display: 'none'
-            })
 
-            // if the user click the previous button in the card info page
-            $('#card-prev-btn').on('click', () => {
-                // hide card info container
-                $('.card-info-section').css({
-                    display: 'none'
+                // if the user click the previous button in the card info page
+                $('#card-prev-btn').on('click', () => {
+                    showSection('.billing-info-section') // show billing info container
+                    hideSection('.card-info-section') // hide card info container
                 })
-                // show billing info container
-                $('.billing-info-section').css({
-                    display: 'block'
-                })
-            })
 
-            // if the user click next in the card info page
-            $('#card-submit-btn').on('click', () => {
-                // hide card info page and show a review page
-                // $('.card-info-section').css({
-                //     display: 'none'
-                // })
-                alert('not implemented')
-            })
+                /** 
+                 * @function
+                 * Billing info section gets hidden and review section is shown 
+                 * */
+                const showReviewSection = (() => {
+                    $('#card-submit-btn').on('click', () => {
+                        alert('review section - not implemented')
+                    })
+                })()
+            })()
         })
-    })
+    })()
 
-    // if the user click cancel, go back to main landing page
+    /** 
+     * Return to Landing page
+     * if the user click cancel go back to the main page 
+     * * can be clicked from any section inside the donation form
+     * */
     $('.cancel-btn').on('click', () => {
-        // remove blur from page
-        $('.donation__section').css({
-            transition: 'all 0s ease-in-out',
-            filter: 'none',
-            userSelect: 'auto'
-
-        })
-        // hide card info container if opened 
-        $('.card-info-section').css({
-            display: 'none'
-        })
-        // hide billing info container if opened 
-        $('.billing-info-section').css({
-            display: 'none'
-        })
+        $('.donation__section').removeClass('fade-out') // remove blur from page
+        hideSection('.card-info-section') // hide card info container if opened 
+        hideSection('.billing-info-section') // hide billing info container if opened
     })
 })
