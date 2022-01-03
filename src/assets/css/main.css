@@ -1,4 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Londrina+Shadow&family=Rajdhani&Open+Sans:400,500,300,700&family=Poppins:wght@100;200;300;400;500;600;700;800&family=Roboto:wght@300;400;900&display=swap');
+
 /* variables */
+/* 
+:root {
+    --header-height: 3.5rem;
+    --color-primary: #FFD400;
+    --color-secondary: #FFE14C;
+    --color-alt: #FFE97F;
+} */
+
+/* :root { */
+    /* --header-height: 3.5rem; */
+    /* colors */
+    /* --hue-color: 39;
+    --color-primary: hsl(var(--hue-color), 69%, 61%);
+    --color-secondary: #e7bc2e;
+    --color-alt: hsl(var(--hue-color), 92%, 85%); */
+    /* --color-container: #000000; */
+    /* --color-text: #494949;
+    --color-input: #bebebe1c;
+    --color-body: rgb(248, 247, 241);
+    --color-container: #F2EBD8; 
+    --color-container-secondary: white;
+    --color-container-alt: #d3d3d3;
+    --color-title:rgb(0, 0, 0); */
+    /* --color-container: rgb(248, 247, 241); */
+    /*  background: #384351; */
+/* } */
+
+/* body.dark-theme {
+    --color-body: linear-gradient(to right,#6d64e6, #a9aee6, #6d64e6);;
+    --color-container: linear-gradient(135deg, #a9aee6 , #6d64e6 85%);;
+    --color-container-secondary: linear-gradient(#e66465, #9198e5);;
+    --color-container-alt: #212831;
+    --color-title: rgba(255, 255, 255, 0.774);
+    --color-text: #ffffff67;
+} */
 
 :root {
     --header-height: 3.5rem;
@@ -28,7 +66,6 @@ body.dark-theme {
     --color-text: #ffffff67;
 }
 
-
 /* end of variables */
 
 
@@ -51,7 +88,8 @@ html,
 body {
     max-width: 100%;
     overflow-x: hidden;
-    background: var(--color-body);
+    /* background: var(--color-body); */
+    background: var(--color-body)
 }
 
 html {
@@ -60,11 +98,6 @@ html {
 
 body {
     margin: var(--header-height) 0 0 0;
-}
-
-main {
-    /* This is creating a weird space on top of the home page under the picture
-     margin-top: calc(var(--header-height) / 2); */
 }
 
 h1,

@@ -60,3 +60,11 @@ $(document).ajaxComplete(() => {  // wait until all default jquery functions are
 //       'transform': 'translate(0, -'+ (wS + 1000 - dH)/4 +'%)'
 //     });
 //   });
+
+
+$('.photo-item .button').on('click', (self) => {
+    // save which leader has been clicked in session sotrage
+    sessionStorage.setItem('person', $(self.target).parent('div').attr('data-person'))
+    // go to contact page in a new window
+    window.open('contact.html')
+})

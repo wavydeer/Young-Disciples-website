@@ -1,14 +1,14 @@
 .footer {
     bottom: 0;
-
     background: var(--color-container);
     box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.1);
     border-top: 2px solid;
     height: auto;
-    width: 100vw;
+    width: 100%;
+    
     font-family: 'Alata', sans-serif;
     padding-top: 1.5rem;
-    color: var(--color-text);
+    color: var(--color-text); 
 }
 
 footer .logo:hover .logo-title, 

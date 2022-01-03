@@ -20,7 +20,7 @@ const getLeaders = (() => {
         $('.card .btn').on('click', (card) => {
             // save which leader has been clicked in session sotrage
             sessionStorage.setItem('person', $(card.target).parent('.card').attr('data-person'))
-                // go to contact page in a new window
+            // go to contact page in a new window
             window.open('contact.html')
         })
     }

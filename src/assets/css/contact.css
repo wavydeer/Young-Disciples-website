@@ -245,7 +245,7 @@ textarea.input {
     width: 500px;
     height: 500px;
     border-radius: 50%;
-    background: linear-gradient(to bottom, var(--color-primary)f, rgb(230, 201, 42));
+    background: linear-gradient(to bottom, var(--white)f, rgb(230, 201, 42));
     bottom: 50%;
     right: 50%;
     transform: translate(-40%, 38%);
@@ -260,6 +260,10 @@ textarea.input {
     border-radius: 50%;
     top: calc(50% - 180px);
     left: calc(50% - 180px);
+}
+
+body.dark-theme .big-circle:after {
+    background: var(--color-primary);
 }
 
 .square {

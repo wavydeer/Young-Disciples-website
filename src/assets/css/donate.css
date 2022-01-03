@@ -1,128 +1,74 @@
-.flex {
+.donate__container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: center;
 }
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-
-.flex > div {
+.donate-form {
     width: 100%;
+    max-width: 820px;
+    background-color: var(--color-container-secondary);
+    border-radius: 10px;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    overflow: hidden;
+    justify-content: center;
 }
-
-.fade-out {
-    filter: blur(1.5px);
-    user-select: none;
-}
-
-.donation__form > .section {
-    position: fixed;
-    display: none;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: var(--color-container);
-    width: 1000px;
-    height: 700px !important;
-    border-radius: 3rem;
-    padding: 50px;
-    box-shadow: 0 0 10px black;
-}
-
-.btns-container {
-    margin: 0 50px;
-    place-items: center;
-}
-
-.btns-container .btn {
-    width: 10rem;
-}
-
-.input-container {
+.donate-info{
+    padding: 2.3rem 2.2rem;
     position: relative;
+    justify-content: center;
+}
+.donate-title {
+    color: var(--color-primary);
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 1;
+    margin-bottom: 0.7rem;
+    justify-content: center;
     text-align: center;
 }
-
-.form__input-field {
-    position: relative;
-    width: calc(100% - 60px);
-    height: 3rem;
-    border: none;
-    border-radius: 10px;
-    padding-left: 10px;
-    font-size: medium;
-}
-
-.form__input-field:focus {
-    border: 2px solid var(--color-primary);
-    outline: none;
-}
-
-
-/* ############################################################# */
-/* MAIN LANDING SECTION OF DONATE PAGE */
-/* ############################################################# */
-
-.donation-container.flex{
-    gap: 3rem;
-}
-
-.donation-container {
-    min-height: calc(100vh - var(--header-height));
-}
-
-.donation-right {
+.donate-text{
     text-align: center;
+    color: var(--color-title);
+    margin: 1.5rem 0 2rem 0;
 }
 
-.donation-description {
-    margin-bottom: 3rem;
+.number{
+    text-align: center;
+    color: #8224e3;
+    font-size: 4rem;
+}
+.donation-information {
+    display: flex;
+    color: var(--color-text);
+    margin: 0.7rem 0;
+    align-items: center;
+    font-size: 0.95rem;
+    text-align: center;
+    justify-content: center;
 }
 
-.btn-secondary {
-    background: var(--color-primary);
-    font-size: 40px;
-    padding: 3px 10px;
-    margin-top: 500px;
-    border-radius: 10px;
-    color: white;
-    transition: all .3s ease-in-out;
-}
-
-.btn-secondary:hover {
-    background: var(--color-secondary);
-}
-
-.btn-secondary:focus {
-    color: red;
-}
-
-.donation-img {
-    border-radius: 1rem;
-}
-
-@media screen and (max-width: 1150px) {
-    .donation-container.flex{
-        flex-direction: column-reverse;
+@media (max-width: 850px) {
+    .donate-info:before {
+        bottom: initial;
+        top: -75px;
+        right: 65px;
+        transform: scale(0.95);
+    }
+    .donate-text {
+        margin: 1rem 0 1.5rem 0;
     }
 }
-
-/* ############################################################# */
-/* BILLING ADDRESS SECTION */
-/* ############################################################# */
-
-
-
-/* ############################################################# */
-/* CARD INFO SECTION */
-/* ############################################################# */
-
-
-
-/* ############################################################# */
-/* REVIEW DONATION SECTION */
-/* ############################################################# */
+@media (max-width: 480px) {
+    .donate__container {
+        padding: 1.5rem;
+    }
+    .donate-information
+    .donate-text{
+        font-size: 0.8rem;
+    }
+}

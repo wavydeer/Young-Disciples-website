@@ -54,10 +54,26 @@ const modifyHead = (() => {
                 font-src 'self' https://fonts.gstatic.com/s/ https://unpkg.com/boxicons@2.0.9/fonts/ https://ka-f.fontawesome.com/releases/v5.15.4/webfonts/;
                 frame-src 'self' https://www.google.com/"
         >
-        <link rel="icon" type="image/png" href="assets/img/placeholder.png"/>   
-        <link rel="stylesheet" type="text/css" href="/out/css/style.css">
+        <link rel="icon" type="image/png" href="assets/img/Young-Disciples-logo.png"/>   
+        
         <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
         <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+    `)
+
+    // <link rel="stylesheet" type="text/css" href="/out/css/style.css">
+
+    /**
+     * ! delete me for 
+     */
+    $('head').append(`
+        <link rel="stylesheet" href="./assets/css/main.css">
+        <link rel="stylesheet" href="./assets/css/navbar.css">
+        <link rel="stylesheet" href="./assets/css/index.css">
+        <link rel="stylesheet" href="./assets/css/meet-us.css">
+        <link rel="stylesheet" href="./assets/css/join.css">
+        <link rel="stylesheet" href="./assets/css/contact.css">
+        <link rel="stylesheet" href="./assets/css/donate.css">
+        <link rel="stylesheet" href="./assets/css/footer.css">
     `)
 })()
 
