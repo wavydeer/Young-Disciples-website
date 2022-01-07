@@ -19,9 +19,7 @@ inputs.forEach((input) => {
 
 // ========================================================
 
-let data = {
-    person: null
-}
+let contactPerson = null
 
 if (!(sessionStorage.getItem("person") === null)) {
     // edit contact us title to contact the person
@@ -29,7 +27,7 @@ if (!(sessionStorage.getItem("person") === null)) {
         `Contact "${sessionStorage.getItem("person")}"`
     );
     // add to stuff to send to the backend
-    data.person = sessionStorage.getItem("person");
+    contactPerson = sessionStorage.getItem("person");
     // remove it from sessionStorage
     sessionStorage.removeItem("person");
 }
@@ -97,7 +95,7 @@ $('.contact__form').submit(e => {
                 email: $('#sender-email').val(),
                 phone: $('#sender-phone').val(),
                 message: $('#sender-message').val(),
-                person: ($(".contact-form .title").text().includes('\"')) ? $(".contact-form .title").text().split('\"')[1] : null
+                person: contactPerson
             })
         })
         .then(response => { return response.json() })  // show loading screen
