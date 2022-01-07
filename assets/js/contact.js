@@ -32,6 +32,7 @@ if (!(sessionStorage.getItem("person") === null)) {
     sessionStorage.removeItem("person");
 }
 
+// parameters for what can be input in the form
 const inputValidation = (() => {
     const patterns = {
         name: /^[a-z ]{3,25}$/i,
