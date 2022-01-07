@@ -51,22 +51,22 @@
                     <form autocomplete="off" class="contact__form">
                         <h3 class="title">Contact us</h3>
                         <div class="input-container">
-                            <input type="text" name="name" class="input" />
+                            <input type="text" name="name" class="input invalid" id="sender-name"/>
                             <label for="">Name</label>
                             <span>Name</span>
                         </div>
                         <div class="input-container">
-                            <input type="email" name="email" class="input" />
+                            <input type="text" name="email" class="input invalid" id="sender-email"/>
                             <label for="">Email</label>
                             <span>Email</span>
                         </div>
                         <div class="input-container">
-                            <input type="tel" name="phone" class="input" />
+                            <input type="tel" name="phone" class="input invalid" id="sender-phone" maxlength="10"/>
                             <label for="">Phone</label>
                             <span>Phone</span>
                         </div>
                         <div class="input-container textarea">
-                            <textarea name="message" class="input"></textarea>
+                            <textarea name="message" class="input invalid" id= "sender-message" maxlength="500"></textarea>
                             <label for="">Message</label>
                             <span>Message</span>
                         </div>

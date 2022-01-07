@@ -40,43 +40,17 @@ const modifyHead = (() => {
     $('head').prepend(`
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="author" content="Malcom | Smyvens">
-        <meta name="description" 
-            content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem cumque autem possimus optio impedit laborum
-                    perspiciatis rerum nisi, quam reiciendis voluptas, veniam aliquid eaque? Amet totam ipsam iure voluptatum nobis."
-        >
-        <meta http-equiv="Content-Security-Policy" 
-            content="
-                default-src 'self';
-                connect-src 'self' https://ka-f.fontawesome.com/releases/v5.15.4/css/;
-                script-src 'self' 'unsafe-inline' https://kit.fontawesome.com/ https://cdnjs.cloudflare.com/;
-                style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/ https://unpkg.com/boxicons@2.0.9/css/ https://cdnjs.cloudflare.com/;
-                font-src 'self' https://fonts.gstatic.com/s/ https://unpkg.com/boxicons@2.0.9/fonts/ https://ka-f.fontawesome.com/releases/v5.15.4/webfonts/;
-                frame-src 'self' https://www.google.com/"
-        >
+        <meta name="author" content="Malcolm | Smyvens">
+        <meta name="description" content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem cumque autem possimus optio impedit laborum perspiciatis rerum nisi, quam reiciendis voluptas, veniam aliquid eaque? Amet totam ipsam iure voluptatum nobis.">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://ka-f.fontawesome.com/releases/v5.15.4/css/ https://6zjispevth.execute-api.us-east-1.amazonaws.com/; script-src 'self' 'unsafe-inline' https://kit.fontawesome.com/ https://cdnjs.cloudflare.com/; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/ https://unpkg.com/boxicons@2.0.9/css/ https://cdnjs.cloudflare.com/; font-src 'self' https://fonts.gstatic.com/s/ https://unpkg.com/boxicons@2.0.9/fonts/ https://ka-f.fontawesome.com/releases/v5.15.4/webfonts/; frame-src 'self' https://www.google.com/"; frame-ancestors 'self'>
         <link rel="icon" type="image/png" href="assets/img/Young-Disciples-logo.png"/>   
-        
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
         <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
         <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
     `)
 
-    // <link rel="stylesheet" type="text/css" href="/out/css/style.css">
-
-    /**
-     * ! delete me for 
-     */
-    $('head').append(`
-        <link rel="stylesheet" href="./assets/css/main.css">
-        <link rel="stylesheet" href="./assets/css/navbar.css">
-        <link rel="stylesheet" href="./assets/css/index.css">
-        <link rel="stylesheet" href="./assets/css/meet-us.css">
-        <link rel="stylesheet" href="./assets/css/join.css">
-        <link rel="stylesheet" href="./assets/css/contact.css">
-        <link rel="stylesheet" href="./assets/css/donate.css">
-        <link rel="stylesheet" href="./assets/css/footer.css">
-    `)
 })()
-
+    
 /**********************************************************************************************/
 
 /** 
@@ -108,11 +82,6 @@ const loadTemplates = $(() => {
     // load footer
     $.get("template/footer.html", (data) => {
         $("#footer").append(data)
-    })
-
-    // load header
-    $.get("template/page-header.html", (data) => {
-        $("#page-header").append(data)
     })
 })
 
