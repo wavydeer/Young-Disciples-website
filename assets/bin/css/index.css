@@ -16,20 +16,6 @@
     color: #fff;
 }
 
-.indexHeader {
-    height: 100vh;
-    background-image: linear-gradient(
-            to top,
-            rgba(219, 183, 85, 0.6) 0%,
-            rgba(0, 0, 0, 0.5) 100%
-        ),
-        url("/src/assets/img/Young-Disciples-Women.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-}
-
 /* navigation bar scroll down animation */
 
 .navbar-scroll {
@@ -174,7 +160,7 @@ body {
     width: 100%;
 }
 
-#content .gallery #hero-image {
+/* #content .gallery #hero-image {
     position: relative;
     width: 100%;
     height: 100vh;
@@ -182,7 +168,7 @@ body {
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;
-}
+} */
 
 #content .gallery #hero-image .text-cont {
     width: 450px;
@@ -320,7 +306,7 @@ body {
     height: 800px;
 }
 
-#content .transparent-text #center {
+/* #content .transparent-text #center {
     position: relative;
     margin: 0 auto;
     top: 65px;
@@ -332,7 +318,7 @@ body {
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-}
+} */
 
 #content .transparent-text #center > img {
     position: absolute;
@@ -451,7 +437,7 @@ body {
     display: none;
 }
 
-.content {
+/* .content {
     background: var(--white) url("/src/assets/img/Praise-team-dinner.JPG") 100% /
         cover no-repeat;
     border-radius: 3rem;
@@ -461,7 +447,7 @@ body {
     overflow: hidden;
     position: relative;
     transition: all 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
-}
+} */
 
 .content:hover {
     box-shadow: 0.3rem 0.3rem 0.4rem rgba(0, 0, 0, 0.3);
@@ -481,21 +467,21 @@ body {
     padding: 0.8rem 1.5rem;
 }
 
-.content:nth-of-type(2) {
-    background-image: url("/src/assets/img/Evona-background.webp");
+/* .content:nth-of-type(2) {
+    background-image: url("assets/img/Evona-background.webp");
 }
 
 .content:nth-of-type(3) {
-    background-image: url("/src/assets/img/Young Disciples Men.jpg");
+    background-image: url("assets/img/Young Disciples Men.jpg");
 }
 
 .content:nth-of-type(4) {
-    background-image: url("/src/assets/img/Young-Disciples-Women.jpg");
+    background-image: url("assets/img/Young-Disciples-Women.jpg");
 }
 
 .content:nth-of-type(5) {
-    background-image: url("/src/assets/img/Praise-team-dinner.JPG");
-}
+    background-image: url("assets/img/Praise-team-dinner.JPG");
+} */
 
 .content:nth-of-type(2) .icon {
     color: var(--dark-gray);

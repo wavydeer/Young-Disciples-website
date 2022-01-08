@@ -41,7 +41,7 @@ fetch(' https://6zjispevth.execute-api.us-east-1.amazonaws.com/YDJC-api/ydjc-dat
             // save which leader has been clicked in session sotrage
             sessionStorage.setItem('person', $(card.target).parent('.card').attr('data-person'))
             // go to contact page in a new window
-            window.open('contact.html')
+            window.location = 'contact.html'
         })
     }
 

@@ -66,5 +66,5 @@ $('.photo-item .button').on('click', (self) => {
     // save which leader has been clicked in session sotrage
     sessionStorage.setItem('person', $(self.target).parent('div').attr('data-person'))
     // go to contact page in a new window
-    window.open('contact.html')
+    window.location = 'https://youngdisciplesministries.com/assets/contact'
 })

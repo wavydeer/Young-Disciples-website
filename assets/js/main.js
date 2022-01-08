@@ -3,28 +3,6 @@
 /**********************************************************************************************/
 
 /** 
- * @function 
- * Modify the <a> to stop the page from reload
- * and stop it from adding "#link" to the URI
- * 
- * */
-const betterLinks = (() => {
-    $(window).on('load', () => {
-        // * remove # from url address bar
-        $(window).on('hashchange', (e) => {
-            history.replaceState("", document.title, e.originalEvent.oldURL)
-        })
-
-        // * make default <a href="#"> tag not reload the page
-        $('a[href="#"]').click((e) => {
-            e.preventDefault();
-        })
-    })
-})()
-
-/**********************************************************************************************/
-
-/** 
  * @function
  * Add all the neccessary resources and some meta tags to the head of the document
  * 
@@ -32,37 +10,28 @@ const betterLinks = (() => {
  * * Load the logo for the favicon 
  * * Load style.css which contains all the css variables
  * * Load the third party fonts and icon
- * 
- * TODO: add headers to page from backend
- * TODO: Fix style.css link
  */
 const modifyHead = (() => {
     $('head').prepend(`
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Malcolm | Smyvens">
-        <meta name="description" content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem cumque autem possimus optio impedit laborum perspiciatis rerum nisi, quam reiciendis voluptas, veniam aliquid eaque? Amet totam ipsam iure voluptatum nobis.">
         <link rel="icon" type="image/png" href="assets/img/Young-Disciples-logo.png"/>   
-        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
         <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
         <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     `)
 
 })()
     
 /**********************************************************************************************/
 
-/** 
- * @function 
- * Loading navbar and footer template 
- * 
- * TODO: Fix links
- * */
-const loadTemplates = $(() => {
-    // load navbar
-    $.get("template/navbar.html", (data) => {
-        $("#navbar").append(data)
+async function loadTemplates(template) {
+    return ( await fetch(template) ).text()
+}   
 
+$(async () => {
+    $("#navbar").append( await loadTemplates('template/navbar.html') )
         // make sure the navbar is always on top of everthing
         $('#navbar').css({
             position: 'absolute',
@@ -76,12 +45,9 @@ const loadTemplates = $(() => {
             var currentFile = (location.pathname.match(/[^\/]+$/)[0]).split('.')[0]
             $(`#nav__link-${currentFile}`).addClass('active-link')
         }
-    })
-
-    // load footer
-    $.get("template/footer.html", (data) => {
-        $("#footer").append(data)
-    })
+    
+    $("#footer").append( await loadTemplates('template/footer.html') )
+    
 })
 
 /** 
