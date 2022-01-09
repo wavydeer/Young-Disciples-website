@@ -19,7 +19,17 @@ const modifyHead = (() => {
         <link rel="icon" type="image/png" href="assets/img/Young-Disciples-logo.png"/>   
         <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
         <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    `)
+        // <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    $('head').append(`
+        <link rel="stylesheet" type="text/css" href="assets/bin/css/main.css">
+        <link rel="stylesheet" type="text/css" href="assets/bin/css/navbar.css">
+        <link rel="stylesheet" type="text/css" href="assets/bin/css/footer.css">
+        <link rel="stylesheet" type="text/css" href="assets/bin/css/index.css">
+        <link rel="stylesheet" type="text/css" href="assets/bin/css/meet-us.css">
+        <link rel="stylesheet" type="text/css" href="assets/bin/css/join.css">
+        <link rel="stylesheet" type="text/css" href="assets/bin/css/contact.css">
+        <link rel="stylesheet" type="text/css" href="assets/bin/css/donate.css">
     `)
 
 })()
