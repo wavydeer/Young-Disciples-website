@@ -1,4 +1,3 @@
-/** @function manageCarousel - Load carousel and customize some settings */
 const manageCarousel = $( window ).on("load", () => {
     $('.schedule-carousel').owlCarousel({
         margin: 20,
@@ -28,42 +27,39 @@ const manageCarousel = $( window ).on("load", () => {
 
 /**********************************************************************************************/
 
-/** @fetch - get events list from database */
-fetch(' https://6zjispevth.execute-api.us-east-1.amazonaws.com/YDJC-api/ydjc-database', {
-    method: 'Get',
-    mode: 'cors',
-    headers: {
-        'content-type': 'application/json; charset=UTF-8',
-        'accept': 'application/json'
-    }
-})
-.then(response => { return response.json() }) 
-.then(data => {
+$(async () => {
+    let apiLink = 'https://6zjispevth.execute-api.us-east-1.amazonaws.com/YDJC-api/ydjc-database'
+    // fetch events from database
+    let getLeadersFromDB = ( await fetch(apiLink, {
+        method: 'Get',
+        mode: 'cors',
+        headers: {
+            'content-type': 'application/json; charset=UTF-8',
+            'accept': 'application/json'
+        }
+    }) ).json()
 
-    const sortData = () => {
-        let sortedData = [], eventList = 0, num = 1
-
+    const sortData = (data) => {
+        let sortedData = [], leaderList = 0, num = 1
         // get how many events in total
-        $(data.body).each((index, object) => {
+        $( data ).each((index, object) => {
             if (object['YDJC-json'].split(' ')[0] == 'events') {
-                eventList++
+                leaderList++
             }
         })
-    
         // sort the events in order
-        while (sortedData.length != eventList) {
-            $(data.body).each((index, object) => {
+        while (sortedData.length != leaderList) {
+            $(data).each((index, object) => {
                 if (object['YDJC-json'].split(' ')[0] == 'events' && object['YDJC-json'].split(' ')[1] == num) {
                     num++
                     sortedData.push(object)
                 }
             })
         }
-
         return sortedData
     }
-    
-    $(sortData()).each((index, item) => {
+
+    $( sortData( (await getLeadersFromDB).body) ).each((index, item) => {
         if (item['YDJC-json'].split(' ')[0] == 'events') {
             const { title, description, time, day, month, year } = item
             // loop over every event in the list and create a template
@@ -88,4 +84,3 @@ fetch(' https://6zjispevth.execute-api.us-east-1.amazonaws.com/YDJC-api/ydjc-dat
         }
     })
 })
-.catch(() => { console.log('An error Occured. Please Reload') })

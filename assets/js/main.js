@@ -32,22 +32,22 @@ async function loadTemplates(template) {
 
 $(async () => {
     $("#navbar").append( await loadTemplates('template/navbar.html') )
-        // make sure the navbar is always on top of everthing
-        $('#navbar').css({
-            position: 'absolute',
-            zIndex: 10000000
-        })
+    
+    // make sure the navbar is always on top of everthing
+    $('#navbar').css({
+        position: 'absolute',
+        zIndex: 10000000
+    })
 
-        // highlight the link of the loaded file on the navbar
-        if (location.pathname === '/') {
-            $(`#nav__link-index`).addClass('active-link')
-        } else {
-            var currentFile = (location.pathname.match(/[^\/]+$/)[0]).split('.')[0]
-            $(`#nav__link-${currentFile}`).addClass('active-link')
+    // highlight the link of the loaded file on the navbar
+    if (location.pathname === '/') {
+        $(`#nav__link-index`).addClass('active-link')
+    } else {
+        var currentFile = (location.pathname.match(/[^\/]+$/)[0]).split('.')[0]
+        $(`#nav__link-${currentFile}`).addClass('active-link')
         }
     
     $("#footer").append( await loadTemplates('template/footer.html') )
-    
 })
 
 /** 
