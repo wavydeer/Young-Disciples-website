@@ -87,9 +87,12 @@ $(async () => {
                     </div>
                 </div>
             `)
+            // Need to fix but basically will remove the card if the current date is greater then event date
+            // Need to put in for loop with eventCount < 10 so it only shows 10 on screen at a time
             eventsCount++;
             eventDate = item.month + item.day + item.year;
-            console.log(eventDate);
+
+            
             if (todayFormat > eventDate){
 
                 $('.event-container').append(``)
