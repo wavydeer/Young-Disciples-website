@@ -58,7 +58,13 @@ $(async () => {
         }
         return sortedData
     }
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+    todayFormat = mm +  dd  + yyyy;
 
+    var eventsCount= 0;
     $( sortData( (await getLeadersFromDB).body) ).each((index, item) => {
         if (item['YDJC-json'].split(' ')[0] == 'events') {
             const { title, description, time, day, month, year } = item
@@ -81,6 +87,24 @@ $(async () => {
                     </div>
                 </div>
             `)
+            eventsCount++;
+            eventDate = item.month + item.day + item.year;
+            console.log(eventDate);
+            if (todayFormat > eventDate){
+
+                $('.event-container').append(``)
+            }
+            
+            
         }
+    
     })
+    
+    
+    
+    
+
+    
+
+
 })
