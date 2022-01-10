@@ -54,8 +54,8 @@ const inputValidation = (() => {
     }
 
     // when user types into the inputs
-    $('.input').each(() => {
-        $(this).keyup(e => {
+    $('.input').each((index, key) => {
+        $(key).keyup(e => {
             // check if they match the patterns
             validate(e.target, patterns[e.target.attributes.name.value])
             

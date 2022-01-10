@@ -1,4 +1,3 @@
-/** @function manageCarousel - Load carousel and customize some settings */
 const manageCarousel = $( window ).on("load", () => {
     $('.schedule-carousel').owlCarousel({
         margin: 20,
@@ -28,17 +27,40 @@ const manageCarousel = $( window ).on("load", () => {
 
 /**********************************************************************************************/
 
-/** 
- * @function
- * 
- * Get special events from backend and load it into the DOM
- * 
- * ! use Fetch API
- * TODO: use Fetch API
- */
-const loadSpecialEvents = (() => {
-    $.getJSON('assets/json/events.json', (data) => {
-        $(data.eventList).each((index, item) => {
+$(async () => {
+    let apiLink = 'https://6zjispevth.execute-api.us-east-1.amazonaws.com/YDJC-api/ydjc-database'
+    // fetch events from database
+    let getLeadersFromDB = ( await fetch(apiLink, {
+        method: 'Get',
+        mode: 'cors',
+        headers: {
+            'content-type': 'application/json; charset=UTF-8',
+            'accept': 'application/json'
+        }
+    }) ).json()
+
+    const sortData = (data) => {
+        let sortedData = [], leaderList = 0, num = 1
+        // get how many events in total
+        $( data ).each((index, object) => {
+            if (object['YDJC-json'].split(' ')[0] == 'events') {
+                leaderList++
+            }
+        })
+        // sort the events in order
+        while (sortedData.length != leaderList) {
+            $(data).each((index, object) => {
+                if (object['YDJC-json'].split(' ')[0] == 'events' && object['YDJC-json'].split(' ')[1] == num) {
+                    num++
+                    sortedData.push(object)
+                }
+            })
+        }
+        return sortedData
+    }
+
+    $( sortData( (await getLeadersFromDB).body) ).each((index, item) => {
+        if (item['YDJC-json'].split(' ')[0] == 'events') {
             const { title, description, time, day, month, year } = item
             // loop over every event in the list and create a template
             $('.event-container').append(`
@@ -59,6 +81,6 @@ const loadSpecialEvents = (() => {
                     </div>
                 </div>
             `)
-        })
+        }
     })
-})()
+})
