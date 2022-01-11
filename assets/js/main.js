@@ -11,6 +11,8 @@
  * * Load style.css which contains all the css variables
  * * Load the third party fonts and icon
  */
+
+window.scrollTo(0, 0);
 const modifyHead = (() => {
     $('head').prepend(`
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">

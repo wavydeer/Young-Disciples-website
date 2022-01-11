@@ -58,7 +58,13 @@ $(async () => {
         }
         return sortedData
     }
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+    todayFormat = mm +  dd  + yyyy;
 
+    var eventsCount= 0;
     $( sortData( (await getLeadersFromDB).body) ).each((index, item) => {
         if (item['YDJC-json'].split(' ')[0] == 'events') {
             const { title, description, time, day, month, year } = item
@@ -81,6 +87,27 @@ $(async () => {
                     </div>
                 </div>
             `)
+            // Need to fix but basically will remove the card if the current date is greater then event date
+            // Need to put in for loop with eventCount < 10 so it only shows 10 on screen at a time
+            eventsCount++;
+            eventDate = item.month + item.day + item.year;
+
+            
+            if (todayFormat > eventDate){
+
+                $('.event-container').append(``)
+            }
+            
+            
         }
+    
     })
+    
+    
+    
+    
+
+    
+
+
 })
