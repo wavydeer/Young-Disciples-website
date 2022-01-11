@@ -1,51 +1,43 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Alata&family=Londrina+Shadow&family=Rajdhani&Open+Sans:400,500,300,700&family=Poppins:wght@100;200;300;400;500;600;700;800&family=Roboto:wght@300;400;900&display=swap');
 
-/* variables */
-/* 
-:root {
-    --header-height: 3.5rem;
-    --color-primary: #FFD400;
-    --color-secondary: #FFE14C;
-    --color-alt: #FFE97F;
-} */
-
-/* :root { */
-    /* --header-height: 3.5rem; */
-    /* colors */
-    /* --hue-color: 39;
-    --color-primary: hsl(var(--hue-color), 69%, 61%);
-    --color-secondary: #e7bc2e;
-    --color-alt: hsl(var(--hue-color), 92%, 85%); */
-    /* --color-container: #000000; */
-    /* --color-text: #494949;
-    --color-input: #bebebe1c;
-    --color-body: rgb(248, 247, 241);
-    --color-container: #F2EBD8; 
-    --color-container-secondary: white;
-    --color-container-alt: #d3d3d3;
-    --color-title:rgb(0, 0, 0); */
-    /* --color-container: rgb(248, 247, 241); */
-    /*  background: #384351; */
-/* } */
-
-/* body.dark-theme {
-    --color-body: linear-gradient(to right,#6d64e6, #a9aee6, #6d64e6);;
-    --color-container: linear-gradient(135deg, #a9aee6 , #6d64e6 85%);;
-    --color-container-secondary: linear-gradient(#e66465, #9198e5);;
-    --color-container-alt: #212831;
-    --color-title: rgba(255, 255, 255, 0.774);
-    --color-text: #ffffff67;
-} */
 
 :root {
     --header-height: 3.5rem;
-    /* colors */
+
+    --color-primary: #F0A500;
+    --color-secondary: #185ADB;
+    --color-background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(186,186,186,1) 100%);
+    --color-navbar: radial-gradient(circle, rgb(143, 143, 143) 0%, rgb(126, 126, 126) 100%);
+    --color-footer: radial-gradient(circle, rgb(88, 88, 88) 0%, rgb(83, 83, 83) 100%);
+    --color-menus-primary: radial-gradient(circle, rgb(58, 58, 58) 0%, rgba(33,33,33,1) 100%);
+    --color-menus-secondary: radial-gradient(circle, rgb(189, 187, 187) 0%, rgb(172, 172, 172) 100%);
+    --color-containers: #ffffff;
+    --color-text-header: #143a88;
+    --color-text-primary: #131313;
+    --color-text-secondary: #505050;
+    --color-text-alt: #FFFFFF;
+}
+
+body.dark-theme {
+    --color-background: radial-gradient(circle, rgba(52,52,52,1) 0%, rgba(24,24,24,1) 100%);
+    --color-navbar: radial-gradient(circle, rgb(165, 165, 165) 0%, rgb(158, 158, 158) 100%);
+    --color-footer: radial-gradient(circle, rgba(52,52,52,1) 0%, rgba(24,24,24,1) 100%);
+    --color-menus-primary: radial-gradient(circle, rgb(58, 58, 58) 0%, rgba(33,33,33,1) 100%);
+    --color-menus-secondary: radial-gradient(circle, rgb(58, 58, 58) 0%, rgb(51, 51, 51) 100%);
+    --color-containers: radial-gradient(circle, rgba(87,87,87,1) 0%, rgba(64,64,64,1) 100%);
+    --color-text-header: #185ADB;
+    --color-text-primary: #FFFFFF;
+    --color-text-secondary: #B3B3B3;
+} 
+
+/* :root {
+    --header-height: 3.5rem;
+    colors
     --hue-color: 39;
-    --color-primary: hsl(var(--hue-color), 69%, 61%);
     --color-secondary: #e7bc2e;
     --color-alt: hsl(var(--hue-color), 92%, 85%);
-    /* --color-container: #000000; */
+    --color-container: #000000;
     --color-text: #494949;
     --color-input: #bebebe1c;
     --color-body: rgb(248, 247, 241);
@@ -53,9 +45,9 @@
     --color-container-secondary: white;
     --color-container-alt: #d3d3d3;
     --color-title:rgb(0, 0, 0);
-    /* --color-container: rgb(248, 247, 241); */
-    /*  background: #384351; */
-}
+    --color-container: rgb(248, 247, 241);
+    background: #384351;
+} */
 
 body.dark-theme {
     --color-body: #59687a;
@@ -89,7 +81,7 @@ body {
     max-width: 100%;
     overflow-x: hidden;
     /* background: var(--color-body); */
-    background: var(--color-body)
+    background: var(--color-background)
 }
 
 html {
@@ -142,6 +134,7 @@ img {
     font-family: "Rajdhani", sans-serif;
     margin-top: var(--header-height);
     user-select: none;
+    color: var(--color-text-header);
 }
 
 /* ===================================================== */

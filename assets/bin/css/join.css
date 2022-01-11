@@ -21,7 +21,7 @@
 }
 
 .schedule {
-    background: var(--color-container);
+    background: var(--color-containers);
     border-radius: 1rem;
     padding: 3rem 2rem;
     min-height: 400px;
@@ -31,6 +31,7 @@
     font-size: 28px;
     font-weight: 400;
     white-space: nowrap;
+    color: var(--color-text-primary);
 }
 
 .schedule hr {
@@ -39,7 +40,7 @@
 }
 
 .schedule-description {
-    color: var(--color-text);
+    color: var(--color-text-secondary);
 }
 
 .owl-dots {
@@ -50,7 +51,7 @@
 .owl-dot {
     width: 14px;
     height: 14px;
-    background: #333 !important;
+    background: var(--color-containers) !important;
     margin: 0 6px;
     border-radius: 50%;
     outline: none;
@@ -66,7 +67,7 @@
     cursor: pointer;
     top: 175px !important;
     font-size: 50px;
-    color: var(--color-container);
+    color: var(--color-containers);
 }
 
 .owl-carousel .fa-chevron-right.nav-btn {
@@ -95,7 +96,7 @@
 }
 
 .event-container .event {
-    background: var(--color-container-secondary);
+    background: var(--color-containers);
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.486);
     display: flex;
     border-radius: 8px;
@@ -110,12 +111,12 @@
 }
 
 .event .event-left {
-    background: var(--color-container-alt);
+    background: var(--color-menus-secondary);
     width: 82px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--color-title);
+    color: var(--color-text-alt);
     padding: 8px 48px;
     font-weight: bold;
     text-align: center;
@@ -142,12 +143,13 @@
 .event .event-right h3.event-title {
     font-size: 24px;
     margin: 24px 0 10px 0;
-    color: var(--color-primary);
+    color: var(--color-text-primary);
     text-transform: uppercase;
 }
 
 .event .event-right .event-timing {
-    background-color: var(--color-container);
+    background-color: var(--color-menus-primary);
+    color: var(--color-primary);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -158,12 +160,8 @@
     font-size: 14px;
 }
 
-body.dark-theme .event .event-right .event-timing {
-    background-color: var(--color-body);
-}
-
 .event-description {
-    color: var(--color-text);
+    color: var(--color-text-secondary);
 }
 
 .event .event-right .event-timing img {
